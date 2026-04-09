@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MaxPetz | World-Class Veterinary Care & Pet Services</title>
-    <meta name="description" content="MaxPetz offers premium veterinary services, grooming, boarding, and diagnostics. Your pet's health is our priority. Book an appointment today.">
+    <title>MaxPetZ at Home | Premium Veterinary Care · South Delhi Since 1952</title>
+    <meta name="description" content="MaxPetZ provides the best veterinary hospital services in Delhi. Book an at-home vet consultation, check dog vaccination schedules, or find an emergency pet hospital near you.">
     
     <!-- CDNs -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -112,30 +112,71 @@
     </script>
 
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,700&family=Outfit:wght@300;400;500;600;700&display=swap');
         
         :root {
-            --primary: #1e40af; /* Trust Blue */
-            --secondary: #f59e0b; /* Warmth/Energy Orange */
-            --accent: #059669; /* Health Green */
-            --specialty: #7c3aed; /* Premium Purple */
-            --warm-bg: #FAF9F6; /* Empathy Neutral */
+            --ink: #0C1110;
+            --ink70: rgba(12,17,16,.7);
+            --canvas: #F6F3EC;
+            --paper: #FDFBF6;
+            --t9: #052A27;
+            --t7: #0C4A42;
+            --t5: #17756A;
+            --t3: #35AFA0;
+            --g5: #C6941A;
+            --g3: #E2B444;
+            --blush: #F0E6DC;
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--warm-bg);
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--canvas);
+            color: var(--ink);
             scroll-behavior: smooth;
         }
 
-        h1, h2, h3 {
+        h1, h2, h3, h4, h5, .serif {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: .75rem;
+            font-weight: 700;
+            letter-spacing: .16em;
+            text-transform: uppercase;
+            color: var(--t5);
+            margin-bottom: 16px;
             font-family: 'Outfit', sans-serif;
+        }
+        .kicker::before {
+            content: '';
+            width: 24px;
+            height: 1.5px;
+            background: var(--t5);
+        }
+        .kicker.light { color: var(--g3); }
+        .kicker.light::before { background: var(--g3); }
+        .kicker.center { justify-content: center; }
+        .kicker.center::before { display: none; }
+        .kicker.center::after { content: ''; width: 24px; height: 1.5px; background: var(--t5); }
+
+        .btn-gold {
+            background: linear-gradient(135deg, var(--g3), var(--g5));
+            color: var(--t9);
+            box-shadow: 0 7px 26px rgba(198,148,26,.4);
+        }
+        .btn-gold:hover {
+            box-shadow: 0 14px 32px rgba(198,148,26,.5);
+            transform: translateY(-2px);
         }
 
         .glass {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(246, 243, 236, 0.95);
+            backdrop-filter: blur(24px);
+            border-bottom: 1px solid rgba(0,0,0,0.06);
         }
 
         .chat-window {
@@ -143,9 +184,10 @@
             width: 400px;
             display: none;
             flex-direction: column;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 30px 80px rgba(5,42,39,.11), 0 0 0 1px rgba(0,0,0,.04);
             border-radius: 2rem;
             z-index: 1000;
+            background: #fff;
         }
 
         .page-view { display: none; }
@@ -153,30 +195,37 @@
 
         /* Psychology Trigger: Subtle Pulsing for CTA */
         @keyframes pulse-soft {
-            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.4); }
-            70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(37, 99, 235, 0); }
-            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 99, 235, 0); }
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(198,148,26,.4); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(198,148,26,0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(198,148,26,0); }
         }
         .cta-pulse { animation: pulse-soft 2s infinite; }
 
         .ab-variant { display: none; }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-900">
+<body class="text-[var(--ink)] bg-[var(--canvas)]">
+
+    <!-- Urgency Banner (Scarcity Trigger) -->
+    <div class="bg-red-600 text-white text-xs font-bold uppercase tracking-widest py-2 text-center relative z-[101] shadow-md">
+        <span class="animate-pulse inline-block w-2 h-2 bg-white rounded-full mr-2"></span>
+        High Demand: Only 3 At-Home Visit Slots Remaining for Today in South Delhi. <a href="javascript:void(0)" onclick="showPage('booking')" class="underline ml-2 hover:text-red-200 transition">Secure Yours Now</a>
+    </div>
 
     <!-- Navigation -->
-    <nav class="fixed w-full z-[100] glass py-4">
+    <nav class="fixed w-full z-[100] glass py-4 top-8">
         <div class="container mx-auto px-6 flex justify-between items-center">
             <div class="flex items-center gap-2 cursor-pointer" onclick="showPage('home')">
-                <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-blue-200">M</div>
-                <span class="text-2xl font-bold tracking-tight text-slate-800">MaxPetz</span>
+                <div class="w-8 h-8 bg-gradient-to-br from-[var(--t5)] to-[var(--t3)] rounded-lg flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-teal-900/30">+</div>
+                <span class="text-2xl font-bold tracking-tight text-[var(--t9)] serif">Max<em class="text-[var(--g5)] not-italic">PetZ</em></span>
             </div>
-            <div class="hidden md:flex gap-8 font-semibold text-slate-600">
-                <a href="javascript:void(0)" onclick="showPage('home')" class="hover:text-blue-600 transition">Home</a>
-                <a href="javascript:void(0)" onclick="document.getElementById('services').scrollIntoView()" class="hover:text-blue-600 transition">Services</a>
-                <a href="javascript:void(0)" onclick="showPage('blog')" class="hover:text-blue-600 transition">Blog</a>
+            <div class="hidden md:flex gap-8 font-semibold text-[var(--ink70)] text-sm tracking-widest uppercase">
+                <a href="javascript:void(0)" onclick="showPage('home')" class="hover:text-[var(--t5)] transition">Home</a>
+                <a href="javascript:void(0)" onclick="showPage('doctors')" class="hover:text-[var(--t5)] transition">Doctors</a>
+                <a href="javascript:void(0)" onclick="showPage('booking')" class="hover:text-[var(--t5)] transition">Book Consult</a>
+                <a href="javascript:void(0)" onclick="showPage('blog')" class="hover:text-[var(--t5)] transition">Journal</a>
             </div>
-            <button onclick="bot.toggleChat()" class="bg-blue-600 text-white px-6 py-2 rounded-full font-bold hover:bg-blue-700 transition shadow-xl shadow-blue-200 cta-pulse">
+            <button onclick="bot.toggleChat()" class="bg-[var(--t9)] text-white px-6 py-3 rounded-full text-sm font-bold hover:bg-[var(--t5)] transition shadow-xl shadow-teal-900/20 cta-pulse uppercase tracking-widest">
                 Book Appointment
             </button>
         </div>
@@ -185,54 +234,59 @@
     <!-- HOME PAGE VIEW -->
     <div id="home-page" class="page-view active">
         <!-- Hero Section -->
-        <header class="relative pt-40 pb-24 overflow-hidden">
-            <div class="container mx-auto px-6 flex flex-col lg:flex-row items-center">
+        <header class="relative pt-40 pb-24 overflow-hidden bg-[var(--t9)] text-white">
+            <div class="absolute inset-0 opacity-50 bg-[radial-gradient(ellipse_75%_90%_at_12%_55%,rgba(23,117,106,0.55)_0%,transparent_58%),radial-gradient(ellipse_50%_60%_at_88%_18%,rgba(198,148,26,0.12)_0%,transparent_52%)]"></div>
+            <div class="container mx-auto px-6 flex flex-col lg:flex-row items-center relative z-10">
                 <div class="lg:w-3/5 z-10">
-                    <span class="inline-block py-2 px-4 rounded-full bg-blue-100 text-blue-700 text-xs font-black uppercase tracking-widest mb-6">South Delhi's #1 Rated Veterinary Hospital</span>
-                    <h1 class="text-6xl lg:text-8xl font-black leading-[0.9] mb-8 text-slate-900 tracking-tighter">
-                        Because You're Not Just Owners, You're <span class="text-blue-600">Pawrents.</span>
+                    <span class="inline-block py-2 px-4 rounded-full bg-white/10 border border-white/20 text-white/80 text-xs font-black uppercase tracking-widest mb-6 backdrop-blur-sm">
+                        <span class="inline-block w-2 h-2 bg-[var(--g3)] rounded-full mr-2 animate-pulse"></span>
+                        Pioneers in Pet Healthcare Since 1952
+                    </span>
+                    <h1 class="text-6xl lg:text-8xl font-light leading-[1.05] mb-8 text-white tracking-tight serif">
+                        <strong class="font-bold block">Because Every</strong>
+                        <em class="text-[var(--g3)] italic block">Pawtner Deserves</em>
+                        Peace of Mind.
                     </h1>
-                    <p class="text-2xl text-slate-600 mb-12 leading-relaxed max-w-2xl">
-                        <span class="font-bold text-slate-900">80% of urban pet owners</span> are unaware of essential seasonal care. We bridge the gap between clinical excellence and parental love.
+                    <p class="text-xl text-white/70 mb-12 leading-relaxed max-w-2xl font-light">
+                        South Delhi's most trusted veterinary service — bringing world-class vet care directly to your door or at our state-of-the-art clinics. Because your fur-baby's health shouldn't come with anxiety.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-6">
-                        <button id="hero-cta-a" onclick="trackCTA('Variant A')" class="ab-variant bg-orange-500 text-white px-10 py-5 rounded-2xl text-xl font-black hover:bg-orange-600 transition shadow-2xl shadow-orange-200 flex items-center justify-center gap-3 cta-pulse">
+                        <button id="hero-cta-a" onclick="trackCTA('Variant A')" class="ab-variant btn-gold px-10 py-5 rounded-full text-lg font-bold transition flex items-center justify-center gap-3 cta-pulse">
                             Book Wellness Visit <i class="fas fa-calendar-check"></i>
                         </button>
-                        <button id="hero-cta-b" onclick="trackCTA('Variant B')" class="ab-variant bg-orange-500 text-white px-10 py-5 rounded-2xl text-xl font-black hover:bg-orange-600 transition shadow-2xl shadow-orange-200 flex items-center justify-center gap-3 cta-pulse">
+                        <button id="hero-cta-b" onclick="trackCTA('Variant B')" class="ab-variant btn-gold px-10 py-5 rounded-full text-lg font-bold transition flex items-center justify-center gap-3 cta-pulse">
                             Schedule "Fear Free" Consult <i class="fas fa-heart"></i>
                         </button>
                         
-                        <button onclick="showPage('blog')" class="bg-white border-2 border-slate-200 text-slate-700 px-10 py-5 rounded-2xl text-xl font-bold hover:bg-slate-50 transition">
-                            Wellness Insights
+                        <button onclick="showPage('blog')" class="bg-white/10 border border-white/20 text-white px-10 py-5 rounded-full text-lg font-medium hover:bg-white/20 transition backdrop-blur-sm">
+                            Read The Journal
                         </button>
                     </div>
                     <div class="mt-12 flex items-center gap-4">
                         <div class="flex -space-x-3">
-                            <img src="https://i.pravatar.cc/100?u=1" class="w-12 h-12 rounded-full border-4 border-white shadow-sm">
-                            <img src="https://i.pravatar.cc/100?u=2" class="w-12 h-12 rounded-full border-4 border-white shadow-sm">
-                            <img src="https://i.pravatar.cc/100?u=3" class="w-12 h-12 rounded-full border-4 border-white shadow-sm">
-                            <div class="w-12 h-12 rounded-full bg-blue-600 border-4 border-white shadow-sm flex items-center justify-center text-white text-xs font-bold">+50k</div>
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" class="w-12 h-12 rounded-full border-4 border-[var(--t9)] shadow-sm object-cover">
+                            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" class="w-12 h-12 rounded-full border-4 border-[var(--t9)] shadow-sm object-cover">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" class="w-12 h-12 rounded-full border-4 border-[var(--t9)] shadow-sm object-cover">
+                            <div class="w-12 h-12 rounded-full bg-[var(--t5)] border-4 border-[var(--t9)] shadow-sm flex items-center justify-center text-white text-xs font-bold">+50k</div>
                         </div>
-                        <p class="text-slate-500 font-medium">Trusted by elite pawrents across India</p>
+                        <p class="text-white/60 font-medium text-sm">Trusted by elite pawtners across India</p>
                     </div>
                 </div>
                 <div class="lg:w-2/5 mt-20 lg:mt-0 relative">
-                    <div class="absolute -top-20 -right-20 w-[500px] h-[500px] bg-blue-200 rounded-full blur-[120px] opacity-40"></div>
                     <div class="relative z-10">
-                        <img src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="MaxPetz Care" class="rounded-[3rem] shadow-3xl transform rotate-3 hover:rotate-0 transition duration-700">
-                        <div class="absolute -bottom-10 -left-10 bg-white p-6 rounded-3xl shadow-2xl flex items-center gap-4 animate-bounce">
-                            <div class="w-14 h-14 bg-emerald-500 rounded-2xl flex items-center justify-center text-white text-2xl">
+                        <img src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="MaxPetz Care" class="rounded-[3rem] shadow-2xl transform rotate-3 hover:rotate-0 transition duration-700 border border-white/10">
+                        <div class="absolute -bottom-10 -left-10 bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-3xl shadow-2xl flex items-center gap-4 animate-bounce z-20">
+                            <div class="w-14 h-14 bg-[var(--g3)] rounded-2xl flex items-center justify-center text-[var(--t9)] text-2xl">
                                 <i class="fas fa-shield-alt"></i>
                             </div>
                             <div>
-                                <div class="font-black text-slate-900">Fear Free Certified</div>
-                                <div class="text-sm text-slate-500">Low-stress handling</div>
+                                <div class="font-black text-white">Fear Free Certified</div>
+                                <div class="text-sm text-white/70">Low-stress handling</div>
                             </div>
                         </div>
                     </div>
                     <!-- Trust Badges -->
-                    <div class="mt-16 flex justify-center lg:justify-start gap-8 opacity-50 grayscale hover:grayscale-0 transition duration-500">
+                    <div class="mt-16 flex justify-center lg:justify-start gap-8 opacity-50 grayscale hover:grayscale-0 transition duration-500 brightness-200">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Logo_of_the_American_Animal_Hospital_Association.svg/1200px-Logo_of_the_American_Animal_Hospital_Association.svg.png" class="h-8" alt="AAHA">
                         <img src="https://fearfreepets.com/wp-content/uploads/2016/10/Fear-Free-Logo-Color-300x138.png" class="h-8" alt="Fear Free">
                         <img src="https://www.vci.gov.in/images/logo.png" class="h-8" alt="VCI">
@@ -242,11 +296,12 @@
         </header>
 
         <!-- Services Module -->
-        <section id="services" class="py-32 bg-white">
+        <section id="services" class="py-32 bg-[var(--paper)]">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-24">
-                    <h2 class="text-5xl font-black mb-6 tracking-tight">World-Class Veterinary Services</h2>
-                    <p class="text-xl text-slate-500 max-w-3xl mx-auto">From routine checkups to advanced surgical procedures, we provide the highest standard of veterinary medicine across India.</p>
+                    <div class="kicker center">What We Offer</div>
+                    <h2 class="text-5xl font-black mb-6 tracking-tight serif">Designed for Anxious<br><em class="text-[var(--t5)] italic font-light">Pawtners Like You</em></h2>
+                    <p class="text-xl text-[var(--ink70)] max-w-3xl mx-auto font-light">From routine checkups to advanced surgical procedures, we provide the highest standard of veterinary medicine across India.</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     <div class="group p-8 rounded-[2rem] bg-white border-2 border-transparent hover:border-blue-600 transition-all duration-500 shadow-sm hover:shadow-xl">
@@ -282,41 +337,43 @@
         </section>
 
         <!-- Localized Pathology Section -->
-        <section id="local-threats" class="py-32 bg-slate-50">
+        <section id="local-threats" class="py-32 bg-[var(--canvas)]">
             <div class="container mx-auto px-6">
                 <div class="flex flex-col lg:flex-row items-center gap-16">
                     <div class="lg:w-1/2">
-                        <h2 class="text-5xl font-black mb-8 tracking-tight">Delhi's Unique Health Challenges</h2>
-                        <p class="text-xl text-slate-600 mb-12">New Delhi's environment poses specific risks to our pets. We've developed specialized protocols to protect them from local stressors.</p>
+                        <div class="kicker">Local Threats</div>
+                        <h2 class="text-5xl font-black mb-8 tracking-tight serif">Delhi's Unique Health Challenges</h2>
+                        <p class="text-xl text-[var(--ink70)] mb-12 font-light">New Delhi's environment poses specific risks to our pets. We've developed specialized protocols to protect them from local stressors.</p>
                         <div class="space-y-6">
-                            <div class="p-6 bg-white rounded-3xl shadow-sm flex gap-6 items-start">
-                                <div class="w-12 h-12 rounded-xl bg-slate-100 flex-shrink-0 flex items-center justify-center text-slate-600">
+                            <div class="p-6 bg-[var(--paper)] border border-[var(--ink15)] rounded-3xl shadow-sm flex gap-6 items-start hover:-translate-y-1 transition-transform">
+                                <div class="w-12 h-12 rounded-xl bg-[var(--t1)] flex-shrink-0 flex items-center justify-center text-[var(--t7)]">
                                     <i class="fas fa-smog"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-bold text-lg mb-1">Toxic Smog & Respiratory Care</h4>
-                                    <p class="text-slate-500 text-sm">Specialized care for brachycephalic breeds (Pugs, Shih Tzus) during high AQI months.</p>
+                                    <h4 class="font-bold text-lg mb-1 serif">Toxic Smog & Respiratory Care</h4>
+                                    <p class="text-[var(--ink70)] text-sm">Specialized care for brachycephalic breeds (Pugs, Shih Tzus) during high AQI months.</p>
                                 </div>
                             </div>
-                            <div class="p-6 bg-white rounded-3xl shadow-sm flex gap-6 items-start">
-                                <div class="w-12 h-12 rounded-xl bg-slate-100 flex-shrink-0 flex items-center justify-center text-slate-600">
+                            <div class="p-6 bg-[var(--paper)] border border-[var(--ink15)] rounded-3xl shadow-sm flex gap-6 items-start hover:-translate-y-1 transition-transform">
+                                <div class="w-12 h-12 rounded-xl bg-[var(--t1)] flex-shrink-0 flex items-center justify-center text-[var(--t7)]">
                                     <i class="fas fa-snowflake"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-bold text-lg mb-1">Winter Joint & Skin Support</h4>
-                                    <p class="text-slate-500 text-sm">Managing arthritis and dermatological issues triggered by Delhi's extreme dry cold.</p>
+                                    <h4 class="font-bold text-lg mb-1 serif">Winter Joint & Skin Support</h4>
+                                    <p class="text-[var(--ink70)] text-sm">Managing arthritis and dermatological issues triggered by Delhi's extreme dry cold.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="lg:w-1/2">
-                        <div class="bg-blue-600 rounded-[3rem] p-12 text-white relative overflow-hidden">
+                        <div class="bg-gradient-to-br from-[var(--t9)] to-[var(--t7)] rounded-[3rem] p-12 text-white relative overflow-hidden shadow-2xl">
+                            <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(53,175,160,0.2)_0%,transparent_60%)]"></div>
                             <div class="relative z-10">
-                                <h3 class="text-3xl font-black mb-6">Are you aware of the top 3 silent mistakes pawrents make during smog season?</h3>
-                                <p class="text-blue-100 mb-8">Download our localized survival guide to protect your pet's lungs today.</p>
-                                <button onclick="document.getElementById('lead-magnet').scrollIntoView()" class="bg-white text-blue-600 px-8 py-4 rounded-2xl font-black hover:bg-blue-50 transition">Get the Smog Survival Guide</button>
+                                <h3 class="text-3xl font-light mb-6 serif"><strong class="font-bold">Are you aware</strong> of the top 3 silent mistakes pawtners make during smog season?</h3>
+                                <p class="text-white/70 mb-8 font-light">Download our localized survival guide to protect your pet's lungs today.</p>
+                                <button onclick="document.getElementById('lead-magnet').scrollIntoView()" class="btn-gold px-8 py-4 rounded-full font-bold transition">Get the Smog Survival Guide</button>
                             </div>
-                            <div class="absolute -bottom-10 -right-10 opacity-20 transform rotate-12">
+                            <div class="absolute -bottom-10 -right-10 opacity-10 transform rotate-12">
                                 <i class="fas fa-mask text-[200px]"></i>
                             </div>
                         </div>
@@ -325,78 +382,127 @@
             </div>
         </section>
 
+        <!-- Pet Health Score Quiz (Curiosity Gap Trigger) -->
+        <section class="py-24 bg-[var(--canvas)] border-y border-[var(--ink15)]">
+            <div class="container mx-auto px-6 max-w-4xl text-center">
+                <div class="kicker center">Interactive Assessment</div>
+                <h2 class="text-4xl font-black mb-6 serif">What is your pet's <em class="text-[var(--t5)] italic font-light">Hidden Health Score?</em></h2>
+                <p class="text-xl text-[var(--ink70)] font-light mb-12">Take our 60-second vet-designed assessment to uncover potential blind spots in your pet's daily routine.</p>
+                
+                <div id="quiz-container" class="bg-white p-10 rounded-[2.5rem] shadow-2xl border border-[var(--ink15)] text-left relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-2 bg-[var(--ink15)]">
+                        <div id="quiz-progress" class="h-full bg-[var(--t5)] w-1/3 transition-all duration-500"></div>
+                    </div>
+                    <h3 id="quiz-question" class="text-2xl font-bold mb-8 serif mt-4">1. How often does your pet drink water compared to 6 months ago?</h3>
+                    <div class="space-y-4" id="quiz-options">
+                        <button onclick="nextQuizStep()" class="w-full text-left p-6 rounded-2xl border border-[var(--ink15)] hover:border-[var(--t5)] hover:bg-[var(--t1)] transition font-medium">About the same</button>
+                        <button onclick="nextQuizStep()" class="w-full text-left p-6 rounded-2xl border border-[var(--ink15)] hover:border-[var(--t5)] hover:bg-[var(--t1)] transition font-medium">Noticeably more</button>
+                        <button onclick="nextQuizStep()" class="w-full text-left p-6 rounded-2xl border border-[var(--ink15)] hover:border-[var(--t5)] hover:bg-[var(--t1)] transition font-medium">Noticeably less</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lead Magnet -->
+        <section id="lead-magnet" class="py-32 bg-[var(--ink)] relative overflow-hidden">
+            <div class="absolute inset-0 bg-[radial-gradient(ellipse_55%_65%_at_10%_50%,rgba(53,175,160,0.15)_0%,transparent_60%),radial-gradient(ellipse_38%_48%_at_92%_80%,rgba(198,148,26,0.1)_0%,transparent_50%)] pointer-events-none"></div>
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="bg-gradient-to-br from-[var(--t9)] to-[var(--ink)] border border-white/10 rounded-[3.5rem] p-12 lg:p-24 flex flex-col lg:flex-row items-center gap-16 shadow-2xl">
+                    <div class="lg:w-1/2">
+                        <div class="kicker light">Free Resource</div>
+                        <h2 class="text-4xl lg:text-6xl font-light text-white mb-8 leading-tight serif"><strong class="font-bold">The South Delhi Pet Parent's</strong><br><em class="text-[var(--g3)] italic">Daily Smog Survival Guide.</em></h2>
+                        <p class="text-xl text-white/60 mb-12 font-light">Learn the 5 essential steps to protect your fur-baby's lungs during Delhi's high AQI months. 100% Science-backed.</p>
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <input type="email" id="magnet-email" placeholder="Your best email..." class="flex-grow px-8 py-5 rounded-full bg-white/10 border border-white/20 text-white font-light placeholder-white/40 focus:outline-none focus:border-[var(--t3)] transition">
+                            <button onclick="triggerMagnetDownload()" class="btn-gold px-10 py-5 rounded-full font-bold transition shadow-2xl">
+                                Download Free Guide
+                            </button>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/2">
+                        <div class="relative">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-[var(--t5)] to-[var(--g3)] rounded-[2.5rem] transform rotate-3 opacity-20 blur-lg"></div>
+                            <img src="https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Guide" class="relative rounded-[2.5rem] shadow-2xl transform -rotate-3 border border-white/10">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- DOCTORS PAGE VIEW -->
+    <div id="doctors-page" class="page-view pt-32">
         <!-- Doctors Module -->
-        <section id="doctors" class="py-32 bg-slate-50">
+        <section id="doctors" class="py-32 bg-[var(--paper)]">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-24">
-                    <h2 class="text-5xl font-black mb-6 tracking-tight">Meet Our Specialists</h2>
-                    <p class="text-xl text-slate-500 max-w-3xl mx-auto">Our team consists of internationally trained veterinary surgeons and physicians dedicated to your pet's health.</p>
+                    <div class="kicker center">Expert Team</div>
+                    <h2 class="text-5xl font-black mb-6 tracking-tight serif">Meet Our <em class="text-[var(--t5)] italic font-light">Specialists</em></h2>
+                    <p class="text-xl text-[var(--ink70)] max-w-3xl mx-auto font-light">Our team consists of internationally trained veterinary surgeons and physicians dedicated to your pet's health.</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div class="bg-white p-8 rounded-[2.5rem] shadow-xl text-center group hover:-translate-y-4 transition-all duration-500">
-                        <img src="https://i.pravatar.cc/150?u=drkunal" class="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-blue-50 group-hover:border-blue-600 transition-all">
-                        <h3 class="text-xl font-black mb-2">Dr. Kunal Dev Sharma</h3>
-                        <p class="text-blue-600 font-bold text-sm mb-4">Senior Surgeon & Founder</p>
-                        <p class="text-slate-500 text-sm">Pioneer in advanced orthopedic and soft tissue veterinary surgery in India.</p>
+                    <div class="bg-[var(--canvas)] p-8 rounded-[2.5rem] border border-[var(--ink15)] text-center group hover:-translate-y-4 transition-all duration-500 hover:shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" class="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-[var(--t1)] group-hover:border-[var(--t5)] transition-all object-cover">
+                        <h3 class="text-xl font-bold mb-2 serif">Dr. Kunal Dev Sharma</h3>
+                        <p class="text-[var(--t5)] font-bold text-xs uppercase tracking-widest mb-4">Senior Surgeon</p>
+                        <p class="text-[var(--ink70)] text-sm">Pioneer in advanced orthopedic and soft tissue veterinary surgery in India.</p>
                     </div>
-                    <div class="bg-white p-8 rounded-[2.5rem] shadow-xl text-center group hover:-translate-y-4 transition-all duration-500">
-                        <img src="https://i.pravatar.cc/150?u=drbhanu" class="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-blue-50 group-hover:border-blue-600 transition-all">
-                        <h3 class="text-xl font-black mb-2">Dr. Bhanu Sharma</h3>
-                        <p class="text-blue-600 font-bold text-sm mb-4">Senior Veterinarian</p>
-                        <p class="text-slate-500 text-sm">Expert in internal medicine and preventive healthcare for small animals.</p>
+                    <div class="bg-[var(--canvas)] p-8 rounded-[2.5rem] border border-[var(--ink15)] text-center group hover:-translate-y-4 transition-all duration-500 hover:shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" class="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-[var(--t1)] group-hover:border-[var(--t5)] transition-all object-cover">
+                        <h3 class="text-xl font-bold mb-2 serif">Dr. Bhanu Sharma</h3>
+                        <p class="text-[var(--t5)] font-bold text-xs uppercase tracking-widest mb-4">Senior Veterinarian</p>
+                        <p class="text-[var(--ink70)] text-sm">Expert in internal medicine and preventive healthcare for small animals.</p>
                     </div>
-                    <div class="bg-white p-8 rounded-[2.5rem] shadow-xl text-center group hover:-translate-y-4 transition-all duration-500">
-                        <img src="https://i.pravatar.cc/150?u=drgautam" class="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-blue-50 group-hover:border-blue-600 transition-all">
-                        <h3 class="text-xl font-black mb-2">Dr. Gautam</h3>
-                        <p class="text-blue-600 font-bold text-sm mb-4">Surgery Specialist</p>
-                        <p class="text-slate-500 text-sm">Specializing in complex trauma and emergency surgical interventions.</p>
+                    <div class="bg-[var(--canvas)] p-8 rounded-[2.5rem] border border-[var(--ink15)] text-center group hover:-translate-y-4 transition-all duration-500 hover:shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" class="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-[var(--t1)] group-hover:border-[var(--t5)] transition-all object-cover">
+                        <h3 class="text-xl font-bold mb-2 serif">Dr. Gautam</h3>
+                        <p class="text-[var(--t5)] font-bold text-xs uppercase tracking-widest mb-4">Surgery Specialist</p>
+                        <p class="text-[var(--ink70)] text-sm">Specializing in complex trauma and emergency surgical interventions.</p>
                     </div>
-                    <div class="bg-white p-8 rounded-[2.5rem] shadow-xl text-center group hover:-translate-y-4 transition-all duration-500">
-                        <img src="https://i.pravatar.cc/150?u=drrahul" class="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-blue-50 group-hover:border-blue-600 transition-all">
-                        <h3 class="text-xl font-black mb-2">Dr. Rahul Verma</h3>
-                        <p class="text-blue-600 font-bold text-sm mb-4">Critical Care Specialist</p>
-                        <p class="text-slate-500 text-sm">Managing ICU and critical care monitoring for high-risk patients.</p>
+                    <div class="bg-[var(--canvas)] p-8 rounded-[2.5rem] border border-[var(--ink15)] text-center group hover:-translate-y-4 transition-all duration-500 hover:shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" class="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-[var(--t1)] group-hover:border-[var(--t5)] transition-all object-cover">
+                        <h3 class="text-xl font-bold mb-2 serif">Dr. Rahul Verma</h3>
+                        <p class="text-[var(--t5)] font-bold text-xs uppercase tracking-widest mb-4">Critical Care</p>
+                        <p class="text-[var(--ink70)] text-sm">Managing ICU and critical care monitoring for high-risk patients.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Why Choose Us Module -->
-        <section id="why-us" class="py-32 bg-slate-900 text-white overflow-hidden relative">
-            <div class="absolute top-0 left-0 w-full h-full opacity-10">
-                <div class="absolute top-10 left-10 w-64 h-64 bg-blue-500 rounded-full blur-3xl"></div>
-                <div class="absolute bottom-10 right-10 w-96 h-96 bg-orange-500 rounded-full blur-3xl"></div>
-            </div>
+        <section id="why-us" class="py-32 bg-[var(--t9)] text-white overflow-hidden relative">
+            <div class="absolute inset-0 bg-[radial-gradient(ellipse_55%_65%_at_90%_50%,rgba(53,175,160,0.1)_0%,transparent_60%),radial-gradient(ellipse_38%_48%_at_8%_80%,rgba(198,148,26,0.07)_0%,transparent_50%)]"></div>
             <div class="container mx-auto px-6 relative z-10">
                 <div class="flex flex-col lg:flex-row items-center gap-16">
                     <div class="lg:w-1/2">
-                        <h2 class="text-5xl font-black mb-8 tracking-tight">Why Elite Pawrents Choose MaxPetz</h2>
+                        <div class="kicker light">Our Philosophy</div>
+                        <h2 class="text-5xl font-light mb-8 tracking-tight serif"><strong class="font-bold">Why Elite Pawtners</strong><br><em class="text-[var(--g3)] italic">Choose MaxPetz</em></h2>
                         <div class="space-y-8">
                             <div class="flex gap-6">
-                                <div class="w-12 h-12 rounded-xl bg-blue-600 flex-shrink-0 flex items-center justify-center">
+                                <div class="w-12 h-12 rounded-xl bg-white/10 border border-white/20 flex-shrink-0 flex items-center justify-center text-[var(--g3)]">
                                     <i class="fas fa-microscope text-xl"></i>
                                 </div>
                                 <div>
-                                    <h4 class="text-xl font-bold mb-2">Advanced Medical Tech</h4>
-                                    <p class="text-slate-400">Equipped with the latest in veterinary diagnostics and surgical technology, ensuring precision in every treatment.</p>
+                                    <h4 class="text-xl font-bold mb-2 serif">Advanced Medical Tech</h4>
+                                    <p class="text-white/60 font-light">Equipped with the latest in veterinary diagnostics and surgical technology, ensuring precision in every treatment.</p>
                                 </div>
                             </div>
                             <div class="flex gap-6">
-                                <div class="w-12 h-12 rounded-xl bg-orange-600 flex-shrink-0 flex items-center justify-center">
+                                <div class="w-12 h-12 rounded-xl bg-white/10 border border-white/20 flex-shrink-0 flex items-center justify-center text-[var(--g3)]">
                                     <i class="fas fa-user-md text-xl"></i>
                                 </div>
                                 <div>
-                                    <h4 class="text-xl font-bold mb-2">Expert Specialist Team</h4>
-                                    <p class="text-slate-400">Our doctors are not just vets; they are specialists with years of experience in complex medical cases.</p>
+                                    <h4 class="text-xl font-bold mb-2 serif">Expert Specialist Team</h4>
+                                    <p class="text-white/60 font-light">Our doctors are not just vets; they are specialists with years of experience in complex medical cases.</p>
                                 </div>
                             </div>
                             <div class="flex gap-6">
-                                <div class="w-12 h-12 rounded-xl bg-emerald-600 flex-shrink-0 flex items-center justify-center">
+                                <div class="w-12 h-12 rounded-xl bg-white/10 border border-white/20 flex-shrink-0 flex items-center justify-center text-[var(--g3)]">
                                     <i class="fas fa-clock text-xl"></i>
                                 </div>
                                 <div>
-                                    <h4 class="text-xl font-bold mb-2">24/7 Unwavering Support</h4>
-                                    <p class="text-slate-400">We never sleep. Our emergency and ICU services are available round the clock, 365 days a year.</p>
+                                    <h4 class="text-xl font-bold mb-2 serif">24/7 Unwavering Support</h4>
+                                    <p class="text-white/60 font-light">We never sleep. Our emergency and ICU services are available round the clock, 365 days a year.</p>
                                 </div>
                             </div>
                         </div>
@@ -424,131 +530,151 @@
         </section>
 
         <!-- Testimonials Module -->
-        <section id="testimonials" class="py-32 bg-slate-50">
-            <div class="container mx-auto px-6">
+        <section id="testimonials" class="py-32 bg-[var(--t9)] text-white relative overflow-hidden">
+            <div class="absolute inset-0 bg-[radial-gradient(ellipse_55%_65%_at_10%_50%,rgba(53,175,160,0.1)_0%,transparent_60%),radial-gradient(ellipse_38%_48%_at_92%_80%,rgba(198,148,26,0.07)_0%,transparent_50%)]"></div>
+            <div class="container mx-auto px-6 relative z-10">
                 <div class="text-center mb-24">
-                    <h2 class="text-5xl font-black mb-6 tracking-tight">Stories from Our Pawrents</h2>
-                    <p class="text-xl text-slate-500 max-w-3xl mx-auto">Real experiences from the people who trust us with their most precious family members.</p>
+                    <div class="kicker light center">Real Pawtner Stories</div>
+                    <h2 class="text-5xl font-light mb-6 tracking-tight serif">Stories of <em class="text-[var(--g3)] italic">Real Relief</em></h2>
+                    <p class="text-xl text-white/60 max-w-3xl mx-auto font-light">Real experiences from the people who trust us with their most precious family members.</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="bg-white p-10 rounded-[2.5rem] shadow-xl relative">
-                        <div class="text-blue-600 text-4xl mb-6 opacity-20"><i class="fas fa-quote-left"></i></div>
-                        <p class="text-slate-600 text-lg italic mb-8">"When my Pug, Bella, couldn't breathe during the severe November smog, the team at MaxPetz stabilized her immediately. Their oxygen therapy and calm demeanor literally saved her life."</p>
+                    <div class="bg-white/5 border border-white/10 p-10 rounded-[2.5rem] hover:bg-white/10 hover:-translate-y-2 transition-all duration-500">
+                        <div class="text-[var(--g3)] text-2xl mb-6"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="text-white/80 text-lg italic mb-8 font-light">"When my Pug, Bella, couldn't breathe during the severe November smog, the team at MaxPetz stabilized her immediately. Their oxygen therapy and calm demeanor literally saved her life."</p>
                         <div class="flex items-center gap-4">
-                            <img src="https://i.pravatar.cc/100?u=t1" class="w-12 h-12 rounded-full">
+                            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-[var(--t5)] to-[var(--t3)] flex items-center justify-center text-white font-bold serif">A</div>
                             <div>
-                                <div class="font-black text-slate-900">Anjali Sharma</div>
-                                <div class="text-sm text-slate-500">Pawrent of Bella (Pug)</div>
+                                <div class="font-bold text-white text-sm">Anjali Sharma</div>
+                                <div class="text-xs text-white/50">Pawtner of Bella (Pug)</div>
                             </div>
                         </div>
                     </div>
-                    <div class="bg-white p-10 rounded-[2.5rem] shadow-xl relative">
-                        <div class="text-blue-600 text-4xl mb-6 opacity-20"><i class="fas fa-quote-left"></i></div>
-                        <p class="text-slate-600 text-lg italic mb-8">"The grooming service at MaxPetz is the best in Delhi. My cat, Luna, is usually very anxious, but they handled her with so much love and care."</p>
+                    <div class="bg-white/5 border border-white/10 p-10 rounded-[2.5rem] hover:bg-white/10 hover:-translate-y-2 transition-all duration-500">
+                        <div class="text-[var(--g3)] text-2xl mb-6"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="text-white/80 text-lg italic mb-8 font-light">"The grooming service at MaxPetz is the best in Delhi. My cat, Luna, is usually very anxious, but they handled her with so much love and care."</p>
                         <div class="flex items-center gap-4">
-                            <img src="https://i.pravatar.cc/100?u=t2" class="w-12 h-12 rounded-full">
+                            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-[#C4714A] to-[#E8A87C] flex items-center justify-center text-white font-bold serif">V</div>
                             <div>
-                                <div class="font-black text-slate-900">Vikram Malhotra</div>
-                                <div class="text-sm text-slate-500">Pawrent of Luna (Persian Cat)</div>
+                                <div class="font-bold text-white text-sm">Vikram Malhotra</div>
+                                <div class="text-xs text-white/50">Pawtner of Luna (Persian)</div>
                             </div>
                         </div>
                     </div>
-                    <div class="bg-white p-10 rounded-[2.5rem] shadow-xl relative">
-                        <div class="text-blue-600 text-4xl mb-6 opacity-20"><i class="fas fa-quote-left"></i></div>
-                        <p class="text-slate-600 text-lg italic mb-8">"MaxPetz at Home is a lifesaver for busy pawrents. Getting vaccinations done at home without the stress of travel is amazing. Highly recommend!"</p>
+                    <div class="bg-white/5 border border-white/10 p-10 rounded-[2.5rem] hover:bg-white/10 hover:-translate-y-2 transition-all duration-500">
+                        <div class="text-[var(--g3)] text-2xl mb-6"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="text-white/80 text-lg italic mb-8 font-light">"MaxPetz at Home is a lifesaver for busy pawtners. Getting vaccinations done at home without the stress of travel is amazing. Highly recommend!"</p>
                         <div class="flex items-center gap-4">
-                            <img src="https://i.pravatar.cc/100?u=t3" class="w-12 h-12 rounded-full">
+                            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-[#6B4E9E] to-[#9B7AC7] flex items-center justify-center text-white font-bold serif">P</div>
                             <div>
-                                <div class="font-black text-slate-900">Priya Iyer</div>
-                                <div class="text-sm text-slate-500">Pawrent of Simba (Beagle)</div>
+                                <div class="font-bold text-white text-sm">Priya Iyer</div>
+                                <div class="text-xs text-white/50">Pawtner of Simba (Beagle)</div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+    </div>
+
+    <!-- BOOKING PAGE VIEW -->
+    <div id="booking-page" class="page-view pt-32">
+        <!-- Loss Aversion / Reality Check -->
+        <section class="py-24 bg-red-50 border-y border-red-100">
+            <div class="container mx-auto px-6 text-center max-w-4xl">
+                <i class="fas fa-heartbeat text-4xl text-red-400 mb-6 animate-pulse"></i>
+                <h2 class="text-4xl font-black mb-6 serif text-red-900">The Cost of Waiting is Too High.</h2>
+                <p class="text-xl text-red-800/70 font-light mb-8">70% of emergency vet visits could be prevented with early detection. Don't let a minor symptom turn into a midnight crisis. Give your pet the proactive care they deserve.</p>
+                <button onclick="document.getElementById('book-appointment').scrollIntoView({behavior: 'smooth'})" class="bg-red-600 text-white px-8 py-4 rounded-full font-bold shadow-xl shadow-red-200 hover:bg-red-700 transition">
+                    Schedule a Preventative Checkup Now
+                </button>
+            </div>
+        </section>
 
         <!-- FAQ Module -->
-        <section id="faq" class="py-32 bg-white">
+        <section id="faq" class="py-32 bg-[var(--paper)]">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-24">
-                    <h2 class="text-5xl font-black mb-6 tracking-tight">Frequently Asked Questions</h2>
-                    <p class="text-xl text-slate-500 max-w-3xl mx-auto">Common queries from pawrents about our services and care protocols.</p>
+                    <div class="kicker center">Common Queries</div>
+                    <h2 class="text-5xl font-black mb-6 tracking-tight serif">Frequently Asked <em class="text-[var(--t5)] italic font-light">Questions</em></h2>
+                    <p class="text-xl text-[var(--ink70)] max-w-3xl mx-auto font-light">Common queries from pawtners about our services and care protocols.</p>
                 </div>
                 <div class="max-w-4xl mx-auto space-y-6">
-                    <div class="border-2 border-slate-100 rounded-3xl p-8 hover:border-blue-600 transition cursor-pointer">
-                        <h4 class="text-xl font-black mb-4 flex justify-between items-center">
+                    <div class="border border-[var(--ink15)] bg-[var(--canvas)] rounded-3xl p-8 hover:border-[var(--t5)] transition cursor-pointer hover:shadow-lg">
+                        <h4 class="text-xl font-bold mb-4 flex justify-between items-center serif">
                             Do you provide 24/7 emergency services?
-                            <i class="fas fa-chevron-down text-blue-600"></i>
+                            <i class="fas fa-chevron-down text-[var(--t5)]"></i>
                         </h4>
-                        <p class="text-slate-600">Yes, all our major hospitals in Delhi and Mumbai are equipped with 24/7 emergency and ICU facilities with senior doctors on-site.</p>
+                        <p class="text-[var(--ink70)] font-light">Yes, all our major hospitals in Delhi and Mumbai are equipped with 24/7 emergency and ICU facilities with senior doctors on-site.</p>
                     </div>
-                    <div class="border-2 border-slate-100 rounded-3xl p-8 hover:border-blue-600 transition cursor-pointer">
-                        <h4 class="text-xl font-black mb-4 flex justify-between items-center">
+                    <div class="border border-[var(--ink15)] bg-[var(--canvas)] rounded-3xl p-8 hover:border-[var(--t5)] transition cursor-pointer hover:shadow-lg">
+                        <h4 class="text-xl font-bold mb-4 flex justify-between items-center serif">
                             How can I book a MaxPetz at Home service?
-                            <i class="fas fa-chevron-down text-blue-600"></i>
+                            <i class="fas fa-chevron-down text-[var(--t5)]"></i>
                         </h4>
-                        <p class="text-slate-600">You can book via our website, app, or by calling our central helpline. We offer vaccinations, basic checkups, and grooming at your doorstep.</p>
+                        <p class="text-[var(--ink70)] font-light">You can book via our website, app, or by calling our central helpline. We offer vaccinations, basic checkups, and grooming at your doorstep.</p>
                     </div>
-                    <div class="border-2 border-slate-100 rounded-3xl p-8 hover:border-blue-600 transition cursor-pointer">
-                        <h4 class="text-xl font-black mb-4 flex justify-between items-center">
+                    <div class="border border-[var(--ink15)] bg-[var(--canvas)] rounded-3xl p-8 hover:border-[var(--t5)] transition cursor-pointer hover:shadow-lg">
+                        <h4 class="text-xl font-bold mb-4 flex justify-between items-center serif">
                             What surgical specialities do you offer?
-                            <i class="fas fa-chevron-down text-blue-600"></i>
+                            <i class="fas fa-chevron-down text-[var(--t5)]"></i>
                         </h4>
-                        <p class="text-slate-600">We specialize in Orthopedics, Soft Tissue Surgery, Neurosurgery, and Minimally Invasive (Laparoscopic) procedures.</p>
+                        <p class="text-[var(--ink70)] font-light">We specialize in Orthopedics, Soft Tissue Surgery, Neurosurgery, and Minimally Invasive (Laparoscopic) procedures.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Book Appointment Module -->
-        <section id="book-appointment" class="py-32 bg-slate-50">
+        <section id="book-appointment" class="py-32 bg-[var(--canvas)]">
             <div class="container mx-auto px-6">
-                <div class="bg-white rounded-[3.5rem] shadow-3xl overflow-hidden flex flex-col lg:flex-row">
-                    <div class="lg:w-1/2 p-12 lg:p-20 bg-blue-600 text-white">
-                        <h2 class="text-5xl font-black mb-8 leading-tight">Ready to Give Your Pet the Best Care?</h2>
-                        <p class="text-xl text-blue-100 mb-12">Book a consultation with our specialists today. We are available 24/7 for your peace of mind.</p>
+                <div class="bg-gradient-to-br from-[var(--t9)] to-[#020d0c] rounded-[3.5rem] shadow-2xl overflow-hidden flex flex-col lg:flex-row relative">
+                    <div class="absolute inset-0 bg-[radial-gradient(ellipse_56%_65%_at_18%_50%,rgba(53,175,160,0.09)_0%,transparent_60%),radial-gradient(ellipse_36%_46%_at_82%_18%,rgba(198,148,26,0.07)_0%,transparent_52%)]"></div>
+                    <div class="lg:w-1/2 p-12 lg:p-20 text-white relative z-10 border-r border-white/10">
+                        <div class="kicker light">Book Your Visit</div>
+                        <h2 class="text-5xl font-light mb-8 leading-tight serif"><strong class="font-bold">Ready to Give Your Pet</strong><br><em class="text-[var(--g3)] italic">the Best Care?</em></h2>
+                        <p class="text-xl text-white/60 mb-12 font-light">Book a consultation with our specialists today. We are available 24/7 for your peace of mind.</p>
                         <div class="space-y-6">
                             <div class="flex items-center gap-4">
-                                <div class="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center">
+                                <div class="w-12 h-12 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-[var(--g3)]">
                                     <i class="fas fa-check"></i>
                                 </div>
-                                <span class="text-lg font-bold">Expert Specialists</span>
+                                <span class="text-lg font-light">Expert Specialists</span>
                             </div>
                             <div class="flex items-center gap-4">
-                                <div class="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center">
+                                <div class="w-12 h-12 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-[var(--g3)]">
                                     <i class="fas fa-check"></i>
                                 </div>
-                                <span class="text-lg font-bold">State-of-the-Art Facilities</span>
+                                <span class="text-lg font-light">State-of-the-Art Facilities</span>
                             </div>
                             <div class="flex items-center gap-4">
-                                <div class="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center">
+                                <div class="w-12 h-12 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-[var(--g3)]">
                                     <i class="fas fa-check"></i>
                                 </div>
-                                <span class="text-lg font-bold">Compassionate Care</span>
+                                <span class="text-lg font-light">Compassionate Care</span>
                             </div>
                         </div>
                     </div>
-                    <div class="lg:w-1/2 p-12 lg:p-20">
-                        <form onsubmit="event.preventDefault(); alert('Thank you! Your appointment request has been sent. We will contact you shortly.');" class="space-y-6">
+                    <div class="lg:w-1/2 p-12 lg:p-20 relative z-10">
+                        <form onsubmit="event.preventDefault(); alert('Thank you! Your appointment request has been sent. We will contact you shortly.');" class="space-y-6 bg-white/5 border border-white/10 p-8 rounded-3xl backdrop-blur-sm">
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
-                                    <label class="block text-sm font-black text-slate-400 uppercase tracking-widest mb-2">Pawrent Name</label>
-                                    <input type="text" placeholder="Your Name" class="w-full px-6 py-4 bg-slate-100 rounded-2xl focus:outline-none focus:ring-4 focus:ring-blue-100 font-bold" required>
+                                    <label class="block text-xs font-bold text-white/50 uppercase tracking-widest mb-2">Pawtner Name</label>
+                                    <input type="text" placeholder="Your Name" class="w-full px-6 py-4 bg-white/10 border border-white/10 rounded-2xl focus:outline-none focus:border-[var(--t3)] text-white font-light placeholder-white/30 transition" required>
                                 </div>
                                 <div>
-                                    <label class="block text-sm font-black text-slate-400 uppercase tracking-widest mb-2">Pet Name</label>
-                                    <input type="text" placeholder="Pet Name" class="w-full px-6 py-4 bg-slate-100 rounded-2xl focus:outline-none focus:ring-4 focus:ring-blue-100 font-bold" required>
+                                    <label class="block text-xs font-bold text-white/50 uppercase tracking-widest mb-2">Pet Name</label>
+                                    <input type="text" placeholder="Pet Name" class="w-full px-6 py-4 bg-white/10 border border-white/10 rounded-2xl focus:outline-none focus:border-[var(--t3)] text-white font-light placeholder-white/30 transition" required>
                                 </div>
                             </div>
                             <div>
-                                <label class="block text-sm font-black text-slate-400 uppercase tracking-widest mb-2">Service Needed</label>
-                                <select class="w-full px-6 py-4 bg-slate-100 rounded-2xl focus:outline-none focus:ring-4 focus:ring-blue-100 font-bold appearance-none">
-                                    <option>General Consultation</option>
-                                    <option>Emergency Care</option>
-                                    <option>Surgery</option>
-                                    <option>Grooming</option>
-                                    <option>Vaccination</option>
+                                <label class="block text-xs font-bold text-white/50 uppercase tracking-widest mb-2">Service Needed</label>
+                                <select class="w-full px-6 py-4 bg-white/10 border border-white/10 rounded-2xl focus:outline-none focus:border-[var(--t3)] text-white font-light appearance-none transition">
+                                    <option class="text-black">General Consultation</option>
+                                    <option class="text-black">Emergency Care</option>
+                                    <option class="text-black">Surgery</option>
+                                    <option class="text-black">Grooming</option>
+                                    <option class="text-black">Vaccination</option>
                                 </select>
                             </div>
                             <div>
@@ -563,147 +689,204 @@
                 </div>
             </div>
         </section>
-
-        <!-- Lead Magnet -->
-        <section id="lead-magnet" class="py-32 bg-slate-900 relative overflow-hidden">
-            <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
-                <div class="absolute top-10 left-10 w-64 h-64 bg-blue-500 rounded-full blur-[100px]"></div>
-                <div class="absolute bottom-10 right-10 w-64 h-64 bg-orange-500 rounded-full blur-[100px]"></div>
-            </div>
-            <div class="container mx-auto px-6 relative z-10">
-                <div class="bg-gradient-to-br from-blue-600 to-blue-800 rounded-[3.5rem] p-12 lg:p-24 flex flex-col lg:flex-row items-center gap-16 shadow-3xl">
-                    <div class="lg:w-1/2">
-                        <h2 class="text-4xl lg:text-6xl font-black text-white mb-8 leading-tight">The South Delhi Pet Parent's Daily Smog Survival Guide.</h2>
-                        <p class="text-xl text-blue-100 mb-12">Learn the 5 essential steps to protect your fur-baby's lungs during Delhi's high AQI months. 100% Science-backed.</p>
-                        <div class="flex flex-col sm:flex-row gap-4">
-                            <input type="email" id="magnet-email" placeholder="Your best email..." class="flex-grow px-8 py-5 rounded-2xl text-slate-900 font-bold focus:outline-none focus:ring-4 focus:ring-blue-400">
-                            <button onclick="triggerMagnetDownload()" class="bg-orange-500 text-white px-10 py-5 rounded-2xl font-black hover:bg-orange-600 transition shadow-2xl">
-                                Download Free Guide
-                            </button>
-                        </div>
-                    </div>
-                    <div class="lg:w-1/2">
-                        <img src="https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Guide" class="rounded-[2.5rem] shadow-2xl transform rotate-6">
-                    </div>
-                </div>
-            </div>
-        </section>
     </div>
 
     <!-- BLOG PAGE VIEW -->
-    <div id="blog-page" class="page-view pt-40 pb-24">
+    <div id="blog-page" class="page-view pt-40 pb-24 bg-[var(--paper)]">
         <div class="container mx-auto px-6">
-            <div class="mb-20">
-                <h1 class="text-6xl font-black mb-6">The Pawrent's <span class="text-blue-600">Journal</span></h1>
-                <p class="text-xl text-slate-500">Expert insights, wellness tips, and heartwarming stories from the MaxPetz family.</p>
+            <div class="mb-20 text-center">
+                <div class="kicker center">Insights & Articles</div>
+                <h1 class="text-6xl font-black mb-6 serif">The Pawtner's <em class="text-[var(--t5)] italic font-light">Journal</em></h1>
+                <p class="text-xl text-[var(--ink70)] font-light max-w-2xl mx-auto">Expert insights, wellness tips, and heartwarming stories from the MaxPetz family.</p>
             </div>
             
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
                 <!-- Blog Post 1 -->
-                <article class="group cursor-pointer">
-                    <div class="overflow-hidden rounded-[2.5rem] mb-8 shadow-xl">
-                        <img src="https://images.unsplash.com/photo-1548191265-cc70d3d45ba1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-full h-64 object-cover group-hover:scale-110 transition duration-700">
+                <article class="group cursor-pointer bg-[var(--canvas)] rounded-[2.5rem] border border-[var(--ink15)] overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                    <div class="overflow-hidden h-64 relative">
+                        <div class="absolute inset-0 bg-[var(--t9)] opacity-0 group-hover:opacity-20 transition-opacity z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1548191265-cc70d3d45ba1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
                     </div>
-                    <div class="flex gap-3 mb-4">
-                        <span class="px-3 py-1 bg-blue-100 text-blue-700 text-xs font-bold rounded-full uppercase">Wellness</span>
-                        <span class="text-slate-400 text-xs font-bold uppercase">5 Min Read</span>
+                    <div class="p-8">
+                        <div class="flex gap-3 mb-4">
+                            <span class="px-3 py-1 bg-[var(--t1)] text-[var(--t7)] text-[10px] font-bold rounded-full uppercase tracking-widest">Wellness</span>
+                            <span class="text-[var(--ink50)] text-[10px] font-bold uppercase tracking-widest">5 Min Read</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 group-hover:text-[var(--t5)] transition serif">5 Silent Signs Your Cat Might Be in Pain</h3>
+                        <p class="text-[var(--ink70)] font-light leading-relaxed mb-6">Cats are masters of disguise. Learn how to spot subtle behavioral shifts that indicate health issues before they become emergencies...</p>
+                        <a href="#" class="text-[var(--t5)] font-bold flex items-center gap-2 text-sm uppercase tracking-widest">Read Article <i class="fas fa-arrow-right"></i></a>
                     </div>
-                    <h3 class="text-2xl font-black mb-4 group-hover:text-blue-600 transition">5 Silent Signs Your Cat Might Be in Pain</h3>
-                    <p class="text-slate-600 leading-relaxed mb-6">Cats are masters of disguise. Learn how to spot subtle behavioral shifts that indicate health issues before they become emergencies...</p>
-                    <a href="#" class="text-blue-600 font-black flex items-center gap-2">Read Article <i class="fas fa-chevron-right text-xs"></i></a>
                 </article>
 
                 <!-- Blog Post 2 -->
-                <article class="group cursor-pointer">
-                    <div class="overflow-hidden rounded-[2.5rem] mb-8 shadow-xl">
-                        <img src="https://images.unsplash.com/photo-1541364983171-a8ba01d95cfc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-full h-64 object-cover group-hover:scale-110 transition duration-700">
+                <article class="group cursor-pointer bg-[var(--canvas)] rounded-[2.5rem] border border-[var(--ink15)] overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                    <div class="overflow-hidden h-64 relative">
+                        <div class="absolute inset-0 bg-[var(--t9)] opacity-0 group-hover:opacity-20 transition-opacity z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1541364983171-a8ba01d95cfc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
                     </div>
-                    <div class="flex gap-3 mb-4">
-                        <span class="px-3 py-1 bg-orange-100 text-orange-700 text-xs font-bold rounded-full uppercase">Nutrition</span>
-                        <span class="text-slate-400 text-xs font-bold uppercase">8 Min Read</span>
+                    <div class="p-8">
+                        <div class="flex gap-3 mb-4">
+                            <span class="px-3 py-1 bg-[#FDF3E7] text-[#C4714A] text-[10px] font-bold rounded-full uppercase tracking-widest">Nutrition</span>
+                            <span class="text-[var(--ink50)] text-[10px] font-bold uppercase tracking-widest">8 Min Read</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 group-hover:text-[var(--t5)] transition serif">The Pawtner's Guide to Raw Food Diets</h3>
+                        <p class="text-[var(--ink70)] font-light leading-relaxed mb-6">Is raw feeding right for your dog? Our senior nutritionists break down the pros, cons, and essential safety protocols for a balanced diet...</p>
+                        <a href="#" class="text-[var(--t5)] font-bold flex items-center gap-2 text-sm uppercase tracking-widest">Read Article <i class="fas fa-arrow-right"></i></a>
                     </div>
-                    <h3 class="text-2xl font-black mb-4 group-hover:text-blue-600 transition">The Pawrent's Guide to Raw Food Diets</h3>
-                    <p class="text-slate-600 leading-relaxed mb-6">Is raw feeding right for your dog? Our senior nutritionists break down the pros, cons, and essential safety protocols for a balanced diet...</p>
-                    <a href="#" class="text-blue-600 font-black flex items-center gap-2">Read Article <i class="fas fa-chevron-right text-xs"></i></a>
                 </article>
 
                 <!-- Blog Post 3 -->
-                <article class="group cursor-pointer">
-                    <div class="overflow-hidden rounded-[2.5rem] mb-8 shadow-xl">
-                        <img src="https://images.unsplash.com/photo-1591769225440-811ad7d62ca2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-full h-64 object-cover group-hover:scale-110 transition duration-700">
+                <article class="group cursor-pointer bg-[var(--canvas)] rounded-[2.5rem] border border-[var(--ink15)] overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                    <div class="overflow-hidden h-64 relative">
+                        <div class="absolute inset-0 bg-[var(--t9)] opacity-0 group-hover:opacity-20 transition-opacity z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1591769225440-811ad7d62ca2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
                     </div>
-                    <div class="flex gap-3 mb-4">
-                        <span class="px-3 py-1 bg-green-100 text-green-700 text-xs font-bold rounded-full uppercase">Emergency</span>
-                        <span class="text-slate-400 text-xs font-bold uppercase">4 Min Read</span>
+                    <div class="p-8">
+                        <div class="flex gap-3 mb-4">
+                            <span class="px-3 py-1 bg-[#F4F1FA] text-[#6B4E9E] text-[10px] font-bold rounded-full uppercase tracking-widest">Emergency</span>
+                            <span class="text-[var(--ink50)] text-[10px] font-bold uppercase tracking-widest">4 Min Read</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 group-hover:text-[var(--t5)] transition serif">First Aid Every Pawtner Should Know</h3>
+                        <p class="text-[var(--ink70)] font-light leading-relaxed mb-6">From choking hazards to heatstroke, these simple steps can save your pet's life while you're on the way to our 24/7 emergency center...</p>
+                        <a href="#" class="text-[var(--t5)] font-bold flex items-center gap-2 text-sm uppercase tracking-widest">Read Article <i class="fas fa-arrow-right"></i></a>
                     </div>
-                    <h3 class="text-2xl font-black mb-4 group-hover:text-blue-600 transition">First Aid Every Pawrent Should Know</h3>
-                    <p class="text-slate-600 leading-relaxed mb-6">From choking hazards to heatstroke, these simple steps can save your pet's life while you're on the way to our 24/7 emergency center...</p>
-                    <a href="#" class="text-blue-600 font-black flex items-center gap-2">Read Article <i class="fas fa-chevron-right text-xs"></i></a>
                 </article>
+            </div>
+
+            <!-- SEO Q&A Section -->
+            <div class="mt-32 max-w-4xl mx-auto">
+                <div class="text-center mb-16">
+                    <div class="kicker center">Expert Answers</div>
+                    <h2 class="text-4xl font-black mb-6 serif">Veterinary Care Q&A</h2>
+                    <p class="text-[var(--ink70)] font-light">Answers to the most searched questions by pet parents in India.</p>
+                </div>
+                <div class="space-y-6">
+                    <div class="p-8 bg-white border border-[var(--ink15)] rounded-3xl shadow-sm">
+                        <h4 class="text-xl font-bold mb-3 serif">What makes MaxPetz the best veterinary hospital in Delhi?</h4>
+                        <p class="text-[var(--ink70)] font-light leading-relaxed">MaxPetz is widely recognized as the best veterinary hospital in Delhi due to our combination of internationally trained specialists, 24/7 emergency ICU facilities, and advanced diagnostic equipment (including digital X-ray and ultrasound). We are Fear Free certified, ensuring a low-stress environment for your pets.</p>
+                    </div>
+                    <div class="p-8 bg-white border border-[var(--ink15)] rounded-3xl shadow-sm">
+                        <h4 class="text-xl font-bold mb-3 serif">How often should I vaccinate my dog in India?</h4>
+                        <p class="text-[var(--ink70)] font-light leading-relaxed">The dog vaccination schedule in India typically starts at 6-8 weeks of age with the core DHPPi vaccine, followed by boosters every 3-4 weeks until 16 weeks. The Anti-Rabies vaccine is given at 12 weeks. Annual boosters are required thereafter. Our specialists can create a customized vaccination plan based on your dog's lifestyle and local risks.</p>
+                    </div>
+                    <div class="p-8 bg-white border border-[var(--ink15)] rounded-3xl shadow-sm">
+                        <h4 class="text-xl font-bold mb-3 serif">Do you have an emergency pet hospital near me?</h4>
+                        <p class="text-[var(--ink70)] font-light leading-relaxed">Yes, if you are searching for an "emergency pet hospital near me" in Delhi, Gurgaon, or Mumbai, MaxPetz operates 24/7 emergency centers. Our critical care units are always staffed with senior veterinarians ready to handle trauma, poisoning, and acute illnesses at any hour.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
     <!-- Footer -->
-    <footer class="bg-white py-20 border-t border-slate-100">
+    <footer class="bg-[var(--canvas)] py-20 border-t border-[var(--ink15)]">
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row justify-between items-center gap-12">
                 <div>
-                    <div class="flex items-center gap-2 mb-6">
-                        <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center text-white font-bold text-xl">M</div>
-                        <span class="text-2xl font-black">MaxPetz</span>
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-12 h-12 bg-gradient-to-br from-[var(--t5)] to-[var(--t7)] rounded-xl flex items-center justify-center text-white font-bold text-2xl serif shadow-lg">M</div>
+                        <span class="text-3xl font-bold serif tracking-tight">MaxPetz</span>
                     </div>
-                    <p class="text-slate-500 max-w-sm">Elevating the standard of veterinary care across India. Dedicated to the health and happiness of every pet.</p>
+                    <p class="text-[var(--ink70)] font-light max-w-sm">Elevating the standard of veterinary care across India. Dedicated to the health and happiness of every pet.</p>
                 </div>
-                <div class="flex gap-12">
+                <div class="flex gap-16">
                     <div class="flex flex-col gap-4">
-                        <span class="font-black uppercase text-xs tracking-widest text-slate-400">Quick Links</span>
-                        <a href="javascript:void(0)" onclick="showPage('home')" class="font-bold hover:text-blue-600 transition">Home</a>
-                        <a href="javascript:void(0)" onclick="showPage('blog')" class="font-bold hover:text-blue-600 transition">Blog</a>
-                        <a href="#" class="font-bold hover:text-blue-600 transition">Locations</a>
+                        <span class="font-bold uppercase text-[10px] tracking-widest text-[var(--ink50)]">Quick Links</span>
+                        <a href="javascript:void(0)" onclick="showPage('home')" class="font-medium text-sm hover:text-[var(--t5)] transition">Home</a>
+                        <a href="javascript:void(0)" onclick="showPage('blog')" class="font-medium text-sm hover:text-[var(--t5)] transition">Blog</a>
+                        <a href="#" class="font-medium text-sm hover:text-[var(--t5)] transition">Locations</a>
                     </div>
                     <div class="flex flex-col gap-4">
-                        <span class="font-black uppercase text-xs tracking-widest text-slate-400">Support</span>
-                        <a href="#" class="font-bold hover:text-blue-600 transition">Contact</a>
-                        <a href="#" class="font-bold hover:text-blue-600 transition">Emergency</a>
-                        <a href="#" class="font-bold hover:text-blue-600 transition">Privacy</a>
+                        <span class="font-bold uppercase text-[10px] tracking-widest text-[var(--ink50)]">Support</span>
+                        <a href="#" class="font-medium text-sm hover:text-[var(--t5)] transition">Contact</a>
+                        <a href="#" class="font-medium text-sm hover:text-[var(--t5)] transition">Emergency</a>
+                        <a href="#" class="font-medium text-sm hover:text-[var(--t5)] transition">Privacy</a>
                     </div>
                 </div>
             </div>
-            <div class="mt-20 pt-12 border-t border-slate-100 text-center text-slate-400 font-medium">
-                &copy; 2026 MaxPetz Veterinary Hospitals. Built for Pawrents.
+            <div class="mt-20 pt-12 border-t border-[var(--ink15)] text-center text-[var(--ink50)] font-light text-sm">
+                &copy; 2026 MaxPetz Veterinary Hospitals. Built for Pawtners.
             </div>
         </div>
     </footer>
 
     <!-- Chatbot & Scripts -->
     <div class="fixed bottom-8 right-8 z-[1000]">
-        <button onclick="bot.toggleChat()" class="w-20 h-20 bg-blue-600 text-white rounded-[2rem] flex items-center justify-center shadow-3xl hover:scale-110 transition-all transform duration-300 cta-pulse">
-            <i class="fas fa-comment-alt text-3xl"></i>
+        <button onclick="bot.toggleChat()" class="w-20 h-20 bg-gradient-to-br from-[var(--t5)] to-[var(--t7)] text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-all transform duration-300 cta-pulse border-4 border-white">
+            <i class="fas fa-comment-dots text-3xl"></i>
         </button>
 
-        <div id="chat-window" class="chat-window glass absolute bottom-24 right-0 overflow-hidden">
-            <div class="bg-blue-600 p-6 text-white flex justify-between items-center">
+        <div id="chat-window" class="chat-window glass absolute bottom-24 right-0 overflow-hidden border border-[var(--ink15)]">
+            <div class="bg-gradient-to-r from-[var(--t9)] to-[var(--t7)] p-6 text-white flex justify-between items-center border-b border-white/10">
                 <div class="flex items-center gap-4">
-                    <div class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-blue-600 font-black text-xl">M</div>
+                    <div class="w-12 h-12 bg-white/10 border border-white/20 rounded-xl flex items-center justify-center text-white font-bold text-xl serif">M</div>
                     <div>
-                        <div class="font-black text-lg">Pawrent Support</div>
-                        <div class="text-xs opacity-80 flex items-center gap-1">
-                            <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span> We're here for you
+                        <div class="font-bold text-lg serif tracking-tight">Pawtner Support</div>
+                        <div class="text-xs font-light text-white/70 flex items-center gap-2">
+                            <span class="w-2 h-2 bg-[var(--g3)] rounded-full animate-pulse"></span> We're here for you
                         </div>
                     </div>
                 </div>
-                <button onclick="bot.toggleChat()" class="hover:opacity-70 text-xl"><i class="fas fa-times"></i></button>
+                <button onclick="bot.toggleChat()" class="hover:text-[var(--g3)] transition text-xl"><i class="fas fa-times"></i></button>
             </div>
-            <div id="chat-messages" class="flex-grow p-6 overflow-y-auto space-y-6 bg-slate-50/50"></div>
-            <div class="p-6 bg-white border-t flex gap-3">
-                <input type="text" id="chat-input" placeholder="Ask a vet assistant..." class="flex-grow px-6 py-4 bg-slate-100 rounded-2xl focus:outline-none font-medium text-sm" onkeypress="if(event.key === 'Enter') bot.handleSend()">
-                <button onclick="bot.handleSend()" class="w-14 h-14 bg-blue-600 text-white rounded-2xl flex items-center justify-center shadow-lg shadow-blue-200"><i class="fas fa-paper-plane"></i></button>
+            <div id="chat-messages" class="flex-grow p-6 overflow-y-auto space-y-6 bg-[var(--paper)]"></div>
+            <div class="p-6 bg-[var(--canvas)] border-t border-[var(--ink15)] flex gap-3">
+                <input type="text" id="chat-input" placeholder="Ask a vet assistant..." class="flex-grow px-6 py-4 bg-white border border-[var(--ink15)] rounded-full focus:outline-none focus:border-[var(--t5)] font-light text-sm transition shadow-inner" onkeypress="if(event.key === 'Enter') bot.handleSend()">
+                <button onclick="bot.handleSend()" class="w-14 h-14 bg-[var(--t5)] text-white rounded-full flex items-center justify-center shadow-lg hover:bg-[var(--t7)] transition"><i class="fas fa-paper-plane"></i></button>
             </div>
         </div>
     </div>
 
+    <!-- Social Proof Popup -->
+    <div id="social-proof" class="fixed bottom-8 left-8 z-[100] bg-white rounded-2xl shadow-2xl p-4 flex items-center gap-4 border border-[var(--ink15)] transform translate-y-32 opacity-0 transition-all duration-500 pointer-events-none">
+        <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" class="w-12 h-12 rounded-full object-cover">
+        <div>
+            <p class="text-sm font-bold text-[var(--ink)]">Priya from Vasant Vihar</p>
+            <p class="text-xs text-[var(--ink70)]">Just booked a Wellness Visit for her Golden Retriever</p>
+            <p class="text-[10px] text-[var(--t5)] font-bold mt-1 uppercase tracking-widest">2 minutes ago</p>
+        </div>
+    </div>
+
     <script>
+        // Quiz Logic
+        let quizStep = 1;
+        function nextQuizStep() {
+            const q = document.getElementById('quiz-question');
+            const opts = document.getElementById('quiz-options');
+            const prog = document.getElementById('quiz-progress');
+            
+            if (quizStep === 1) {
+                prog.style.width = '66%';
+                q.innerText = "2. Has your pet's energy level or playfulness decreased recently?";
+                opts.innerHTML = `
+                    <button onclick="nextQuizStep()" class="w-full text-left p-6 rounded-2xl border border-[var(--ink15)] hover:border-[var(--t5)] hover:bg-[var(--t1)] transition font-medium">No, still very active</button>
+                    <button onclick="nextQuizStep()" class="w-full text-left p-6 rounded-2xl border border-[var(--ink15)] hover:border-[var(--t5)] hover:bg-[var(--t1)] transition font-medium">A little bit</button>
+                    <button onclick="nextQuizStep()" class="w-full text-left p-6 rounded-2xl border border-[var(--ink15)] hover:border-[var(--t5)] hover:bg-[var(--t1)] transition font-medium">Yes, noticeably lethargic</button>
+                `;
+                quizStep++;
+            } else if (quizStep === 2) {
+                prog.style.width = '100%';
+                q.innerHTML = "<span class='text-[var(--t5)]'>Analyzing Results...</span>";
+                opts.innerHTML = "";
+                setTimeout(() => {
+                    q.innerHTML = "Based on your answers, your pet might benefit from a <strong class='text-[var(--t5)]'>Preventative Wellness Check</strong>.";
+                    opts.innerHTML = `
+                        <p class="text-[var(--ink70)] mb-6">Subtle changes in water intake or energy can be early indicators of underlying issues. Early detection saves lives and reduces long-term costs.</p>
+                        <button onclick="showPage('booking')" class="w-full bg-[var(--t5)] text-white p-6 rounded-2xl font-bold hover:bg-[var(--t7)] transition shadow-lg">Schedule a Checkup Now</button>
+                    `;
+                }, 1500);
+            }
+        }
+
+        // Social Proof Logic
+        setTimeout(() => {
+            const popup = document.getElementById('social-proof');
+            popup.classList.remove('translate-y-32', 'opacity-0');
+            setTimeout(() => {
+                popup.classList.add('translate-y-32', 'opacity-0');
+            }, 6000);
+        }, 15000);
+
         // Simple SPA Router
         function showPage(pageId) {
             document.querySelectorAll('.page-view').forEach(p => p.classList.remove('active'));
@@ -745,7 +928,7 @@
                 this.isOpen = !this.isOpen;
                 document.getElementById('chat-window').style.display = this.isOpen ? 'flex' : 'none';
                 if (this.isOpen && this.step === 0) {
-                    this.addMessage('bot', "Hello fellow Pawrent! 🐾 I'm here to help you get the best care for your fur-baby. What's their name?");
+                    this.addMessage('bot', "Hello fellow Pawtner! 🐾 I'm here to help you get the best care for your fur-baby. What's their name?");
                     this.step = 1;
                 }
             }
@@ -754,7 +937,7 @@
                 const div = document.createElement('div');
                 div.className = `flex ${sender === 'user' ? 'justify-end' : 'justify-start'} animate-fade-in`;
                 div.innerHTML = `
-                    <div class="${sender === 'user' ? 'bg-blue-600 text-white' : 'bg-white text-slate-700 shadow-md'} px-6 py-4 rounded-[1.5rem] max-w-[85%] font-medium leading-relaxed">
+                    <div class="${sender === 'user' ? 'bg-[var(--t5)] text-white' : 'bg-white border border-[var(--ink15)] text-[var(--ink)] shadow-md'} px-6 py-4 rounded-[1.5rem] max-w-[85%] font-light leading-relaxed text-sm">
                         ${text}
                     </div>
                 `;
@@ -772,30 +955,45 @@
             }
 
             process(input) {
+                const lowerInput = input.toLowerCase();
+                
                 switch(this.step) {
                     case 1:
                         this.userData.petName = input;
-                        this.addMessage('bot', `What a lovely name! And what's your name, ${this.userData.petName}'s Pawrent?`);
+                        this.addMessage('bot', `What a lovely name! And what's your name, ${this.userData.petName}'s Pawtner?`);
                         this.step = 2;
                         break;
                     case 2:
                         this.userData.userName = input;
-                        this.addMessage('bot', `Great to meet you, ${input}. Which service are you interested in for ${this.userData.petName}? (Emergency, Grooming, Surgery, or Boarding?)`);
+                        this.addMessage('bot', `Great to meet you, ${input}. Can you tell me a bit about why you're looking to visit us? Are there any specific symptoms ${this.userData.petName} is experiencing?`);
                         this.step = 3;
                         break;
                     case 3:
-                        this.userData.service = input;
-                        this.addMessage('bot', "Perfect. Lastly, please share your email or phone number so our specialist can reach out to finalize the details.");
-                        this.step = 4;
+                        this.userData.symptoms = input;
+                        
+                        // Objection handling
+                        if (lowerInput.includes('expensive') || lowerInput.includes('cost') || lowerInput.includes('price')) {
+                            this.addMessage('bot', `I understand cost is a concern. We believe in transparent pricing and offer various care plans. However, delaying care can sometimes lead to more complex issues. Let's get a specialist to discuss options with you. What's the best phone number to reach you?`);
+                            this.step = 4;
+                        } 
+                        else if (lowerInput.includes('wait') || lowerInput.includes('not sure') || lowerInput.includes('maybe later')) {
+                            this.addMessage('bot', `It's natural to want to wait and see, but pets are excellent at hiding pain. Early detection is always the safest route for ${this.userData.petName}. Could we have a specialist call you for a free brief chat? What's your phone number?`);
+                            this.step = 4;
+                        }
+                        // Medical symptom handling (Legal safety)
+                        else {
+                            this.addMessage('bot', `Thank you for sharing that. <br><br><strong class="text-[var(--t5)]">Disclaimer: I am an AI assistant, not a veterinarian.</strong><br><br>Based on what you've described, it's highly recommended that ${this.userData.petName} is evaluated by a professional to ensure their safety and well-being. Please provide your phone number so our triage team can contact you immediately.`);
+                            this.step = 4;
+                        }
                         break;
                     case 4:
                         this.userData.contact = input;
-                        this.addMessage('bot', "Thank you! We've received your request. A MaxPetz specialist will call you shortly. Have a paw-some day! 🐶");
+                        this.addMessage('bot', "Thank you. We've securely received your information. A MaxPetz specialist will call you shortly to assist further. Your fur-baby is in good hands! 🐾");
                         console.log("[Lead Captured]", this.userData);
                         this.step = 5;
                         break;
                     default:
-                        this.addMessage('bot', "How else can I assist you today?");
+                        this.addMessage('bot', "If you have an emergency, please call our 24/7 hotline immediately at +91-88000-00000.");
                 }
             }
         }
