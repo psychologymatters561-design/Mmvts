@@ -182,6 +182,8 @@
         .chat-window {
             height: 550px;
             width: 400px;
+            max-width: calc(100vw - 2rem);
+            max-height: calc(100vh - 8rem);
             display: none;
             flex-direction: column;
             box-shadow: 0 30px 80px rgba(5,42,39,.11), 0 0 0 1px rgba(0,0,0,.04);
@@ -207,17 +209,17 @@
 <body class="text-[var(--ink)] bg-[var(--canvas)]">
 
     <!-- Urgency Banner (Scarcity Trigger) -->
-    <div class="bg-red-600 text-white text-xs font-bold uppercase tracking-widest py-2 text-center relative z-[101] shadow-md">
+    <div class="bg-red-600 text-white text-[10px] sm:text-xs font-bold uppercase tracking-widest py-2 px-4 text-center relative z-[101] shadow-md">
         <span class="animate-pulse inline-block w-2 h-2 bg-white rounded-full mr-2"></span>
-        High Demand: Only 3 At-Home Visit Slots Remaining for Today in South Delhi. <a href="javascript:void(0)" onclick="showPage('booking')" class="underline ml-2 hover:text-red-200 transition">Secure Yours Now</a>
+        High Demand: Only 3 At-Home Visit Slots Remaining for Today. <a href="javascript:void(0)" onclick="showPage('booking')" class="underline ml-2 hover:text-red-200 transition whitespace-nowrap">Secure Yours Now</a>
     </div>
 
     <!-- Navigation -->
-    <nav class="fixed w-full z-[100] glass py-4 top-8">
-        <div class="container mx-auto px-6 flex justify-between items-center">
+    <nav class="sticky top-0 w-full z-[100] glass py-4">
+        <div class="container mx-auto px-4 sm:px-6 flex justify-between items-center">
             <div class="flex items-center gap-2 cursor-pointer" onclick="showPage('home')">
                 <div class="w-8 h-8 bg-gradient-to-br from-[var(--t5)] to-[var(--t3)] rounded-lg flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-teal-900/30">+</div>
-                <span class="text-2xl font-bold tracking-tight text-[var(--t9)] serif">Max<em class="text-[var(--g5)] not-italic">PetZ</em></span>
+                <span class="text-xl sm:text-2xl font-bold tracking-tight text-[var(--t9)] serif">Max<em class="text-[var(--g5)] not-italic">PetZ</em></span>
             </div>
             <div class="hidden md:flex gap-8 font-semibold text-[var(--ink70)] text-sm tracking-widest uppercase">
                 <a href="javascript:void(0)" onclick="showPage('home')" class="hover:text-[var(--t5)] transition">Home</a>
@@ -225,8 +227,8 @@
                 <a href="javascript:void(0)" onclick="showPage('booking')" class="hover:text-[var(--t5)] transition">Book Consult</a>
                 <a href="javascript:void(0)" onclick="showPage('blog')" class="hover:text-[var(--t5)] transition">Journal</a>
             </div>
-            <button onclick="bot.toggleChat()" class="bg-[var(--t9)] text-white px-6 py-3 rounded-full text-sm font-bold hover:bg-[var(--t5)] transition shadow-xl shadow-teal-900/20 cta-pulse uppercase tracking-widest">
-                Book Appointment
+            <button onclick="bot.toggleChat()" class="bg-[var(--t9)] text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full text-xs sm:text-sm font-bold hover:bg-[var(--t5)] transition shadow-xl shadow-teal-900/20 cta-pulse uppercase tracking-widest">
+                Book
             </button>
         </div>
     </nav>
@@ -242,23 +244,23 @@
                         <span class="inline-block w-2 h-2 bg-[var(--g3)] rounded-full mr-2 animate-pulse"></span>
                         Pioneers in Pet Healthcare Since 1952
                     </span>
-                    <h1 class="text-6xl lg:text-8xl font-light leading-[1.05] mb-8 text-white tracking-tight serif">
+                    <h1 class="text-5xl sm:text-6xl lg:text-8xl font-light leading-[1.05] mb-8 text-white tracking-tight serif">
                         <strong class="font-bold block">Because Every</strong>
                         <em class="text-[var(--g3)] italic block">Pawtner Deserves</em>
                         Peace of Mind.
                     </h1>
-                    <p class="text-xl text-white/70 mb-12 leading-relaxed max-w-2xl font-light">
+                    <p class="text-lg sm:text-xl text-white/70 mb-12 leading-relaxed max-w-2xl font-light">
                         South Delhi's most trusted veterinary service — bringing world-class vet care directly to your door or at our state-of-the-art clinics. Because your fur-baby's health shouldn't come with anxiety.
                     </p>
-                    <div class="flex flex-col sm:flex-row gap-6">
-                        <button id="hero-cta-a" onclick="trackCTA('Variant A')" class="ab-variant btn-gold px-10 py-5 rounded-full text-lg font-bold transition flex items-center justify-center gap-3 cta-pulse">
+                    <div class="flex flex-col sm:flex-row gap-4 sm:gap-6">
+                        <button id="hero-cta-a" onclick="trackCTA('Variant A')" class="ab-variant btn-gold px-6 sm:px-10 py-4 sm:py-5 rounded-full text-base sm:text-lg font-bold transition flex items-center justify-center gap-3 cta-pulse">
                             Book Wellness Visit <i class="fas fa-calendar-check"></i>
                         </button>
-                        <button id="hero-cta-b" onclick="trackCTA('Variant B')" class="ab-variant btn-gold px-10 py-5 rounded-full text-lg font-bold transition flex items-center justify-center gap-3 cta-pulse">
+                        <button id="hero-cta-b" onclick="trackCTA('Variant B')" class="ab-variant btn-gold px-6 sm:px-10 py-4 sm:py-5 rounded-full text-base sm:text-lg font-bold transition flex items-center justify-center gap-3 cta-pulse">
                             Schedule "Fear Free" Consult <i class="fas fa-heart"></i>
                         </button>
                         
-                        <button onclick="showPage('blog')" class="bg-white/10 border border-white/20 text-white px-10 py-5 rounded-full text-lg font-medium hover:bg-white/20 transition backdrop-blur-sm">
+                        <button onclick="showPage('blog')" class="bg-white/10 border border-white/20 text-white px-6 sm:px-10 py-4 sm:py-5 rounded-full text-base sm:text-lg font-medium hover:bg-white/20 transition backdrop-blur-sm">
                             Read The Journal
                         </button>
                     </div>
@@ -304,46 +306,46 @@
                     <p class="text-xl text-[var(--ink70)] max-w-3xl mx-auto font-light">From routine checkups to advanced surgical procedures, we provide the highest standard of veterinary medicine across India.</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div class="group p-8 rounded-[2rem] bg-white border-2 border-transparent hover:border-blue-600 transition-all duration-500 shadow-sm hover:shadow-xl">
-                        <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 text-2xl mb-6 shadow-sm group-hover:bg-blue-600 group-hover:text-white transition-all">
+                    <div class="group p-8 rounded-[2rem] bg-white border-2 border-transparent hover:border-[var(--t5)] transition-all duration-500 shadow-sm hover:shadow-xl">
+                        <div class="w-16 h-16 bg-[var(--t5)]/10 rounded-2xl flex items-center justify-center text-[var(--t5)] text-2xl mb-6 shadow-sm group-hover:bg-[var(--t5)] group-hover:text-white transition-all">
                             <i class="fas fa-ambulance"></i>
                         </div>
                         <h3 class="text-xl font-black mb-3">24/7 Emergency</h3>
-                        <p class="text-slate-600">Critical care and life-saving interventions when every second counts. Our ICU is always staffed.</p>
+                        <p class="text-[var(--ink70)]">Critical care and life-saving interventions when every second counts. Our ICU is always staffed.</p>
                     </div>
-                    <div class="group p-8 rounded-[2rem] bg-white border-2 border-transparent hover:border-specialty transition-all duration-500 shadow-sm hover:shadow-xl">
-                        <div class="w-16 h-16 bg-purple-50 rounded-2xl flex items-center justify-center text-purple-600 text-2xl mb-6 shadow-sm group-hover:bg-purple-600 group-hover:text-white transition-all">
+                    <div class="group p-8 rounded-[2rem] bg-white border-2 border-transparent hover:border-[var(--t5)] transition-all duration-500 shadow-sm hover:shadow-xl">
+                        <div class="w-16 h-16 bg-[var(--t5)]/10 rounded-2xl flex items-center justify-center text-[var(--t5)] text-2xl mb-6 shadow-sm group-hover:bg-[var(--t5)] group-hover:text-white transition-all">
                             <i class="fas fa-microscope"></i>
                         </div>
                         <h3 class="text-xl font-black mb-3">Advanced Diagnostics</h3>
-                        <p class="text-slate-600">Digital X-ray, Ultrasound, and in-house laboratory for rapid and accurate diagnosis.</p>
+                        <p class="text-[var(--ink70)]">Digital X-ray, Ultrasound, and in-house laboratory for rapid and accurate diagnosis.</p>
                     </div>
-                    <div class="group p-8 rounded-[2rem] bg-white border-2 border-transparent hover:border-specialty transition-all duration-500 shadow-sm hover:shadow-xl">
-                        <div class="w-16 h-16 bg-purple-50 rounded-2xl flex items-center justify-center text-purple-600 text-2xl mb-6 shadow-sm group-hover:bg-purple-600 group-hover:text-white transition-all">
+                    <div class="group p-8 rounded-[2rem] bg-white border-2 border-transparent hover:border-[var(--t5)] transition-all duration-500 shadow-sm hover:shadow-xl">
+                        <div class="w-16 h-16 bg-[var(--t5)]/10 rounded-2xl flex items-center justify-center text-[var(--t5)] text-2xl mb-6 shadow-sm group-hover:bg-[var(--t5)] group-hover:text-white transition-all">
                             <i class="fas fa-stethoscope"></i>
                         </div>
                         <h3 class="text-xl font-black mb-3">Specialized Surgery</h3>
-                        <p class="text-slate-600">Orthopedic, soft tissue, and neurosurgeries performed by internationally trained experts.</p>
+                        <p class="text-[var(--ink70)]">Orthopedic, soft tissue, and neurosurgeries performed by internationally trained experts.</p>
                     </div>
-                    <div class="group p-8 rounded-[2rem] bg-white border-2 border-transparent hover:border-accent transition-all duration-500 shadow-sm hover:shadow-xl">
-                        <div class="w-16 h-16 bg-emerald-50 rounded-2xl flex items-center justify-center text-emerald-600 text-2xl mb-6 shadow-sm group-hover:bg-emerald-600 group-hover:text-white transition-all">
+                    <div class="group p-8 rounded-[2rem] bg-white border-2 border-transparent hover:border-[var(--t5)] transition-all duration-500 shadow-sm hover:shadow-xl">
+                        <div class="w-16 h-16 bg-[var(--t5)]/10 rounded-2xl flex items-center justify-center text-[var(--t5)] text-2xl mb-6 shadow-sm group-hover:bg-[var(--t5)] group-hover:text-white transition-all">
                             <i class="fas fa-spa"></i>
                         </div>
                         <h3 class="text-xl font-black mb-3">Wellness & Spa</h3>
-                        <p class="text-slate-600">Preventive healthcare, luxury grooming, and holistic therapy in a low-stress environment.</p>
+                        <p class="text-[var(--ink70)]">Preventive healthcare, luxury grooming, and holistic therapy in a low-stress environment.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Localized Pathology Section -->
-        <section id="local-threats" class="py-32 bg-[var(--canvas)]">
-            <div class="container mx-auto px-6">
-                <div class="flex flex-col lg:flex-row items-center gap-16">
+        <section id="local-threats" class="py-24 sm:py-32 bg-[var(--canvas)]">
+            <div class="container mx-auto px-4 sm:px-6">
+                <div class="flex flex-col lg:flex-row items-center gap-12 sm:gap-16">
                     <div class="lg:w-1/2">
                         <div class="kicker">Local Threats</div>
-                        <h2 class="text-5xl font-black mb-8 tracking-tight serif">Delhi's Unique Health Challenges</h2>
-                        <p class="text-xl text-[var(--ink70)] mb-12 font-light">New Delhi's environment poses specific risks to our pets. We've developed specialized protocols to protect them from local stressors.</p>
+                        <h2 class="text-4xl sm:text-5xl font-black mb-6 sm:mb-8 tracking-tight serif">Delhi's Unique Health Challenges</h2>
+                        <p class="text-lg sm:text-xl text-[var(--ink70)] mb-8 sm:mb-12 font-light">New Delhi's environment poses specific risks to our pets. We've developed specialized protocols to protect them from local stressors.</p>
                         <div class="space-y-6">
                             <div class="p-6 bg-[var(--paper)] border border-[var(--ink15)] rounded-3xl shadow-sm flex gap-6 items-start hover:-translate-y-1 transition-transform">
                                 <div class="w-12 h-12 rounded-xl bg-[var(--t1)] flex-shrink-0 flex items-center justify-center text-[var(--t7)]">
@@ -366,12 +368,12 @@
                         </div>
                     </div>
                     <div class="lg:w-1/2">
-                        <div class="bg-gradient-to-br from-[var(--t9)] to-[var(--t7)] rounded-[3rem] p-12 text-white relative overflow-hidden shadow-2xl">
+                        <div class="bg-gradient-to-br from-[var(--t9)] to-[var(--t7)] rounded-[2.5rem] sm:rounded-[3rem] p-8 sm:p-12 text-white relative overflow-hidden shadow-2xl">
                             <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(53,175,160,0.2)_0%,transparent_60%)]"></div>
                             <div class="relative z-10">
-                                <h3 class="text-3xl font-light mb-6 serif"><strong class="font-bold">Are you aware</strong> of the top 3 silent mistakes pawtners make during smog season?</h3>
+                                <h3 class="text-2xl sm:text-3xl font-light mb-6 serif"><strong class="font-bold">Are you aware</strong> of the top 3 silent mistakes pawtners make during smog season?</h3>
                                 <p class="text-white/70 mb-8 font-light">Download our localized survival guide to protect your pet's lungs today.</p>
-                                <button onclick="document.getElementById('lead-magnet').scrollIntoView()" class="btn-gold px-8 py-4 rounded-full font-bold transition">Get the Smog Survival Guide</button>
+                                <button onclick="document.getElementById('lead-magnet').scrollIntoView()" class="btn-gold px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold transition text-sm sm:text-base">Get the Smog Survival Guide</button>
                             </div>
                             <div class="absolute -bottom-10 -right-10 opacity-10 transform rotate-12">
                                 <i class="fas fa-mask text-[200px]"></i>
@@ -389,15 +391,15 @@
                 <h2 class="text-4xl font-black mb-6 serif">What is your pet's <em class="text-[var(--t5)] italic font-light">Hidden Health Score?</em></h2>
                 <p class="text-xl text-[var(--ink70)] font-light mb-12">Take our 60-second vet-designed assessment to uncover potential blind spots in your pet's daily routine.</p>
                 
-                <div id="quiz-container" class="bg-white p-10 rounded-[2.5rem] shadow-2xl border border-[var(--ink15)] text-left relative overflow-hidden">
+                <div id="quiz-container" class="bg-white p-6 sm:p-10 rounded-[2.5rem] shadow-2xl border border-[var(--ink15)] text-left relative overflow-hidden">
                     <div class="absolute top-0 left-0 w-full h-2 bg-[var(--ink15)]">
                         <div id="quiz-progress" class="h-full bg-[var(--t5)] w-1/3 transition-all duration-500"></div>
                     </div>
-                    <h3 id="quiz-question" class="text-2xl font-bold mb-8 serif mt-4">1. How often does your pet drink water compared to 6 months ago?</h3>
+                    <h3 id="quiz-question" class="text-xl sm:text-2xl font-bold mb-8 serif mt-4">1. How often does your pet drink water compared to 6 months ago?</h3>
                     <div class="space-y-4" id="quiz-options">
-                        <button onclick="nextQuizStep()" class="w-full text-left p-6 rounded-2xl border border-[var(--ink15)] hover:border-[var(--t5)] hover:bg-[var(--t1)] transition font-medium">About the same</button>
-                        <button onclick="nextQuizStep()" class="w-full text-left p-6 rounded-2xl border border-[var(--ink15)] hover:border-[var(--t5)] hover:bg-[var(--t1)] transition font-medium">Noticeably more</button>
-                        <button onclick="nextQuizStep()" class="w-full text-left p-6 rounded-2xl border border-[var(--ink15)] hover:border-[var(--t5)] hover:bg-[var(--t1)] transition font-medium">Noticeably less</button>
+                        <button onclick="nextQuizStep()" class="w-full text-left p-4 sm:p-6 rounded-2xl border border-[var(--ink15)] hover:border-[var(--t5)] hover:bg-[var(--t1)] transition font-medium">About the same</button>
+                        <button onclick="nextQuizStep()" class="w-full text-left p-4 sm:p-6 rounded-2xl border border-[var(--ink15)] hover:border-[var(--t5)] hover:bg-[var(--t1)] transition font-medium">Noticeably more</button>
+                        <button onclick="nextQuizStep()" class="w-full text-left p-4 sm:p-6 rounded-2xl border border-[var(--ink15)] hover:border-[var(--t5)] hover:bg-[var(--t1)] transition font-medium">Noticeably less</button>
                     </div>
                 </div>
             </div>
@@ -406,15 +408,15 @@
         <!-- Lead Magnet -->
         <section id="lead-magnet" class="py-32 bg-[var(--ink)] relative overflow-hidden">
             <div class="absolute inset-0 bg-[radial-gradient(ellipse_55%_65%_at_10%_50%,rgba(53,175,160,0.15)_0%,transparent_60%),radial-gradient(ellipse_38%_48%_at_92%_80%,rgba(198,148,26,0.1)_0%,transparent_50%)] pointer-events-none"></div>
-            <div class="container mx-auto px-6 relative z-10">
-                <div class="bg-gradient-to-br from-[var(--t9)] to-[var(--ink)] border border-white/10 rounded-[3.5rem] p-12 lg:p-24 flex flex-col lg:flex-row items-center gap-16 shadow-2xl">
+            <div class="container mx-auto px-4 sm:px-6 relative z-10">
+                <div class="bg-gradient-to-br from-[var(--t9)] to-[var(--ink)] border border-white/10 rounded-[2.5rem] sm:rounded-[3.5rem] p-8 sm:p-12 lg:p-24 flex flex-col lg:flex-row items-center gap-12 sm:gap-16 shadow-2xl">
                     <div class="lg:w-1/2">
                         <div class="kicker light">Free Resource</div>
-                        <h2 class="text-4xl lg:text-6xl font-light text-white mb-8 leading-tight serif"><strong class="font-bold">The South Delhi Pet Parent's</strong><br><em class="text-[var(--g3)] italic">Daily Smog Survival Guide.</em></h2>
-                        <p class="text-xl text-white/60 mb-12 font-light">Learn the 5 essential steps to protect your fur-baby's lungs during Delhi's high AQI months. 100% Science-backed.</p>
+                        <h2 class="text-3xl sm:text-4xl lg:text-6xl font-light text-white mb-6 sm:mb-8 leading-tight serif"><strong class="font-bold">The South Delhi Pet Parent's</strong><br><em class="text-[var(--g3)] italic">Daily Smog Survival Guide.</em></h2>
+                        <p class="text-lg sm:text-xl text-white/60 mb-8 sm:mb-12 font-light">Learn the 5 essential steps to protect your fur-baby's lungs during Delhi's high AQI months. 100% Science-backed.</p>
                         <div class="flex flex-col sm:flex-row gap-4">
-                            <input type="email" id="magnet-email" placeholder="Your best email..." class="flex-grow px-8 py-5 rounded-full bg-white/10 border border-white/20 text-white font-light placeholder-white/40 focus:outline-none focus:border-[var(--t3)] transition">
-                            <button onclick="triggerMagnetDownload()" class="btn-gold px-10 py-5 rounded-full font-bold transition shadow-2xl">
+                            <input type="email" id="magnet-email" placeholder="Your best email..." class="flex-grow px-6 sm:px-8 py-4 sm:py-5 rounded-full bg-white/10 border border-white/20 text-white font-light placeholder-white/40 focus:outline-none focus:border-[var(--t3)] transition">
+                            <button onclick="triggerMagnetDownload()" class="btn-gold px-8 sm:px-10 py-4 sm:py-5 rounded-full font-bold transition shadow-2xl">
                                 Download Free Guide
                             </button>
                         </div>
@@ -507,22 +509,22 @@
                             </div>
                         </div>
                     </div>
-                    <div class="lg:w-1/2 grid grid-cols-2 gap-6">
-                        <div class="bg-slate-800 p-8 rounded-3xl text-center">
-                            <div class="text-4xl font-black text-blue-500 mb-2">15+</div>
-                            <div class="text-sm text-slate-400 uppercase tracking-widest font-bold">Years Experience</div>
+                    <div class="lg:w-1/2 grid grid-cols-2 gap-4 sm:gap-6">
+                        <div class="bg-white/5 border border-white/10 p-6 sm:p-8 rounded-3xl text-center">
+                            <div class="text-3xl sm:text-4xl font-black text-[var(--g3)] mb-2">15+</div>
+                            <div class="text-xs sm:text-sm text-white/50 uppercase tracking-widest font-bold">Years Experience</div>
                         </div>
-                        <div class="bg-slate-800 p-8 rounded-3xl text-center">
-                            <div class="text-4xl font-black text-orange-500 mb-2">50k+</div>
-                            <div class="text-sm text-slate-400 uppercase tracking-widest font-bold">Happy Pets</div>
+                        <div class="bg-white/5 border border-white/10 p-6 sm:p-8 rounded-3xl text-center">
+                            <div class="text-3xl sm:text-4xl font-black text-[var(--g3)] mb-2">50k+</div>
+                            <div class="text-xs sm:text-sm text-white/50 uppercase tracking-widest font-bold">Happy Pets</div>
                         </div>
-                        <div class="bg-slate-800 p-8 rounded-3xl text-center">
-                            <div class="text-4xl font-black text-emerald-500 mb-2">100+</div>
-                            <div class="text-sm text-slate-400 uppercase tracking-widest font-bold">Specialists</div>
+                        <div class="bg-white/5 border border-white/10 p-6 sm:p-8 rounded-3xl text-center">
+                            <div class="text-3xl sm:text-4xl font-black text-[var(--g3)] mb-2">100+</div>
+                            <div class="text-xs sm:text-sm text-white/50 uppercase tracking-widest font-bold">Specialists</div>
                         </div>
-                        <div class="bg-slate-800 p-8 rounded-3xl text-center">
-                            <div class="text-4xl font-black text-purple-500 mb-2">24/7</div>
-                            <div class="text-sm text-slate-400 uppercase tracking-widest font-bold">Emergency Care</div>
+                        <div class="bg-white/5 border border-white/10 p-6 sm:p-8 rounded-3xl text-center">
+                            <div class="text-3xl sm:text-4xl font-black text-[var(--g3)] mb-2">24/7</div>
+                            <div class="text-xs sm:text-sm text-white/50 uppercase tracking-widest font-bold">Emergency Care</div>
                         </div>
                     </div>
                 </div>
@@ -580,12 +582,12 @@
     <!-- BOOKING PAGE VIEW -->
     <div id="booking-page" class="page-view pt-32">
         <!-- Loss Aversion / Reality Check -->
-        <section class="py-24 bg-red-50 border-y border-red-100">
-            <div class="container mx-auto px-6 text-center max-w-4xl">
-                <i class="fas fa-heartbeat text-4xl text-red-400 mb-6 animate-pulse"></i>
-                <h2 class="text-4xl font-black mb-6 serif text-red-900">The Cost of Waiting is Too High.</h2>
-                <p class="text-xl text-red-800/70 font-light mb-8">70% of emergency vet visits could be prevented with early detection. Don't let a minor symptom turn into a midnight crisis. Give your pet the proactive care they deserve.</p>
-                <button onclick="document.getElementById('book-appointment').scrollIntoView({behavior: 'smooth'})" class="bg-red-600 text-white px-8 py-4 rounded-full font-bold shadow-xl shadow-red-200 hover:bg-red-700 transition">
+        <section class="py-16 sm:py-24 bg-red-50 border-y border-red-100">
+            <div class="container mx-auto px-4 sm:px-6 text-center max-w-4xl">
+                <i class="fas fa-heartbeat text-3xl sm:text-4xl text-red-400 mb-6 animate-pulse"></i>
+                <h2 class="text-3xl sm:text-4xl font-black mb-6 serif text-red-900">The Cost of Waiting is Too High.</h2>
+                <p class="text-lg sm:text-xl text-red-800/70 font-light mb-8">70% of emergency vet visits could be prevented with early detection. Don't let a minor symptom turn into a midnight crisis. Give your pet the proactive care they deserve.</p>
+                <button onclick="document.getElementById('book-appointment').scrollIntoView({behavior: 'smooth'})" class="bg-red-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold shadow-xl shadow-red-200 hover:bg-red-700 transition text-sm sm:text-base">
                     Schedule a Preventative Checkup Now
                 </button>
             </div>
@@ -626,14 +628,14 @@
         </section>
 
         <!-- Book Appointment Module -->
-        <section id="book-appointment" class="py-32 bg-[var(--canvas)]">
-            <div class="container mx-auto px-6">
-                <div class="bg-gradient-to-br from-[var(--t9)] to-[#020d0c] rounded-[3.5rem] shadow-2xl overflow-hidden flex flex-col lg:flex-row relative">
+        <section id="book-appointment" class="py-24 sm:py-32 bg-[var(--canvas)]">
+            <div class="container mx-auto px-4 sm:px-6">
+                <div class="bg-gradient-to-br from-[var(--t9)] to-[#020d0c] rounded-[2.5rem] sm:rounded-[3.5rem] shadow-2xl overflow-hidden flex flex-col lg:flex-row relative">
                     <div class="absolute inset-0 bg-[radial-gradient(ellipse_56%_65%_at_18%_50%,rgba(53,175,160,0.09)_0%,transparent_60%),radial-gradient(ellipse_36%_46%_at_82%_18%,rgba(198,148,26,0.07)_0%,transparent_52%)]"></div>
-                    <div class="lg:w-1/2 p-12 lg:p-20 text-white relative z-10 border-r border-white/10">
+                    <div class="lg:w-1/2 p-8 sm:p-12 lg:p-20 text-white relative z-10 border-b lg:border-b-0 lg:border-r border-white/10">
                         <div class="kicker light">Book Your Visit</div>
-                        <h2 class="text-5xl font-light mb-8 leading-tight serif"><strong class="font-bold">Ready to Give Your Pet</strong><br><em class="text-[var(--g3)] italic">the Best Care?</em></h2>
-                        <p class="text-xl text-white/60 mb-12 font-light">Book a consultation with our specialists today. We are available 24/7 for your peace of mind.</p>
+                        <h2 class="text-4xl sm:text-5xl font-light mb-6 sm:mb-8 leading-tight serif"><strong class="font-bold">Ready to Give Your Pet</strong><br><em class="text-[var(--g3)] italic">the Best Care?</em></h2>
+                        <p class="text-lg sm:text-xl text-white/60 mb-8 sm:mb-12 font-light">Book a consultation with our specialists today. We are available 24/7 for your peace of mind.</p>
                         <div class="space-y-6">
                             <div class="flex items-center gap-4">
                                 <div class="w-12 h-12 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-[var(--g3)]">
@@ -655,8 +657,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="lg:w-1/2 p-12 lg:p-20 relative z-10">
-                        <form onsubmit="event.preventDefault(); alert('Thank you! Your appointment request has been sent. We will contact you shortly.');" class="space-y-6 bg-white/5 border border-white/10 p-8 rounded-3xl backdrop-blur-sm">
+                    <div class="lg:w-1/2 p-8 sm:p-12 lg:p-20 relative z-10">
+                        <form onsubmit="event.preventDefault(); alert('Thank you! Your appointment request has been sent. We will contact you shortly.');" class="space-y-6 bg-white/5 border border-white/10 p-6 sm:p-8 rounded-3xl backdrop-blur-sm">
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
                                     <label class="block text-xs font-bold text-white/50 uppercase tracking-widest mb-2">Pawtner Name</label>
@@ -678,10 +680,10 @@
                                 </select>
                             </div>
                             <div>
-                                <label class="block text-sm font-black text-slate-400 uppercase tracking-widest mb-2">Phone Number</label>
-                                <input type="tel" placeholder="+91 00000 00000" class="w-full px-6 py-4 bg-slate-100 rounded-2xl focus:outline-none focus:ring-4 focus:ring-blue-100 font-bold" required>
+                                <label class="block text-xs font-bold text-white/50 uppercase tracking-widest mb-2">Phone Number</label>
+                                <input type="tel" placeholder="+91 00000 00000" class="w-full px-6 py-4 bg-white/10 border border-white/10 rounded-2xl focus:outline-none focus:border-[var(--t3)] text-white font-light placeholder-white/30 transition" required>
                             </div>
-                            <button type="submit" class="w-full bg-blue-600 text-white py-6 rounded-2xl text-xl font-black hover:bg-blue-700 transition shadow-2xl shadow-blue-200">
+                            <button type="submit" class="w-full btn-gold text-[var(--t9)] py-5 sm:py-6 rounded-2xl text-lg sm:text-xl font-bold transition shadow-2xl">
                                 Confirm Appointment Request
                             </button>
                         </form>
@@ -696,8 +698,8 @@
         <div class="container mx-auto px-6">
             <div class="mb-20 text-center">
                 <div class="kicker center">Insights & Articles</div>
-                <h1 class="text-6xl font-black mb-6 serif">The Pawtner's <em class="text-[var(--t5)] italic font-light">Journal</em></h1>
-                <p class="text-xl text-[var(--ink70)] font-light max-w-2xl mx-auto">Expert insights, wellness tips, and heartwarming stories from the MaxPetz family.</p>
+                <h1 class="text-5xl sm:text-6xl font-black mb-6 serif">The Pawtner's <em class="text-[var(--t5)] italic font-light">Journal</em></h1>
+                <p class="text-lg sm:text-xl text-[var(--ink70)] font-light max-w-2xl mx-auto">Expert insights, wellness tips, and heartwarming stories from the MaxPetz family.</p>
             </div>
             
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
@@ -811,12 +813,12 @@
     </footer>
 
     <!-- Chatbot & Scripts -->
-    <div class="fixed bottom-8 right-8 z-[1000]">
-        <button onclick="bot.toggleChat()" class="w-20 h-20 bg-gradient-to-br from-[var(--t5)] to-[var(--t7)] text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-all transform duration-300 cta-pulse border-4 border-white">
-            <i class="fas fa-comment-dots text-3xl"></i>
+    <div class="fixed bottom-4 right-4 md:bottom-8 md:right-8 z-[1000]">
+        <button onclick="bot.toggleChat()" class="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-[var(--t5)] to-[var(--t7)] text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-all transform duration-300 cta-pulse border-4 border-white">
+            <i class="fas fa-comment-dots text-2xl md:text-3xl"></i>
         </button>
 
-        <div id="chat-window" class="chat-window glass absolute bottom-24 right-0 overflow-hidden border border-[var(--ink15)]">
+        <div id="chat-window" class="chat-window glass absolute bottom-20 md:bottom-24 right-0 overflow-hidden border border-[var(--ink15)]">
             <div class="bg-gradient-to-r from-[var(--t9)] to-[var(--t7)] p-6 text-white flex justify-between items-center border-b border-white/10">
                 <div class="flex items-center gap-4">
                     <div class="w-12 h-12 bg-white/10 border border-white/20 rounded-xl flex items-center justify-center text-white font-bold text-xl serif">M</div>
@@ -838,7 +840,7 @@
     </div>
 
     <!-- Social Proof Popup -->
-    <div id="social-proof" class="fixed bottom-8 left-8 z-[100] bg-white rounded-2xl shadow-2xl p-4 flex items-center gap-4 border border-[var(--ink15)] transform translate-y-32 opacity-0 transition-all duration-500 pointer-events-none">
+    <div id="social-proof" class="fixed bottom-4 left-4 sm:bottom-8 sm:left-8 z-[100] bg-white rounded-2xl shadow-2xl p-4 flex items-center gap-4 border border-[var(--ink15)] transform translate-y-32 opacity-0 transition-all duration-500 pointer-events-none max-w-[calc(100vw-2rem)] sm:max-w-md">
         <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" class="w-12 h-12 rounded-full object-cover">
         <div>
             <p class="text-sm font-bold text-[var(--ink)]">Priya from Vasant Vihar</p>
