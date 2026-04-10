@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MaxPetZ at Home | Premium Veterinary Care · South Delhi Since 1952</title>
-    <meta name="description" content="MaxPetZ provides the best veterinary hospital services in Delhi. Book an at-home vet consultation, check dog vaccination schedules, or find an emergency pet hospital near you.">
+    <title>Emergency Vet & Best Veterinarian Near You in Delhi & Mumbai | MaxPetZ@Home</title>
+    <meta name="description" content="MaxPetZ@Home brings expert veterinary care directly to your door. From emergency vet services to routine vaccinations, get the best care for your pet in Delhi, Mumbai, and Goa without the stress of a clinic visit.">
     
     <!-- CDNs -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -384,6 +384,58 @@
             </div>
         </section>
 
+        <!-- Meet the Experts Module (Landing Page) -->
+        <section id="experts-preview" class="py-24 sm:py-32 bg-[var(--paper)]">
+            <div class="container mx-auto px-4 sm:px-6">
+                <div class="text-center mb-24">
+                    <h2 class="text-4xl sm:text-5xl font-black mb-6 tracking-tight text-[#3b3b58] serif">Meet the Experts</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-20 mt-12">
+                    <!-- Doctor 1 -->
+                    <div class="bg-white rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.08)] text-center relative pt-20 pb-8 px-6 border border-gray-100">
+                        <div class="absolute -top-16 left-1/2 transform -translate-x-1/2">
+                            <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" class="w-32 h-32 rounded-full object-cover border-4 border-white shadow-md">
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2 text-gray-800">Dr. Leena<br>Dalal</h3>
+                        <p class="text-[#6B4E9E] font-medium text-sm mb-6 h-10 flex items-center justify-center">Head of<br>Oncology and<br>Oncosurgery</p>
+                        <p class="text-gray-500 text-sm">Experience: 35 Yrs</p>
+                    </div>
+                    <!-- Doctor 2 -->
+                    <div class="bg-white rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.08)] text-center relative pt-20 pb-8 px-6 border border-gray-100">
+                        <div class="absolute -top-16 left-1/2 transform -translate-x-1/2">
+                            <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" class="w-32 h-32 rounded-full object-cover border-4 border-white shadow-md">
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2 text-gray-800">Dr. Kunal Dev<br>Sharma</h3>
+                        <p class="text-[#6B4E9E] font-medium text-sm mb-6 h-10 flex items-center justify-center">Sr. Orthopaedic<br>Surgeon</p>
+                        <p class="text-gray-500 text-sm">Experience: 20 Yrs</p>
+                    </div>
+                    <!-- Doctor 3 -->
+                    <div class="bg-white rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.08)] text-center relative pt-20 pb-8 px-6 border border-gray-100">
+                        <div class="absolute -top-16 left-1/2 transform -translate-x-1/2">
+                            <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" class="w-32 h-32 rounded-full object-cover border-4 border-white shadow-md">
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2 text-gray-800">Dr. Bhanu Dev<br>Sharma</h3>
+                        <p class="text-[#6B4E9E] font-medium text-sm mb-6 h-10 flex items-center justify-center">Clinical/Interventional<br>Cardiologist</p>
+                        <p class="text-gray-500 text-sm">Experience: 19 Yrs</p>
+                    </div>
+                    <!-- Doctor 4 -->
+                    <div class="bg-white rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.08)] text-center relative pt-20 pb-8 px-6 border border-gray-100">
+                        <div class="absolute -top-16 left-1/2 transform -translate-x-1/2">
+                            <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" class="w-32 h-32 rounded-full object-cover border-4 border-white shadow-md">
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2 text-gray-800">Dr. Deep<br>Vasudeo</h3>
+                        <p class="text-[#6B4E9E] font-medium text-sm mb-6 h-10 flex items-center justify-center">Neurologist and<br>Physiotherapist</p>
+                        <p class="text-gray-500 text-sm">Experience: 14 Yrs</p>
+                    </div>
+                </div>
+                <div class="text-center mt-16">
+                    <button onclick="showPage('doctors')" class="btn-gold px-8 py-4 rounded-full font-bold transition shadow-xl">
+                        View All Specialists
+                    </button>
+                </div>
+            </div>
+        </section>
+
         <!-- Pet Health Score Quiz (Curiosity Gap Trigger) -->
         <section class="py-24 bg-[var(--canvas)] border-y border-[var(--ink15)]">
             <div class="container mx-auto px-6 max-w-4xl text-center">
@@ -435,37 +487,86 @@
     <!-- DOCTORS PAGE VIEW -->
     <div id="doctors-page" class="page-view pt-32">
         <!-- Doctors Module -->
-        <section id="doctors" class="py-32 bg-[var(--paper)]">
-            <div class="container mx-auto px-6">
+        <section id="doctors" class="py-24 sm:py-32 bg-[var(--paper)]">
+            <div class="container mx-auto px-4 sm:px-6">
                 <div class="text-center mb-24">
-                    <div class="kicker center">Expert Team</div>
-                    <h2 class="text-5xl font-black mb-6 tracking-tight serif">Meet Our <em class="text-[var(--t5)] italic font-light">Specialists</em></h2>
-                    <p class="text-xl text-[var(--ink70)] max-w-3xl mx-auto font-light">Our team consists of internationally trained veterinary surgeons and physicians dedicated to your pet's health.</p>
+                    <div class="kicker center">Our Complete Team</div>
+                    <h2 class="text-4xl sm:text-5xl font-black mb-6 tracking-tight text-[#3b3b58] serif">Meet Our <em class="text-[var(--t5)] italic font-light">Specialists</em></h2>
+                    <p class="text-lg sm:text-xl text-[var(--ink70)] max-w-3xl mx-auto font-light">Our team consists of internationally trained veterinary surgeons and physicians dedicated to your pet's health. <br><span class="text-sm opacity-70">(Note: Placeholder images used. Replace with exact URLs from maxpetz.com/doctors)</span></p>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div class="bg-[var(--canvas)] p-8 rounded-[2.5rem] border border-[var(--ink15)] text-center group hover:-translate-y-4 transition-all duration-500 hover:shadow-2xl">
-                        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" class="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-[var(--t1)] group-hover:border-[var(--t5)] transition-all object-cover">
-                        <h3 class="text-xl font-bold mb-2 serif">Dr. Kunal Dev Sharma</h3>
-                        <p class="text-[var(--t5)] font-bold text-xs uppercase tracking-widest mb-4">Senior Surgeon</p>
-                        <p class="text-[var(--ink70)] text-sm">Pioneer in advanced orthopedic and soft tissue veterinary surgery in India.</p>
+                <!-- Full List Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-20 mt-12">
+                    <!-- Doctor 1 -->
+                    <div class="bg-white rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.08)] text-center relative pt-20 pb-8 px-6 border border-gray-100">
+                        <div class="absolute -top-16 left-1/2 transform -translate-x-1/2">
+                            <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" class="w-32 h-32 rounded-full object-cover border-4 border-white shadow-md">
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2 text-gray-800">Dr. Leena<br>Dalal</h3>
+                        <p class="text-[#6B4E9E] font-medium text-sm mb-6 h-10 flex items-center justify-center">Head of<br>Oncology and<br>Oncosurgery</p>
+                        <p class="text-gray-500 text-sm">Experience: 35 Yrs</p>
                     </div>
-                    <div class="bg-[var(--canvas)] p-8 rounded-[2.5rem] border border-[var(--ink15)] text-center group hover:-translate-y-4 transition-all duration-500 hover:shadow-2xl">
-                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" class="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-[var(--t1)] group-hover:border-[var(--t5)] transition-all object-cover">
-                        <h3 class="text-xl font-bold mb-2 serif">Dr. Bhanu Sharma</h3>
-                        <p class="text-[var(--t5)] font-bold text-xs uppercase tracking-widest mb-4">Senior Veterinarian</p>
-                        <p class="text-[var(--ink70)] text-sm">Expert in internal medicine and preventive healthcare for small animals.</p>
+                    <!-- Doctor 2 -->
+                    <div class="bg-white rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.08)] text-center relative pt-20 pb-8 px-6 border border-gray-100">
+                        <div class="absolute -top-16 left-1/2 transform -translate-x-1/2">
+                            <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" class="w-32 h-32 rounded-full object-cover border-4 border-white shadow-md">
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2 text-gray-800">Dr. Kunal Dev<br>Sharma</h3>
+                        <p class="text-[#6B4E9E] font-medium text-sm mb-6 h-10 flex items-center justify-center">Sr. Orthopaedic<br>Surgeon</p>
+                        <p class="text-gray-500 text-sm">Experience: 20 Yrs</p>
                     </div>
-                    <div class="bg-[var(--canvas)] p-8 rounded-[2.5rem] border border-[var(--ink15)] text-center group hover:-translate-y-4 transition-all duration-500 hover:shadow-2xl">
-                        <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" class="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-[var(--t1)] group-hover:border-[var(--t5)] transition-all object-cover">
-                        <h3 class="text-xl font-bold mb-2 serif">Dr. Gautam</h3>
-                        <p class="text-[var(--t5)] font-bold text-xs uppercase tracking-widest mb-4">Surgery Specialist</p>
-                        <p class="text-[var(--ink70)] text-sm">Specializing in complex trauma and emergency surgical interventions.</p>
+                    <!-- Doctor 3 -->
+                    <div class="bg-white rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.08)] text-center relative pt-20 pb-8 px-6 border border-gray-100">
+                        <div class="absolute -top-16 left-1/2 transform -translate-x-1/2">
+                            <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" class="w-32 h-32 rounded-full object-cover border-4 border-white shadow-md">
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2 text-gray-800">Dr. Bhanu Dev<br>Sharma</h3>
+                        <p class="text-[#6B4E9E] font-medium text-sm mb-6 h-10 flex items-center justify-center">Clinical/Interventional<br>Cardiologist</p>
+                        <p class="text-gray-500 text-sm">Experience: 19 Yrs</p>
                     </div>
-                    <div class="bg-[var(--canvas)] p-8 rounded-[2.5rem] border border-[var(--ink15)] text-center group hover:-translate-y-4 transition-all duration-500 hover:shadow-2xl">
-                        <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" class="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-[var(--t1)] group-hover:border-[var(--t5)] transition-all object-cover">
-                        <h3 class="text-xl font-bold mb-2 serif">Dr. Rahul Verma</h3>
-                        <p class="text-[var(--t5)] font-bold text-xs uppercase tracking-widest mb-4">Critical Care</p>
-                        <p class="text-[var(--ink70)] text-sm">Managing ICU and critical care monitoring for high-risk patients.</p>
+                    <!-- Doctor 4 -->
+                    <div class="bg-white rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.08)] text-center relative pt-20 pb-8 px-6 border border-gray-100">
+                        <div class="absolute -top-16 left-1/2 transform -translate-x-1/2">
+                            <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" class="w-32 h-32 rounded-full object-cover border-4 border-white shadow-md">
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2 text-gray-800">Dr. Deep<br>Vasudeo</h3>
+                        <p class="text-[#6B4E9E] font-medium text-sm mb-6 h-10 flex items-center justify-center">Neurologist and<br>Physiotherapist</p>
+                        <p class="text-gray-500 text-sm">Experience: 14 Yrs</p>
+                    </div>
+                    <!-- Doctor 5 -->
+                    <div class="bg-white rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.08)] text-center relative pt-20 pb-8 px-6 border border-gray-100">
+                        <div class="absolute -top-16 left-1/2 transform -translate-x-1/2">
+                            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" class="w-32 h-32 rounded-full object-cover border-4 border-white shadow-md">
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2 text-gray-800">Dr. Sarah<br>Mathews</h3>
+                        <p class="text-[#6B4E9E] font-medium text-sm mb-6 h-10 flex items-center justify-center">Senior Feline<br>Specialist</p>
+                        <p class="text-gray-500 text-sm">Experience: 12 Yrs</p>
+                    </div>
+                    <!-- Doctor 6 -->
+                    <div class="bg-white rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.08)] text-center relative pt-20 pb-8 px-6 border border-gray-100">
+                        <div class="absolute -top-16 left-1/2 transform -translate-x-1/2">
+                            <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" class="w-32 h-32 rounded-full object-cover border-4 border-white shadow-md">
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2 text-gray-800">Dr. Amit<br>Verma</h3>
+                        <p class="text-[#6B4E9E] font-medium text-sm mb-6 h-10 flex items-center justify-center">Critical Care<br>Director</p>
+                        <p class="text-gray-500 text-sm">Experience: 15 Yrs</p>
+                    </div>
+                    <!-- Doctor 7 -->
+                    <div class="bg-white rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.08)] text-center relative pt-20 pb-8 px-6 border border-gray-100">
+                        <div class="absolute -top-16 left-1/2 transform -translate-x-1/2">
+                            <img src="https://images.unsplash.com/photo-1594824436998-058a231d685b?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" class="w-32 h-32 rounded-full object-cover border-4 border-white shadow-md">
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2 text-gray-800">Dr. Priya<br>Rajan</h3>
+                        <p class="text-[#6B4E9E] font-medium text-sm mb-6 h-10 flex items-center justify-center">Dermatology<br>Specialist</p>
+                        <p class="text-gray-500 text-sm">Experience: 10 Yrs</p>
+                    </div>
+                    <!-- Doctor 8 -->
+                    <div class="bg-white rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.08)] text-center relative pt-20 pb-8 px-6 border border-gray-100">
+                        <div class="absolute -top-16 left-1/2 transform -translate-x-1/2">
+                            <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" class="w-32 h-32 rounded-full object-cover border-4 border-white shadow-md">
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2 text-gray-800">Dr. Rohan<br>Kapoor</h3>
+                        <p class="text-[#6B4E9E] font-medium text-sm mb-6 h-10 flex items-center justify-center">Avian & Exotic<br>Medicine</p>
+                        <p class="text-gray-500 text-sm">Experience: 8 Yrs</p>
                     </div>
                 </div>
             </div>
