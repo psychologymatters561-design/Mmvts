@@ -107,6 +107,27 @@
           "@type": "Answer",
           "text": "You can book a grooming session through our website, by calling our nearest branch, or by using our intelligent chatbot for instant scheduling."
         }
+      }, {
+        "@type": "Question",
+        "name": "My dog is vomiting white foam, what should I do?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "White foam vomit may indicate an upset stomach. Withhold food for 12-24 hours and offer ice chips. If it persists, consult a vet immediately."
+        }
+      }, {
+        "@type": "Question",
+        "name": "How long can a dog fast after vomiting?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Withhold food for 12–24 hours but provide water/fluids."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Dog vomiting repeatedly – kya karna chahiye?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Agar kutta baar-baar ulti kar raha hai, toh use 12-24 ghante tak khana na dein. Hydration ke liye barf ke tukde dein. Agar 24 ghante se zyada ho, toh turant vet se sampark karein."
+        }
       }]
     }
     </script>
@@ -236,35 +257,63 @@
     <!-- HOME PAGE VIEW -->
     <div id="home-page" class="page-view active">
         <!-- Hero Section -->
-        <header class="relative pt-40 pb-24 overflow-hidden bg-[var(--t9)] text-white">
-            <div class="absolute inset-0 opacity-50 bg-[radial-gradient(ellipse_75%_90%_at_12%_55%,rgba(23,117,106,0.55)_0%,transparent_58%),radial-gradient(ellipse_50%_60%_at_88%_18%,rgba(198,148,26,0.12)_0%,transparent_52%)]"></div>
+        <header class="relative pt-32 pb-16 overflow-hidden bg-[var(--t9)] text-white">
+            <div class="absolute inset-0 z-0">
+                <img src="https://images.unsplash.com/photo-1596492784531-6e6eb5ea9993?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="Veterinarian treating a dog" class="w-full h-full object-cover opacity-30 mix-blend-overlay">
+            </div>
+            <div class="absolute inset-0 opacity-80 bg-[radial-gradient(ellipse_75%_90%_at_12%_55%,rgba(23,117,106,0.8)_0%,transparent_58%),radial-gradient(ellipse_50%_60%_at_88%_18%,rgba(198,148,26,0.2)_0%,transparent_52%)] z-0"></div>
             <div class="container mx-auto px-6 flex flex-col lg:flex-row items-center relative z-10">
                 <div class="lg:w-3/5 z-10">
-                    <span class="inline-block py-2 px-4 rounded-full bg-white/10 border border-white/20 text-white/80 text-xs font-black uppercase tracking-widest mb-6 backdrop-blur-sm">
-                        <span class="inline-block w-2 h-2 bg-[var(--g3)] rounded-full mr-2 animate-pulse"></span>
+                    <span class="inline-block py-1.5 px-3 rounded-full bg-white/10 border border-white/20 text-white/80 text-[10px] sm:text-xs font-black uppercase tracking-widest mb-4 backdrop-blur-sm">
+                        <span class="inline-block w-1.5 h-1.5 bg-[var(--g3)] rounded-full mr-1.5 animate-pulse"></span>
                         Pioneers in Pet Healthcare Since 1952
                     </span>
-                    <h1 class="text-5xl sm:text-6xl lg:text-8xl font-light leading-[1.05] mb-8 text-white tracking-tight serif">
+                    <h1 class="text-4xl sm:text-5xl lg:text-7xl font-light leading-[1.05] mb-6 text-white tracking-tight serif">
                         <strong class="font-bold block">Because Every</strong>
                         <em class="text-[var(--g3)] italic block">Pawtner Deserves</em>
                         Peace of Mind.
                     </h1>
-                    <p class="text-lg sm:text-xl text-white/70 mb-12 leading-relaxed max-w-2xl font-light">
-                        South Delhi's most trusted veterinary service — bringing world-class vet care directly to your door or at our state-of-the-art clinics. Because your fur-baby's health shouldn't come with anxiety.
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-4 sm:gap-6">
-                        <button id="hero-cta-a" onclick="trackCTA('Variant A')" class="ab-variant btn-gold px-6 sm:px-10 py-4 sm:py-5 rounded-full text-base sm:text-lg font-bold transition flex items-center justify-center gap-3 cta-pulse">
+                    <div class="text-left max-w-2xl mb-8">
+                        <h3 class="text-lg sm:text-xl font-bold text-white mb-2 tracking-tight">Is Your Pet Sick or Acting Unusual?</h3>
+                        <p class="text-base sm:text-lg text-white/80 mb-4 font-light leading-snug">
+                            Get immediate, world-class veterinary care in South Delhi. We eliminate the panic of pet emergencies by offering:
+                        </p>
+                        <ul class="space-y-1.5 text-white/90 font-medium text-sm sm:text-base">
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check-circle text-[var(--t5)] mt-1 text-sm"></i>
+                                <span><strong>24/7 Emergency Animal Hospital:</strong> Immediate critical care, ICU, and trauma support.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check-circle text-[var(--t5)] mt-1 text-sm"></i>
+                                <span><strong>At-Home Vet Consultations:</strong> Stress-free doorstep checkups and dog vaccinations.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check-circle text-[var(--t5)] mt-1 text-sm"></i>
+                                <span><strong>Advanced Pet Surgery & Diagnostics:</strong> Expert surgeons, digital X-rays, and lab tests.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check-circle text-[var(--t5)] mt-1 text-sm"></i>
+                                <span><strong>Specialized Disease Treatment:</strong> Rapid response for Parvovirus, tick fever, and more.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check-circle text-[var(--t5)] mt-1 text-sm"></i>
+                                <span><strong>Fear-Free Certified Vets:</strong> Compassionate handling for anxious or aggressive pets.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                        <button id="hero-cta-a" onclick="trackCTA('Variant A')" class="ab-variant btn-gold px-5 sm:px-8 py-3 sm:py-4 rounded-full text-sm sm:text-base font-bold transition flex items-center justify-center gap-2 cta-pulse">
                             Book Wellness Visit <i class="fas fa-calendar-check"></i>
                         </button>
-                        <button id="hero-cta-b" onclick="trackCTA('Variant B')" class="ab-variant btn-gold px-6 sm:px-10 py-4 sm:py-5 rounded-full text-base sm:text-lg font-bold transition flex items-center justify-center gap-3 cta-pulse">
+                        <button id="hero-cta-b" onclick="trackCTA('Variant B')" class="ab-variant btn-gold px-5 sm:px-8 py-3 sm:py-4 rounded-full text-sm sm:text-base font-bold transition flex items-center justify-center gap-2 cta-pulse">
                             Schedule "Fear Free" Consult <i class="fas fa-heart"></i>
                         </button>
                         
-                        <button onclick="showPage('blog')" class="bg-white/10 border border-white/20 text-white px-6 sm:px-10 py-4 sm:py-5 rounded-full text-base sm:text-lg font-medium hover:bg-white/20 transition backdrop-blur-sm">
+                        <button onclick="showPage('blog')" class="bg-white/10 border border-white/20 text-white px-5 sm:px-8 py-3 sm:py-4 rounded-full text-sm sm:text-base font-medium hover:bg-white/20 transition backdrop-blur-sm">
                             Read The Journal
                         </button>
                     </div>
-                    <div class="mt-12 flex items-center gap-4">
+                    <div class="mt-8 flex items-center gap-3">
                         <div class="flex -space-x-3">
                             <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" class="w-12 h-12 rounded-full border-4 border-[var(--t9)] shadow-sm object-cover">
                             <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" class="w-12 h-12 rounded-full border-4 border-[var(--t9)] shadow-sm object-cover">
@@ -276,7 +325,7 @@
                 </div>
                 <div class="lg:w-2/5 mt-20 lg:mt-0 relative">
                     <div class="relative z-10">
-                        <img src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="MaxPetz Care" class="rounded-[3rem] shadow-2xl transform rotate-3 hover:rotate-0 transition duration-700 border border-white/10">
+                        <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Veterinarian examining a dog" class="rounded-[3rem] shadow-2xl transform rotate-3 hover:rotate-0 transition duration-700 border border-white/10">
                         <div class="absolute -bottom-10 -left-10 bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-3xl shadow-2xl flex items-center gap-4 animate-bounce z-20">
                             <div class="w-14 h-14 bg-[var(--g3)] rounded-2xl flex items-center justify-center text-[var(--t9)] text-2xl">
                                 <i class="fas fa-shield-alt"></i>
@@ -298,49 +347,59 @@
         </header>
 
         <!-- Services Module -->
-        <section id="services" class="py-32 bg-[var(--paper)]">
-            <div class="container mx-auto px-6">
+        <section id="services" class="py-32 bg-[var(--paper)] relative overflow-hidden">
+            <div class="absolute inset-0 z-0 opacity-[0.03] pointer-events-none">
+                <img src="https://images.unsplash.com/photo-1548191265-cc70d3d45ba1?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="Background pattern of a cat" class="w-full h-full object-cover">
+            </div>
+            <div class="container mx-auto px-6 relative z-10">
                 <div class="text-center mb-24">
                     <div class="kicker center">What We Offer</div>
                     <h2 class="text-5xl font-black mb-6 tracking-tight serif">Designed for Anxious<br><em class="text-[var(--t5)] italic font-light">Pawtners Like You</em></h2>
                     <p class="text-xl text-[var(--ink70)] max-w-3xl mx-auto font-light">From routine checkups to advanced surgical procedures, we provide the highest standard of veterinary medicine across India.</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div class="group p-8 rounded-[2rem] bg-white border-2 border-transparent hover:border-[var(--t5)] transition-all duration-500 shadow-sm hover:shadow-xl">
-                        <div class="w-16 h-16 bg-[var(--t5)]/10 rounded-2xl flex items-center justify-center text-[var(--t5)] text-2xl mb-6 shadow-sm group-hover:bg-[var(--t5)] group-hover:text-white transition-all">
+                    <div class="group p-6 rounded-[2rem] bg-white border-2 border-transparent hover:border-[var(--t5)] transition-all duration-500 shadow-sm hover:shadow-xl flex flex-col">
+                        <img src="https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Dog receiving emergency care" class="w-full h-40 object-cover rounded-2xl mb-6">
+                        <div class="w-12 h-12 bg-[var(--t5)]/10 rounded-xl flex items-center justify-center text-[var(--t5)] text-xl mb-4 shadow-sm group-hover:bg-[var(--t5)] group-hover:text-white transition-all">
                             <i class="fas fa-ambulance"></i>
                         </div>
                         <h3 class="text-xl font-black mb-3">24/7 Emergency</h3>
-                        <p class="text-[var(--ink70)]">Critical care and life-saving interventions when every second counts. Our ICU is always staffed.</p>
+                        <p class="text-[var(--ink70)] text-sm">Critical care and life-saving interventions when every second counts. Our ICU is always staffed.</p>
                     </div>
-                    <div class="group p-8 rounded-[2rem] bg-white border-2 border-transparent hover:border-[var(--t5)] transition-all duration-500 shadow-sm hover:shadow-xl">
-                        <div class="w-16 h-16 bg-[var(--t5)]/10 rounded-2xl flex items-center justify-center text-[var(--t5)] text-2xl mb-6 shadow-sm group-hover:bg-[var(--t5)] group-hover:text-white transition-all">
+                    <div class="group p-6 rounded-[2rem] bg-white border-2 border-transparent hover:border-[var(--t5)] transition-all duration-500 shadow-sm hover:shadow-xl flex flex-col">
+                        <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Dog getting diagnostic check" class="w-full h-40 object-cover rounded-2xl mb-6">
+                        <div class="w-12 h-12 bg-[var(--t5)]/10 rounded-xl flex items-center justify-center text-[var(--t5)] text-xl mb-4 shadow-sm group-hover:bg-[var(--t5)] group-hover:text-white transition-all">
                             <i class="fas fa-microscope"></i>
                         </div>
                         <h3 class="text-xl font-black mb-3">Advanced Diagnostics</h3>
-                        <p class="text-[var(--ink70)]">Digital X-ray, Ultrasound, and in-house laboratory for rapid and accurate diagnosis.</p>
+                        <p class="text-[var(--ink70)] text-sm">Digital X-ray, Ultrasound, and in-house laboratory for rapid and accurate diagnosis.</p>
                     </div>
-                    <div class="group p-8 rounded-[2rem] bg-white border-2 border-transparent hover:border-[var(--t5)] transition-all duration-500 shadow-sm hover:shadow-xl">
-                        <div class="w-16 h-16 bg-[var(--t5)]/10 rounded-2xl flex items-center justify-center text-[var(--t5)] text-2xl mb-6 shadow-sm group-hover:bg-[var(--t5)] group-hover:text-white transition-all">
+                    <div class="group p-6 rounded-[2rem] bg-white border-2 border-transparent hover:border-[var(--t5)] transition-all duration-500 shadow-sm hover:shadow-xl flex flex-col">
+                        <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Dog recovering from surgery" class="w-full h-40 object-cover rounded-2xl mb-6">
+                        <div class="w-12 h-12 bg-[var(--t5)]/10 rounded-xl flex items-center justify-center text-[var(--t5)] text-xl mb-4 shadow-sm group-hover:bg-[var(--t5)] group-hover:text-white transition-all">
                             <i class="fas fa-stethoscope"></i>
                         </div>
                         <h3 class="text-xl font-black mb-3">Specialized Surgery</h3>
-                        <p class="text-[var(--ink70)]">Orthopedic, soft tissue, and neurosurgeries performed by internationally trained experts.</p>
+                        <p class="text-[var(--ink70)] text-sm">Orthopedic, soft tissue, and neurosurgeries performed by internationally trained experts.</p>
                     </div>
-                    <div class="group p-8 rounded-[2rem] bg-white border-2 border-transparent hover:border-[var(--t5)] transition-all duration-500 shadow-sm hover:shadow-xl">
-                        <div class="w-16 h-16 bg-[var(--t5)]/10 rounded-2xl flex items-center justify-center text-[var(--t5)] text-2xl mb-6 shadow-sm group-hover:bg-[var(--t5)] group-hover:text-white transition-all">
+                    <div class="group p-6 rounded-[2rem] bg-white border-2 border-transparent hover:border-[var(--t5)] transition-all duration-500 shadow-sm hover:shadow-xl flex flex-col">
+                        <img src="https://images.unsplash.com/photo-1541364983171-a8ba01d95cfc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Cat at wellness spa" class="w-full h-40 object-cover rounded-2xl mb-6">
+                        <div class="w-12 h-12 bg-[var(--t5)]/10 rounded-xl flex items-center justify-center text-[var(--t5)] text-xl mb-4 shadow-sm group-hover:bg-[var(--t5)] group-hover:text-white transition-all">
                             <i class="fas fa-spa"></i>
                         </div>
                         <h3 class="text-xl font-black mb-3">Wellness & Spa</h3>
-                        <p class="text-[var(--ink70)]">Preventive healthcare, luxury grooming, and holistic therapy in a low-stress environment.</p>
+                        <p class="text-[var(--ink70)] text-sm">Preventive healthcare, luxury grooming, and holistic therapy in a low-stress environment.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Localized Pathology Section -->
-        <section id="local-threats" class="py-24 sm:py-32 bg-[var(--canvas)]">
-            <div class="container mx-auto px-4 sm:px-6">
+        <section id="local-threats" class="py-24 sm:py-32 bg-[var(--canvas)] relative overflow-hidden">
+            <div class="absolute inset-0 z-0 opacity-[0.04] pointer-events-none">
+                <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="Background pattern of a dog" class="w-full h-full object-cover">
+            </div>
+            <div class="container mx-auto px-4 sm:px-6 relative z-10">
                 <div class="flex flex-col lg:flex-row items-center gap-12 sm:gap-16">
                     <div class="lg:w-1/2">
                         <div class="kicker">Local Threats</div>
@@ -369,7 +428,10 @@
                     </div>
                     <div class="lg:w-1/2">
                         <div class="bg-gradient-to-br from-[var(--t9)] to-[var(--t7)] rounded-[2.5rem] sm:rounded-[3rem] p-8 sm:p-12 text-white relative overflow-hidden shadow-2xl">
-                            <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(53,175,160,0.2)_0%,transparent_60%)]"></div>
+                            <div class="absolute inset-0 z-0">
+                                <img src="https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Dog wrapped in blanket" class="w-full h-full object-cover opacity-20 mix-blend-overlay">
+                            </div>
+                            <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(53,175,160,0.2)_0%,transparent_60%)] z-0"></div>
                             <div class="relative z-10">
                                 <h3 class="text-2xl sm:text-3xl font-light mb-6 serif"><strong class="font-bold">Are you aware</strong> of the top 3 silent mistakes pawtners make during smog season?</h3>
                                 <p class="text-white/70 mb-8 font-light">Download our localized survival guide to protect your pet's lungs today.</p>
@@ -385,8 +447,11 @@
         </section>
 
         <!-- Meet the Experts Module (Landing Page) -->
-        <section id="experts-preview" class="py-24 sm:py-32 bg-[var(--paper)]">
-            <div class="container mx-auto px-4 sm:px-6">
+        <section id="experts-preview" class="py-24 sm:py-32 bg-[var(--paper)] relative overflow-hidden">
+            <div class="absolute inset-0 z-0 opacity-[0.03] pointer-events-none">
+                <img src="https://images.unsplash.com/photo-1583337260546-28b6bf66d004?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="Veterinarian with dog" class="w-full h-full object-cover">
+            </div>
+            <div class="container mx-auto px-4 sm:px-6 relative z-10">
                 <div class="text-center mb-24">
                     <h2 class="text-4xl sm:text-5xl font-black mb-6 tracking-tight text-[#3b3b58] serif">Meet the Experts</h2>
                 </div>
@@ -437,21 +502,24 @@
         </section>
 
         <!-- Pet Health Score Quiz (Curiosity Gap Trigger) -->
-        <section class="py-24 bg-[var(--canvas)] border-y border-[var(--ink15)]">
-            <div class="container mx-auto px-6 max-w-4xl text-center">
+        <section class="py-24 bg-[var(--canvas)] border-y border-[var(--ink15)] relative overflow-hidden">
+            <div class="absolute inset-0 z-0 opacity-[0.05] pointer-events-none">
+                <img src="https://images.unsplash.com/photo-1548191265-cc70d3d45ba1?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="Cat looking curious" class="w-full h-full object-cover">
+            </div>
+            <div class="container mx-auto px-6 max-w-4xl text-center relative z-10">
                 <div class="kicker center">Interactive Assessment</div>
                 <h2 class="text-4xl font-black mb-6 serif">What is your pet's <em class="text-[var(--t5)] italic font-light">Hidden Health Score?</em></h2>
                 <p class="text-xl text-[var(--ink70)] font-light mb-12">Take our 60-second vet-designed assessment to uncover potential blind spots in your pet's daily routine.</p>
                 
                 <div id="quiz-container" class="bg-white p-6 sm:p-10 rounded-[2.5rem] shadow-2xl border border-[var(--ink15)] text-left relative overflow-hidden">
                     <div class="absolute top-0 left-0 w-full h-2 bg-[var(--ink15)]">
-                        <div id="quiz-progress" class="h-full bg-[var(--t5)] w-1/3 transition-all duration-500"></div>
+                        <div id="quiz-progress" class="h-full bg-[var(--t5)] w-[10%] transition-all duration-500"></div>
                     </div>
                     <h3 id="quiz-question" class="text-xl sm:text-2xl font-bold mb-8 serif mt-4">1. How often does your pet drink water compared to 6 months ago?</h3>
                     <div class="space-y-4" id="quiz-options">
-                        <button onclick="nextQuizStep()" class="w-full text-left p-4 sm:p-6 rounded-2xl border border-[var(--ink15)] hover:border-[var(--t5)] hover:bg-[var(--t1)] transition font-medium">About the same</button>
-                        <button onclick="nextQuizStep()" class="w-full text-left p-4 sm:p-6 rounded-2xl border border-[var(--ink15)] hover:border-[var(--t5)] hover:bg-[var(--t1)] transition font-medium">Noticeably more</button>
-                        <button onclick="nextQuizStep()" class="w-full text-left p-4 sm:p-6 rounded-2xl border border-[var(--ink15)] hover:border-[var(--t5)] hover:bg-[var(--t1)] transition font-medium">Noticeably less</button>
+                        <button onclick="nextQuizStep(0)" class="w-full text-left p-4 sm:p-6 rounded-2xl border border-[var(--ink15)] hover:border-[var(--t5)] hover:bg-[var(--t1)] transition font-medium">About the same</button>
+                        <button onclick="nextQuizStep(1)" class="w-full text-left p-4 sm:p-6 rounded-2xl border border-[var(--ink15)] hover:border-[var(--t5)] hover:bg-[var(--t1)] transition font-medium">Noticeably more</button>
+                        <button onclick="nextQuizStep(1)" class="w-full text-left p-4 sm:p-6 rounded-2xl border border-[var(--ink15)] hover:border-[var(--t5)] hover:bg-[var(--t1)] transition font-medium">Noticeably less</button>
                     </div>
                 </div>
             </div>
@@ -464,7 +532,7 @@
                 <div class="bg-gradient-to-br from-[var(--t9)] to-[var(--ink)] border border-white/10 rounded-[2.5rem] sm:rounded-[3.5rem] p-8 sm:p-12 lg:p-24 flex flex-col lg:flex-row items-center gap-12 sm:gap-16 shadow-2xl">
                     <div class="lg:w-1/2">
                         <div class="kicker light">Free Resource</div>
-                        <h2 class="text-3xl sm:text-4xl lg:text-6xl font-light text-white mb-6 sm:mb-8 leading-tight serif"><strong class="font-bold">The South Delhi Pet Parent's</strong><br><em class="text-[var(--g3)] italic">Daily Smog Survival Guide.</em></h2>
+                        <h2 class="text-3xl sm:text-4xl lg:text-6xl font-light text-white mb-6 sm:mb-8 leading-tight serif"><strong class="font-bold">The South Delhi Pawtner's</strong><br><em class="text-[var(--g3)] italic">Daily Smog Survival Guide.</em></h2>
                         <p class="text-lg sm:text-xl text-white/60 mb-8 sm:mb-12 font-light">Learn the 5 essential steps to protect your fur-baby's lungs during Delhi's high AQI months. 100% Science-backed.</p>
                         <div class="flex flex-col sm:flex-row gap-4">
                             <input type="email" id="magnet-email" placeholder="Your best email..." class="flex-grow px-6 sm:px-8 py-4 sm:py-5 rounded-full bg-white/10 border border-white/20 text-white font-light placeholder-white/40 focus:outline-none focus:border-[var(--t3)] transition">
@@ -476,7 +544,7 @@
                     <div class="lg:w-1/2">
                         <div class="relative">
                             <div class="absolute inset-0 bg-gradient-to-tr from-[var(--t5)] to-[var(--g3)] rounded-[2.5rem] transform rotate-3 opacity-20 blur-lg"></div>
-                            <img src="https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Guide" class="relative rounded-[2.5rem] shadow-2xl transform -rotate-3 border border-white/10">
+                            <img src="https://images.unsplash.com/photo-1606425271394-c30c3f115155?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Veterinary Guide" class="relative rounded-[2.5rem] shadow-2xl transform -rotate-3 border border-white/10">
                         </div>
                     </div>
                 </div>
@@ -634,17 +702,20 @@
 
         <!-- Testimonials Module -->
         <section id="testimonials" class="py-32 bg-[var(--t9)] text-white relative overflow-hidden">
-            <div class="absolute inset-0 bg-[radial-gradient(ellipse_55%_65%_at_10%_50%,rgba(53,175,160,0.1)_0%,transparent_60%),radial-gradient(ellipse_38%_48%_at_92%_80%,rgba(198,148,26,0.07)_0%,transparent_50%)]"></div>
+            <div class="absolute inset-0 z-0">
+                <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="Happy dog looking up" class="w-full h-full object-cover opacity-10 mix-blend-overlay">
+            </div>
+            <div class="absolute inset-0 bg-[radial-gradient(ellipse_55%_65%_at_10%_50%,rgba(53,175,160,0.1)_0%,transparent_60%),radial-gradient(ellipse_38%_48%_at_92%_80%,rgba(198,148,26,0.07)_0%,transparent_50%)] z-0"></div>
             <div class="container mx-auto px-6 relative z-10">
                 <div class="text-center mb-24">
                     <div class="kicker light center">Real Pawtner Stories</div>
                     <h2 class="text-5xl font-light mb-6 tracking-tight serif">Stories of <em class="text-[var(--g3)] italic">Real Relief</em></h2>
                     <p class="text-xl text-white/60 max-w-3xl mx-auto font-light">Real experiences from the people who trust us with their most precious family members.</p>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <div class="bg-white/5 border border-white/10 p-10 rounded-[2.5rem] hover:bg-white/10 hover:-translate-y-2 transition-all duration-500">
                         <div class="text-[var(--g3)] text-2xl mb-6"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                        <p class="text-white/80 text-lg italic mb-8 font-light">"When my Pug, Bella, couldn't breathe during the severe November smog, the team at MaxPetz stabilized her immediately. Their oxygen therapy and calm demeanor literally saved her life."</p>
+                        <p class="text-white/80 text-lg italic mb-8 font-light">"When my Pug, Bella, couldn't breathe during the severe November smog, the <strong class="text-white font-medium">emergency vet</strong> team at MaxPetz stabilized her immediately. Their oxygen therapy and calm demeanor literally saved her life. Best <strong class="text-white font-medium">24/7 animal hospital</strong> in Delhi!"</p>
                         <div class="flex items-center gap-4">
                             <div class="w-12 h-12 rounded-full bg-gradient-to-br from-[var(--t5)] to-[var(--t3)] flex items-center justify-center text-white font-bold serif">A</div>
                             <div>
@@ -655,23 +726,56 @@
                     </div>
                     <div class="bg-white/5 border border-white/10 p-10 rounded-[2.5rem] hover:bg-white/10 hover:-translate-y-2 transition-all duration-500">
                         <div class="text-[var(--g3)] text-2xl mb-6"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                        <p class="text-white/80 text-lg italic mb-8 font-light">"The grooming service at MaxPetz is the best in Delhi. My cat, Luna, is usually very anxious, but they handled her with so much love and care."</p>
+                        <p class="text-white/80 text-lg italic mb-8 font-light">"My Golden Retriever was diagnosed with severe hip dysplasia. The <strong class="text-white font-medium">advanced pet surgery</strong> and orthopedic care here is unmatched. The <strong class="text-white font-medium">veterinary surgeons</strong> were brilliant, and his recovery was smooth."</p>
                         <div class="flex items-center gap-4">
-                            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-[#C4714A] to-[#E8A87C] flex items-center justify-center text-white font-bold serif">V</div>
+                            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-[#C4714A] to-[#E8A87C] flex items-center justify-center text-white font-bold serif">R</div>
                             <div>
-                                <div class="font-bold text-white text-sm">Vikram Malhotra</div>
-                                <div class="text-xs text-white/50">Pawtner of Luna (Persian)</div>
+                                <div class="font-bold text-white text-sm">Rahul Verma</div>
+                                <div class="text-xs text-white/50">Pawtner of Max (Golden Retriever)</div>
                             </div>
                         </div>
                     </div>
                     <div class="bg-white/5 border border-white/10 p-10 rounded-[2.5rem] hover:bg-white/10 hover:-translate-y-2 transition-all duration-500">
                         <div class="text-[var(--g3)] text-2xl mb-6"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                        <p class="text-white/80 text-lg italic mb-8 font-light">"MaxPetz at Home is a lifesaver for busy pawtners. Getting vaccinations done at home without the stress of travel is amazing. Highly recommend!"</p>
+                        <p class="text-white/80 text-lg italic mb-8 font-light">"We thought we were going to lose our puppy to Parvo. The <strong class="text-white font-medium">parvovirus treatment</strong> and intensive care unit at this <strong class="text-white font-medium">veterinary clinic</strong> brought him back. They are truly the <strong class="text-white font-medium">best vet near me</strong>."</p>
                         <div class="flex items-center gap-4">
-                            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-[#6B4E9E] to-[#9B7AC7] flex items-center justify-center text-white font-bold serif">P</div>
+                            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-[#6B4E9E] to-[#9B7AC7] flex items-center justify-center text-white font-bold serif">S</div>
+                            <div>
+                                <div class="font-bold text-white text-sm">Sneha Gupta</div>
+                                <div class="text-xs text-white/50">Pawtner of Bruno (Labrador)</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white/5 border border-white/10 p-10 rounded-[2.5rem] hover:bg-white/10 hover:-translate-y-2 transition-all duration-500">
+                        <div class="text-[var(--g3)] text-2xl mb-6"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="text-white/80 text-lg italic mb-8 font-light">"Our senior cat developed kidney issues. The <strong class="text-white font-medium">feline kidney disease treatment</strong> and compassionate <strong class="text-white font-medium">senior pet care</strong> provided by Dr. Singh extended her life comfortably. Highly recommend this <strong class="text-white font-medium">animal hospital</strong>."</p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-[#4A90E2] to-[#7BB4EB] flex items-center justify-center text-white font-bold serif">M</div>
+                            <div>
+                                <div class="font-bold text-white text-sm">Meera Reddy</div>
+                                <div class="text-xs text-white/50">Pawtner of Cleo (Siamese)</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white/5 border border-white/10 p-10 rounded-[2.5rem] hover:bg-white/10 hover:-translate-y-2 transition-all duration-500">
+                        <div class="text-[var(--g3)] text-2xl mb-6"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="text-white/80 text-lg italic mb-8 font-light">"MaxPetz at Home is a lifesaver for busy pawtners. Getting <strong class="text-white font-medium">dog vaccinations</strong> and <strong class="text-white font-medium">routine pet checkups</strong> done at home without the stress of travel is amazing. <strong class="text-white font-medium">Affordable pet care</strong> at its finest."</p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-[#E24A75] to-[#EB7B9A] flex items-center justify-center text-white font-bold serif">P</div>
                             <div>
                                 <div class="font-bold text-white text-sm">Priya Iyer</div>
                                 <div class="text-xs text-white/50">Pawtner of Simba (Beagle)</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white/5 border border-white/10 p-10 rounded-[2.5rem] hover:bg-white/10 hover:-translate-y-2 transition-all duration-500">
+                        <div class="text-[var(--g3)] text-2xl mb-6"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="text-white/80 text-lg italic mb-8 font-light">"I needed an <strong class="text-white font-medium">emergency vet clinic</strong> late at night when my dog swallowed a toy. The <strong class="text-white font-medium">digital x-ray</strong> and immediate <strong class="text-white font-medium">soft tissue surgery</strong> saved him. They are the top <strong class="text-white font-medium">veterinary experts</strong>."</p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-[#27AE60] to-[#58D68D] flex items-center justify-center text-white font-bold serif">K</div>
+                            <div>
+                                <div class="font-bold text-white text-sm">Karan Singh</div>
+                                <div class="text-xs text-white/50">Pawtner of Rocky (German Shepherd)</div>
                             </div>
                         </div>
                     </div>
@@ -683,8 +787,11 @@
     <!-- BOOKING PAGE VIEW -->
     <div id="booking-page" class="page-view pt-32">
         <!-- Loss Aversion / Reality Check -->
-        <section class="py-16 sm:py-24 bg-red-50 border-y border-red-100">
-            <div class="container mx-auto px-4 sm:px-6 text-center max-w-4xl">
+        <section class="py-16 sm:py-24 bg-red-50 border-y border-red-100 relative overflow-hidden">
+            <div class="absolute inset-0 z-0 opacity-[0.05] pointer-events-none">
+                <img src="https://images.unsplash.com/photo-1587764379873-97814611fbcb?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="Sad dog" class="w-full h-full object-cover grayscale">
+            </div>
+            <div class="container mx-auto px-4 sm:px-6 text-center max-w-4xl relative z-10">
                 <i class="fas fa-heartbeat text-3xl sm:text-4xl text-red-400 mb-6 animate-pulse"></i>
                 <h2 class="text-3xl sm:text-4xl font-black mb-6 serif text-red-900">The Cost of Waiting is Too High.</h2>
                 <p class="text-lg sm:text-xl text-red-800/70 font-light mb-8">70% of emergency vet visits could be prevented with early detection. Don't let a minor symptom turn into a midnight crisis. Give your pet the proactive care they deserve.</p>
@@ -729,8 +836,11 @@
         </section>
 
         <!-- Book Appointment Module -->
-        <section id="book-appointment" class="py-24 sm:py-32 bg-[var(--canvas)]">
-            <div class="container mx-auto px-4 sm:px-6">
+        <section id="book-appointment" class="py-24 sm:py-32 bg-[var(--canvas)] relative overflow-hidden">
+            <div class="absolute inset-0 z-0 opacity-[0.03] pointer-events-none">
+                <img src="https://images.unsplash.com/photo-1583337260546-28b6bf66d004?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="Veterinarian with dog" class="w-full h-full object-cover">
+            </div>
+            <div class="container mx-auto px-4 sm:px-6 relative z-10">
                 <div class="bg-gradient-to-br from-[var(--t9)] to-[#020d0c] rounded-[2.5rem] sm:rounded-[3.5rem] shadow-2xl overflow-hidden flex flex-col lg:flex-row relative">
                     <div class="absolute inset-0 bg-[radial-gradient(ellipse_56%_65%_at_18%_50%,rgba(53,175,160,0.09)_0%,transparent_60%),radial-gradient(ellipse_36%_46%_at_82%_18%,rgba(198,148,26,0.07)_0%,transparent_52%)]"></div>
                     <div class="lg:w-1/2 p-8 sm:p-12 lg:p-20 text-white relative z-10 border-b lg:border-b-0 lg:border-r border-white/10">
@@ -794,89 +904,99 @@
         </section>
     </div>
 
-    <!-- BLOG PAGE VIEW -->
-    <div id="blog-page" class="page-view pt-40 pb-24 bg-[var(--paper)]">
+    <!-- BLOG / HEALTH GUIDES PAGE VIEW -->
+    <div id="blog-page" class="page-view pt-32 pb-24 bg-[var(--paper)]">
         <div class="container mx-auto px-6">
-            <div class="mb-20 text-center">
-                <div class="kicker center">Insights & Articles</div>
-                <h1 class="text-5xl sm:text-6xl font-black mb-6 serif">The Pawtner's <em class="text-[var(--t5)] italic font-light">Journal</em></h1>
-                <p class="text-lg sm:text-xl text-[var(--ink70)] font-light max-w-2xl mx-auto">Expert insights, wellness tips, and heartwarming stories from the MaxPetz family.</p>
-            </div>
-            
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
-                <!-- Blog Post 1 -->
-                <article class="group cursor-pointer bg-[var(--canvas)] rounded-[2.5rem] border border-[var(--ink15)] overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
-                    <div class="overflow-hidden h-64 relative">
-                        <div class="absolute inset-0 bg-[var(--t9)] opacity-0 group-hover:opacity-20 transition-opacity z-10"></div>
-                        <img src="https://images.unsplash.com/photo-1548191265-cc70d3d45ba1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                    </div>
-                    <div class="p-8">
-                        <div class="flex gap-3 mb-4">
-                            <span class="px-3 py-1 bg-[var(--t1)] text-[var(--t7)] text-[10px] font-bold rounded-full uppercase tracking-widest">Wellness</span>
-                            <span class="text-[var(--ink50)] text-[10px] font-bold uppercase tracking-widest">5 Min Read</span>
-                        </div>
-                        <h3 class="text-2xl font-bold mb-4 group-hover:text-[var(--t5)] transition serif">5 Silent Signs Your Cat Might Be in Pain</h3>
-                        <p class="text-[var(--ink70)] font-light leading-relaxed mb-6">Cats are masters of disguise. Learn how to spot subtle behavioral shifts that indicate health issues before they become emergencies...</p>
-                        <a href="#" class="text-[var(--t5)] font-bold flex items-center gap-2 text-sm uppercase tracking-widest">Read Article <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
-
-                <!-- Blog Post 2 -->
-                <article class="group cursor-pointer bg-[var(--canvas)] rounded-[2.5rem] border border-[var(--ink15)] overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
-                    <div class="overflow-hidden h-64 relative">
-                        <div class="absolute inset-0 bg-[var(--t9)] opacity-0 group-hover:opacity-20 transition-opacity z-10"></div>
-                        <img src="https://images.unsplash.com/photo-1541364983171-a8ba01d95cfc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                    </div>
-                    <div class="p-8">
-                        <div class="flex gap-3 mb-4">
-                            <span class="px-3 py-1 bg-[#FDF3E7] text-[#C4714A] text-[10px] font-bold rounded-full uppercase tracking-widest">Nutrition</span>
-                            <span class="text-[var(--ink50)] text-[10px] font-bold uppercase tracking-widest">8 Min Read</span>
-                        </div>
-                        <h3 class="text-2xl font-bold mb-4 group-hover:text-[var(--t5)] transition serif">The Pawtner's Guide to Raw Food Diets</h3>
-                        <p class="text-[var(--ink70)] font-light leading-relaxed mb-6">Is raw feeding right for your dog? Our senior nutritionists break down the pros, cons, and essential safety protocols for a balanced diet...</p>
-                        <a href="#" class="text-[var(--t5)] font-bold flex items-center gap-2 text-sm uppercase tracking-widest">Read Article <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
-
-                <!-- Blog Post 3 -->
-                <article class="group cursor-pointer bg-[var(--canvas)] rounded-[2.5rem] border border-[var(--ink15)] overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
-                    <div class="overflow-hidden h-64 relative">
-                        <div class="absolute inset-0 bg-[var(--t9)] opacity-0 group-hover:opacity-20 transition-opacity z-10"></div>
-                        <img src="https://images.unsplash.com/photo-1591769225440-811ad7d62ca2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                    </div>
-                    <div class="p-8">
-                        <div class="flex gap-3 mb-4">
-                            <span class="px-3 py-1 bg-[#F4F1FA] text-[#6B4E9E] text-[10px] font-bold rounded-full uppercase tracking-widest">Emergency</span>
-                            <span class="text-[var(--ink50)] text-[10px] font-bold uppercase tracking-widest">4 Min Read</span>
-                        </div>
-                        <h3 class="text-2xl font-bold mb-4 group-hover:text-[var(--t5)] transition serif">First Aid Every Pawtner Should Know</h3>
-                        <p class="text-[var(--ink70)] font-light leading-relaxed mb-6">From choking hazards to heatstroke, these simple steps can save your pet's life while you're on the way to our 24/7 emergency center...</p>
-                        <a href="#" class="text-[var(--t5)] font-bold flex items-center gap-2 text-sm uppercase tracking-widest">Read Article <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
+            <div class="text-center mb-16">
+                <div class="kicker center">Delhi Pet Health Guide</div>
+                <h1 class="text-5xl sm:text-6xl font-black mb-6 serif">Symptom & <em class="text-[var(--t5)] italic font-light">Care Hub</em></h1>
+                <p class="text-lg sm:text-xl text-[var(--ink70)] font-light max-w-3xl mx-auto">Expert veterinary insights for Delhi, Gurgaon, and Noida pawtners. Learn the signs, home care, and when to call the vet.</p>
             </div>
 
-            <!-- SEO Q&A Section -->
-            <div class="mt-32 max-w-4xl mx-auto">
-                <div class="text-center mb-16">
-                    <div class="kicker center">Expert Answers</div>
-                    <h2 class="text-4xl font-black mb-6 serif">Veterinary Care Q&A</h2>
-                    <p class="text-[var(--ink70)] font-light">Answers to the most searched questions by pet parents in India.</p>
-                </div>
-                <div class="space-y-6">
-                    <div class="p-8 bg-white border border-[var(--ink15)] rounded-3xl shadow-sm">
-                        <h4 class="text-xl font-bold mb-3 serif">What makes MaxPetz the best veterinary hospital in Delhi?</h4>
-                        <p class="text-[var(--ink70)] font-light leading-relaxed">MaxPetz is widely recognized as the best veterinary hospital in Delhi due to our combination of internationally trained specialists, 24/7 emergency ICU facilities, and advanced diagnostic equipment (including digital X-ray and ultrasound). We are Fear Free certified, ensuring a low-stress environment for your pets.</p>
+            <div class="max-w-4xl mx-auto space-y-16">
+                <!-- Post 1: Dog Vomiting -->
+                <article class="bg-white rounded-[2.5rem] p-8 sm:p-12 shadow-xl border border-[var(--ink15)]">
+                    <div class="flex gap-3 mb-6">
+                        <span class="px-3 py-1 bg-red-100 text-red-700 text-xs font-bold rounded-full uppercase tracking-widest">Emergency Guide</span>
+                        <span class="px-3 py-1 bg-[var(--t1)] text-[var(--t7)] text-xs font-bold rounded-full uppercase tracking-widest">Delhi NCR</span>
                     </div>
-                    <div class="p-8 bg-white border border-[var(--ink15)] rounded-3xl shadow-sm">
-                        <h4 class="text-xl font-bold mb-3 serif">How often should I vaccinate my dog in India?</h4>
-                        <p class="text-[var(--ink70)] font-light leading-relaxed">The dog vaccination schedule in India typically starts at 6-8 weeks of age with the core DHPPi vaccine, followed by boosters every 3-4 weeks until 16 weeks. The Anti-Rabies vaccine is given at 12 weeks. Annual boosters are required thereafter. Our specialists can create a customized vaccination plan based on your dog's lifestyle and local risks.</p>
+                    <h2 class="text-3xl sm:text-4xl font-bold mb-6 serif">Dog Vomiting in Delhi: Causes, Home Care & Vet Guidance</h2>
+                    <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Dog being examined by vet" class="w-full h-64 sm:h-80 object-cover rounded-2xl mb-8">
+                    <div class="prose max-w-none text-[var(--ink70)] font-light space-y-4">
+                        <p><strong>Overview:</strong> Vomiting is different from regurgitation. Common preceding signs include nausea, drooling, and retching. If your dog is vomiting in East Delhi or anywhere in the NCR, knowing the difference can save their life.</p>
+                        
+                        <h3 class="text-xl font-bold text-[var(--ink)] mt-8 mb-4 serif">Symptoms & Red Flags</h3>
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li><strong>Bloody vomit</strong> or repeated episodes.</li>
+                            <li><strong>Dehydration signs:</strong> dry gums, sunken eyes.</li>
+                            <li><strong>Weakness/Lethargy:</strong> If vomiting lasts >24 hrs or your pet seems weak, consult a vet immediately.</li>
+                        </ul>
+
+                        <h3 class="text-xl font-bold text-[var(--ink)] mt-8 mb-4 serif">Common Causes</h3>
+                        <p>Gastroenteritis (parvovirus, food poisoning, dietary indiscretion), parasites, heatstroke, kidney or liver disease. Vomiting can be caused by many disorders including digestive disease, kidney failure, pancreatitis, or poisons.</p>
+
+                        <h3 class="text-xl font-bold text-[var(--ink)] mt-8 mb-4 serif">Home First Aid (kutta ulti kya karein)</h3>
+                        <p>Stop food for 12–24h (offer ice chips for hydration). Use unflavored Pedialyte or boiled rice water to replenish electrolytes. Introduce small bland meals (boiled rice/chicken) when vomiting stops.</p>
+
+                        <h3 class="text-xl font-bold text-[var(--ink)] mt-8 mb-4 serif">When to Visit the Vet</h3>
+                        <p>Continual vomiting >1–2 days, blood, signs of pain, or if it's a puppy/senior dog. If vomiting is accompanied by blood, pain, or depression, it requires a prompt exam.</p>
+
+                        <div class="bg-[var(--canvas)] p-6 rounded-2xl mt-8 border border-[var(--t3)]">
+                            <h4 class="font-bold text-[var(--t9)] mb-2">Need Urgent Help in Delhi/Haryana?</h4>
+                            <p class="mb-4 text-sm">Don't wait if your pet is showing severe signs. Our mobile vets are ready.</p>
+                            <button onclick="showPage('booking')" class="btn-gold px-6 py-3 rounded-full text-sm font-bold shadow-lg">Book Your Delhi Vet Now</button>
+                            <a href="https://wa.me/918800000000" target="_blank" class="ml-4 text-[var(--t5)] font-bold text-sm underline"><i class="fab fa-whatsapp"></i> WhatsApp Us 24/7</a>
+                        </div>
                     </div>
-                    <div class="p-8 bg-white border border-[var(--ink15)] rounded-3xl shadow-sm">
-                        <h4 class="text-xl font-bold mb-3 serif">Do you have an emergency pet hospital near me?</h4>
-                        <p class="text-[var(--ink70)] font-light leading-relaxed">Yes, if you are searching for an "emergency pet hospital near me" in Delhi, Gurgaon, or Mumbai, MaxPetz operates 24/7 emergency centers. Our critical care units are always staffed with senior veterinarians ready to handle trauma, poisoning, and acute illnesses at any hour.</p>
+                </article>
+
+                <!-- Post 2: Diarrhea -->
+                <article class="bg-white rounded-[2.5rem] p-8 sm:p-12 shadow-xl border border-[var(--ink15)]">
+                    <div class="flex gap-3 mb-6">
+                        <span class="px-3 py-1 bg-orange-100 text-orange-700 text-xs font-bold rounded-full uppercase tracking-widest">High Priority</span>
+                        <span class="px-3 py-1 bg-[var(--t1)] text-[var(--t7)] text-xs font-bold rounded-full uppercase tracking-widest">Noida & Gurgaon</span>
                     </div>
-                </div>
+                    <h2 class="text-3xl sm:text-4xl font-bold mb-6 serif">Diarrhea in Dogs & Cats – Home Care & When to See a Vet</h2>
+                    <img src="https://images.unsplash.com/photo-1596492784531-6e6eb5ea9993?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Veterinarian with dog" class="w-full h-64 sm:h-80 object-cover rounded-2xl mb-8">
+                    <div class="prose max-w-none text-[var(--ink70)] font-light space-y-4">
+                        <p>Diarrhea (loose stool) is common. Look for straining, mucus, or blood in feces. Cats and dogs with diarrhea may also vomit or be lethargic. Colitis causes mucus/blood and small volume frequent stools.</p>
+                        
+                        <h3 class="text-xl font-bold text-[var(--ink)] mt-8 mb-4 serif">Causes & Local Risks</h3>
+                        <p>Parasites (Giardia, worms), dietary changes, infections, toxins, pancreatitis, colitis. <strong>Local Tip:</strong> Avoid giving pets contaminated municipal water – use filtered water. In Delhi’s monsoon, be wary of leptospirosis and ensure vaccinations are up to date.</p>
+
+                        <h3 class="text-xl font-bold text-[var(--ink)] mt-8 mb-4 serif">Home Care for Loose Motions</h3>
+                        <p>Fast your pet for 12–24h, give water/safe fluids (PED, rice water). Feed a bland diet (boiled rice & chicken). You can use probiotics or canned pumpkin (fiber). Monitor hydration closely.</p>
+
+                        <h3 class="text-xl font-bold text-[var(--ink)] mt-8 mb-4 serif">Veterinary Care & Treatment</h3>
+                        <p>If it persists >24h, there's fever/depression, the pet won’t drink, or the pet is young/old, see a vet. Diagnostics may include fecal float, snap tests, bloodwork, and imaging. Treatment involves rehydration (Oral VetLyte or IV fluids), antibiotics, or deworming as needed.</p>
+
+                        <div class="bg-[var(--canvas)] p-6 rounded-2xl mt-8 border border-[var(--t3)]">
+                            <h4 class="font-bold text-[var(--t9)] mb-2">Schedule a Same-Day Consult</h4>
+                            <p class="mb-4 text-sm">If diarrhea worsens, our specialists in Noida and Gurgaon can help immediately.</p>
+                            <button onclick="showPage('booking')" class="btn-gold px-6 py-3 rounded-full text-sm font-bold shadow-lg">Book an Appointment</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post 3: Lethargy -->
+                <article class="bg-white rounded-[2.5rem] p-8 sm:p-12 shadow-xl border border-[var(--ink15)]">
+                    <div class="flex gap-3 mb-6">
+                        <span class="px-3 py-1 bg-blue-100 text-blue-700 text-xs font-bold rounded-full uppercase tracking-widest">General Health</span>
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-bold mb-6 serif">Lethargy & Weakness in Dogs & Cats – Don’t Ignore These Signs</h2>
+                    <img src="https://images.unsplash.com/photo-1541364983171-a8ba01d95cfc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Sleepy dog" class="w-full h-64 sm:h-80 object-cover rounded-2xl mb-8">
+                    <div class="prose max-w-none text-[var(--ink70)] font-light space-y-4">
+                        <p>Lethargy means the pet is unusually tired or inactive. Often owners notice the pet sleeping more or showing a reluctance to play. While it might seem minor, it's a broad indicator of underlying issues.</p>
+                        
+                        <h3 class="text-xl font-bold text-[var(--ink)] mt-8 mb-4 serif">Potential Causes</h3>
+                        <p>Systemic illness (infections, organ failure, cancer), pain (arthritis), anemia, or even emotional distress. In older pets, it's often dismissed as "just aging," but it warrants investigation.</p>
+
+                        <div class="bg-[var(--canvas)] p-6 rounded-2xl mt-8 border border-[var(--t3)]">
+                            <h4 class="font-bold text-[var(--t9)] mb-2">Concerned about your pet's energy levels?</h4>
+                            <button onclick="showPage('booking')" class="btn-gold px-6 py-3 rounded-full text-sm font-bold shadow-lg">Schedule a Wellness Check</button>
+                        </div>
+                    </div>
+                </article>
             </div>
         </div>
     </div>
@@ -953,30 +1073,125 @@
     <script>
         // Quiz Logic
         let quizStep = 1;
-        function nextQuizStep() {
+        let quizScore = 0;
+        
+        const quizQuestions = [
+            {
+                q: "1. How often does your pet drink water compared to 6 months ago?",
+                opts: [
+                    { text: "About the same", score: 0 },
+                    { text: "Noticeably more", score: 1 },
+                    { text: "Noticeably less", score: 1 }
+                ]
+            },
+            {
+                q: "2. Has your pet's energy level or playfulness decreased recently?",
+                opts: [
+                    { text: "No, still very active", score: 0 },
+                    { text: "A little bit", score: 1 },
+                    { text: "Yes, noticeably lethargic", score: 2 }
+                ]
+            },
+            {
+                q: "3. Have you noticed any changes in your pet's appetite?",
+                opts: [
+                    { text: "Normal appetite", score: 0 },
+                    { text: "Eating slightly less/more", score: 1 },
+                    { text: "Refusing food entirely", score: 3 }
+                ]
+            },
+            {
+                q: "4. Is your pet experiencing any vomiting or diarrhea?",
+                opts: [
+                    { text: "No, digestion is normal", score: 0 },
+                    { text: "Occasionally (once a month)", score: 1 },
+                    { text: "Frequently (multiple times a week)", score: 3 }
+                ]
+            },
+            {
+                q: "5. Does your pet seem to have difficulty standing up or climbing stairs?",
+                opts: [
+                    { text: "No, moves perfectly fine", score: 0 },
+                    { text: "Sometimes stiff in the morning", score: 1 },
+                    { text: "Yes, struggles significantly", score: 2 }
+                ]
+            },
+            {
+                q: "6. Have you noticed any unusual lumps, bumps, or swelling?",
+                opts: [
+                    { text: "No lumps found", score: 0 },
+                    { text: "Small, unchanging bumps", score: 1 },
+                    { text: "Yes, new or growing lumps", score: 3 }
+                ]
+            },
+            {
+                q: "7. Is your pet coughing, sneezing, or having difficulty breathing?",
+                opts: [
+                    { text: "Breathing normally", score: 0 },
+                    { text: "Occasional sneeze/cough", score: 1 },
+                    { text: "Frequent coughing or struggling", score: 3 }
+                ]
+            },
+            {
+                q: "8. Has your pet's weight changed significantly in the last few months?",
+                opts: [
+                    { text: "Weight is stable", score: 0 },
+                    { text: "Slight change", score: 1 },
+                    { text: "Noticeable weight loss/gain", score: 2 }
+                ]
+            },
+            {
+                q: "9. Are your pet's eyes cloudy, red, or producing unusual discharge?",
+                opts: [
+                    { text: "Clear and bright", score: 0 },
+                    { text: "Slightly red or watery", score: 1 },
+                    { text: "Cloudy or heavy discharge", score: 2 }
+                ]
+            },
+            {
+                q: "10. Does your pet seem to be in pain when touched in certain areas?",
+                opts: [
+                    { text: "No pain at all", score: 0 },
+                    { text: "Mild discomfort", score: 1 },
+                    { text: "Yes, cries or pulls away", score: 3 }
+                ]
+            }
+        ];
+
+        function nextQuizStep(score) {
+            if (score !== undefined) {
+                quizScore += score;
+            }
             const q = document.getElementById('quiz-question');
             const opts = document.getElementById('quiz-options');
             const prog = document.getElementById('quiz-progress');
             
-            if (quizStep === 1) {
-                prog.style.width = '66%';
-                q.innerText = "2. Has your pet's energy level or playfulness decreased recently?";
-                opts.innerHTML = `
-                    <button onclick="nextQuizStep()" class="w-full text-left p-6 rounded-2xl border border-[var(--ink15)] hover:border-[var(--t5)] hover:bg-[var(--t1)] transition font-medium">No, still very active</button>
-                    <button onclick="nextQuizStep()" class="w-full text-left p-6 rounded-2xl border border-[var(--ink15)] hover:border-[var(--t5)] hover:bg-[var(--t1)] transition font-medium">A little bit</button>
-                    <button onclick="nextQuizStep()" class="w-full text-left p-6 rounded-2xl border border-[var(--ink15)] hover:border-[var(--t5)] hover:bg-[var(--t1)] transition font-medium">Yes, noticeably lethargic</button>
-                `;
+            if (quizStep < 10) {
+                const nextQ = quizQuestions[quizStep];
+                prog.style.width = `${((quizStep + 1) / 10) * 100}%`;
+                q.innerText = nextQ.q;
+                opts.innerHTML = nextQ.opts.map(opt => 
+                    `<button onclick="nextQuizStep(${opt.score})" class="w-full text-left p-4 sm:p-6 rounded-2xl border border-[var(--ink15)] hover:border-[var(--t5)] hover:bg-[var(--t1)] transition font-medium">${opt.text}</button>`
+                ).join('');
                 quizStep++;
-            } else if (quizStep === 2) {
+            } else {
                 prog.style.width = '100%';
                 q.innerHTML = "<span class='text-[var(--t5)]'>Analyzing Results...</span>";
                 opts.innerHTML = "";
                 setTimeout(() => {
-                    q.innerHTML = "Based on your answers, your pet might benefit from a <strong class='text-[var(--t5)]'>Preventative Wellness Check</strong>.";
-                    opts.innerHTML = `
-                        <p class="text-[var(--ink70)] mb-6">Subtle changes in water intake or energy can be early indicators of underlying issues. Early detection saves lives and reduces long-term costs.</p>
-                        <button onclick="showPage('booking')" class="w-full bg-[var(--t5)] text-white p-6 rounded-2xl font-bold hover:bg-[var(--t7)] transition shadow-lg">Schedule a Checkup Now</button>
-                    `;
+                    if (quizScore >= 3) {
+                        q.innerHTML = "Based on your answers, your pet <strong class='text-[var(--t5)]'>requires a veterinary consultation</strong>.";
+                        opts.innerHTML = `
+                            <p class="text-[var(--ink70)] mb-6">The symptoms you've selected indicate potential underlying health issues that need professional medical attention. Early diagnosis is crucial.</p>
+                            <button onclick="showPage('booking')" class="w-full bg-[var(--t5)] text-white p-6 rounded-2xl font-bold hover:bg-[var(--t7)] transition shadow-lg">Schedule a Consultation Now</button>
+                        `;
+                    } else {
+                        q.innerHTML = "Based on your answers, your pet <strong class='text-[var(--g3)]'>does not require an urgent visit</strong> at this time.";
+                        opts.innerHTML = `
+                            <p class="text-[var(--ink70)] mb-6">Your pet seems to be in good general health! However, we always recommend an annual wellness checkup to maintain their well-being.</p>
+                            <button onclick="showPage('booking')" class="w-full border-2 border-[var(--t5)] text-[var(--t5)] p-6 rounded-2xl font-bold hover:bg-[var(--t1)] transition shadow-sm">Book Annual Wellness Check</button>
+                        `;
+                    }
                 }, 1500);
             }
         }
