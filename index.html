@@ -135,6 +135,23 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,700&family=Outfit:wght@300;400;500;600;700&display=swap');
         
+        @keyframes scroll-left {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .review-scroll-container {
+            display: flex;
+            width: max-content;
+            animation: scroll-left 40s linear infinite;
+        }
+        .review-scroll-container:hover {
+            animation-play-state: paused;
+        }
+        .mask-image-fade {
+            mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+        }
+
         :root {
             --ink: #0C1110;
             --ink70: rgba(12,17,16,.7);
@@ -346,22 +363,57 @@
             </div>
             
             <!-- Hero Reviews Strip -->
-            <div class="container mx-auto px-6 relative z-10 mt-16 pt-8 border-t border-white/10">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="bg-white/5 p-5 rounded-2xl border border-white/10 backdrop-blur-sm">
-                        <div class="flex text-[var(--g3)] text-sm mb-2"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                        <p class="text-white/80 text-sm italic mb-3">"The <strong class="text-white">best 24/7 emergency vet near me</strong>. They saved my dog from Parvovirus when no other clinic was open."</p>
-                        <div class="text-xs text-white/50 font-bold uppercase tracking-widest">- Priya, Pawtner of Leo</div>
+            <div class="w-full relative z-10 mt-16 pt-8 border-t border-white/10 overflow-hidden mask-image-fade">
+                <div class="review-scroll-container gap-6 px-6">
+                    <!-- Review 1 -->
+                    <div class="bg-white/5 p-6 rounded-2xl border border-white/10 backdrop-blur-sm w-[350px] sm:w-[450px] flex-shrink-0 whitespace-normal">
+                        <div class="flex text-[var(--g3)] text-sm mb-3"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="text-white/80 text-sm sm:text-base italic mb-4 leading-relaxed">"I was terrified when my Golden Retriever started vomiting blood at 2 AM. MaxPetz was the only <strong class="text-white">24/7 emergency animal hospital</strong> that picked up. The ICU team was waiting at the door. They diagnosed him with Parvovirus and started treatment immediately. He's alive today because of their rapid response. Truly the <strong class="text-white">best emergency vet in Delhi</strong>!"</p>
+                        <div class="text-xs text-white/50 font-bold uppercase tracking-widest">- Priya Sharma, Pawtner of Leo</div>
                     </div>
-                    <div class="bg-white/5 p-5 rounded-2xl border border-white/10 backdrop-blur-sm">
-                        <div class="flex text-[var(--g3)] text-sm mb-2"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                        <p class="text-white/80 text-sm italic mb-3">"Incredible <strong class="text-white">at-home vet consultation</strong>. Getting dog vaccinations without the stress of travel is a game-changer."</p>
-                        <div class="text-xs text-white/50 font-bold uppercase tracking-widest">- Rohan, Pawtner of Max</div>
+                    <!-- Review 2 -->
+                    <div class="bg-white/5 p-6 rounded-2xl border border-white/10 backdrop-blur-sm w-[350px] sm:w-[450px] flex-shrink-0 whitespace-normal">
+                        <div class="flex text-[var(--g3)] text-sm mb-3"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="text-white/80 text-sm sm:text-base italic mb-4 leading-relaxed">"My senior cat hates the carrier. Booking an <strong class="text-white">at-home vet consultation</strong> was a game-changer. The vet was incredibly gentle, did her blood work on the spot, and even handled her <strong class="text-white">cat vaccinations</strong> without a single hiss. It's the most <strong class="text-white">fear-free pet care</strong> experience we've ever had."</p>
+                        <div class="text-xs text-white/50 font-bold uppercase tracking-widest">- Rohan Verma, Pawtner of Luna</div>
                     </div>
-                    <div class="bg-white/5 p-5 rounded-2xl border border-white/10 backdrop-blur-sm">
-                        <div class="flex text-[var(--g3)] text-sm mb-2"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                        <p class="text-white/80 text-sm italic mb-3">"Top-tier <strong class="text-white">pet surgery and diagnostics</strong>. The orthopedic surgeons here are truly world-class experts."</p>
-                        <div class="text-xs text-white/50 font-bold uppercase tracking-widest">- Amit, Pawtner of Bella</div>
+                    <!-- Review 3 -->
+                    <div class="bg-white/5 p-6 rounded-2xl border border-white/10 backdrop-blur-sm w-[350px] sm:w-[450px] flex-shrink-0 whitespace-normal">
+                        <div class="flex text-[var(--g3)] text-sm mb-3"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="text-white/80 text-sm sm:text-base italic mb-4 leading-relaxed">"When Max tore his ACL, we needed an <strong class="text-white">orthopedic veterinary surgeon</strong> we could trust. The <strong class="text-white">advanced pet surgery and diagnostics</strong> here are world-class. They walked us through the digital x-rays and the entire recovery plan. Six months later, he's running like a puppy again."</p>
+                        <div class="text-xs text-white/50 font-bold uppercase tracking-widest">- Amit Patel, Pawtner of Max</div>
+                    </div>
+                    <!-- Review 4 -->
+                    <div class="bg-white/5 p-6 rounded-2xl border border-white/10 backdrop-blur-sm w-[350px] sm:w-[450px] flex-shrink-0 whitespace-normal">
+                        <div class="flex text-[var(--g3)] text-sm mb-3"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="text-white/80 text-sm sm:text-base italic mb-4 leading-relaxed">"Finding an <strong class="text-white">affordable pet clinic</strong> that doesn't compromise on quality is hard. MaxPetz handled my indie dog's <strong class="text-white">tick fever treatment</strong> with such professionalism. The <strong class="text-white">in-house blood tests</strong> gave us results in minutes, not days. Highly recommend to all pawtners!"</p>
+                        <div class="text-xs text-white/50 font-bold uppercase tracking-widest">- Sneha Gupta, Pawtner of Chutney</div>
+                    </div>
+                    
+                    <!-- DUPLICATES FOR INFINITE SCROLL -->
+                    <!-- Review 1 -->
+                    <div class="bg-white/5 p-6 rounded-2xl border border-white/10 backdrop-blur-sm w-[350px] sm:w-[450px] flex-shrink-0 whitespace-normal">
+                        <div class="flex text-[var(--g3)] text-sm mb-3"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="text-white/80 text-sm sm:text-base italic mb-4 leading-relaxed">"I was terrified when my Golden Retriever started vomiting blood at 2 AM. MaxPetz was the only <strong class="text-white">24/7 emergency animal hospital</strong> that picked up. The ICU team was waiting at the door. They diagnosed him with Parvovirus and started treatment immediately. He's alive today because of their rapid response. Truly the <strong class="text-white">best emergency vet in Delhi</strong>!"</p>
+                        <div class="text-xs text-white/50 font-bold uppercase tracking-widest">- Priya Sharma, Pawtner of Leo</div>
+                    </div>
+                    <!-- Review 2 -->
+                    <div class="bg-white/5 p-6 rounded-2xl border border-white/10 backdrop-blur-sm w-[350px] sm:w-[450px] flex-shrink-0 whitespace-normal">
+                        <div class="flex text-[var(--g3)] text-sm mb-3"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="text-white/80 text-sm sm:text-base italic mb-4 leading-relaxed">"My senior cat hates the carrier. Booking an <strong class="text-white">at-home vet consultation</strong> was a game-changer. The vet was incredibly gentle, did her blood work on the spot, and even handled her <strong class="text-white">cat vaccinations</strong> without a single hiss. It's the most <strong class="text-white">fear-free pet care</strong> experience we've ever had."</p>
+                        <div class="text-xs text-white/50 font-bold uppercase tracking-widest">- Rohan Verma, Pawtner of Luna</div>
+                    </div>
+                    <!-- Review 3 -->
+                    <div class="bg-white/5 p-6 rounded-2xl border border-white/10 backdrop-blur-sm w-[350px] sm:w-[450px] flex-shrink-0 whitespace-normal">
+                        <div class="flex text-[var(--g3)] text-sm mb-3"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="text-white/80 text-sm sm:text-base italic mb-4 leading-relaxed">"When Max tore his ACL, we needed an <strong class="text-white">orthopedic veterinary surgeon</strong> we could trust. The <strong class="text-white">advanced pet surgery and diagnostics</strong> here are world-class. They walked us through the digital x-rays and the entire recovery plan. Six months later, he's running like a puppy again."</p>
+                        <div class="text-xs text-white/50 font-bold uppercase tracking-widest">- Amit Patel, Pawtner of Max</div>
+                    </div>
+                    <!-- Review 4 -->
+                    <div class="bg-white/5 p-6 rounded-2xl border border-white/10 backdrop-blur-sm w-[350px] sm:w-[450px] flex-shrink-0 whitespace-normal">
+                        <div class="flex text-[var(--g3)] text-sm mb-3"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="text-white/80 text-sm sm:text-base italic mb-4 leading-relaxed">"Finding an <strong class="text-white">affordable pet clinic</strong> that doesn't compromise on quality is hard. MaxPetz handled my indie dog's <strong class="text-white">tick fever treatment</strong> with such professionalism. The <strong class="text-white">in-house blood tests</strong> gave us results in minutes, not days. Highly recommend to all pawtners!"</p>
+                        <div class="text-xs text-white/50 font-bold uppercase tracking-widest">- Sneha Gupta, Pawtner of Chutney</div>
                     </div>
                 </div>
             </div>
@@ -380,7 +432,7 @@
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     <div class="group p-6 rounded-[2rem] bg-white border-2 border-transparent hover:border-[var(--t5)] transition-all duration-500 shadow-sm hover:shadow-xl flex flex-col">
-                        <img src="https://images.unsplash.com/photo-1606425271394-c30c3f115155?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Veterinarian providing emergency care to a dog" class="w-full h-40 object-cover rounded-2xl mb-6">
+                        <img src="https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Sick dog receiving emergency veterinary care" class="w-full h-40 object-cover rounded-2xl mb-6">
                         <div class="w-12 h-12 bg-[var(--t5)]/10 rounded-xl flex items-center justify-center text-[var(--t5)] text-xl mb-4 shadow-sm group-hover:bg-[var(--t5)] group-hover:text-white transition-all">
                             <i class="fas fa-ambulance"></i>
                         </div>
@@ -388,7 +440,7 @@
                         <p class="text-[var(--ink70)] text-sm">Critical care and life-saving interventions when every second counts. Our ICU is always staffed.</p>
                     </div>
                     <div class="group p-6 rounded-[2rem] bg-white border-2 border-transparent hover:border-[var(--t5)] transition-all duration-500 shadow-sm hover:shadow-xl flex flex-col">
-                        <img src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Dog getting diagnostic check with stethoscope" class="w-full h-40 object-cover rounded-2xl mb-6">
+                        <img src="https://images.unsplash.com/photo-1606425271394-c30c3f115155?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Veterinarian examining a small dog for diagnostics" class="w-full h-40 object-cover rounded-2xl mb-6">
                         <div class="w-12 h-12 bg-[var(--t5)]/10 rounded-xl flex items-center justify-center text-[var(--t5)] text-xl mb-4 shadow-sm group-hover:bg-[var(--t5)] group-hover:text-white transition-all">
                             <i class="fas fa-microscope"></i>
                         </div>
@@ -396,7 +448,7 @@
                         <p class="text-[var(--ink70)] text-sm">Digital X-ray, Ultrasound, and in-house laboratory for rapid and accurate diagnosis.</p>
                     </div>
                     <div class="group p-6 rounded-[2rem] bg-white border-2 border-transparent hover:border-[var(--t5)] transition-all duration-500 shadow-sm hover:shadow-xl flex flex-col">
-                        <img src="https://images.unsplash.com/photo-1599443015574-be5fe8a05783?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Veterinary surgery and medical care" class="w-full h-40 object-cover rounded-2xl mb-6">
+                        <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Dog recovering from surgery wearing a medical cone" class="w-full h-40 object-cover rounded-2xl mb-6">
                         <div class="w-12 h-12 bg-[var(--t5)]/10 rounded-xl flex items-center justify-center text-[var(--t5)] text-xl mb-4 shadow-sm group-hover:bg-[var(--t5)] group-hover:text-white transition-all">
                             <i class="fas fa-stethoscope"></i>
                         </div>
@@ -404,7 +456,7 @@
                         <p class="text-[var(--ink70)] text-sm">Orthopedic, soft tissue, and neurosurgeries performed by internationally trained experts.</p>
                     </div>
                     <div class="group p-6 rounded-[2rem] bg-white border-2 border-transparent hover:border-[var(--t5)] transition-all duration-500 shadow-sm hover:shadow-xl flex flex-col">
-                        <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Happy dog at wellness spa" class="w-full h-40 object-cover rounded-2xl mb-6">
+                        <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Happy, clean dog after a wellness spa treatment" class="w-full h-40 object-cover rounded-2xl mb-6">
                         <div class="w-12 h-12 bg-[var(--t5)]/10 rounded-xl flex items-center justify-center text-[var(--t5)] text-xl mb-4 shadow-sm group-hover:bg-[var(--t5)] group-hover:text-white transition-all">
                             <i class="fas fa-spa"></i>
                         </div>
