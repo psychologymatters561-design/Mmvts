@@ -135,17 +135,12 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,700&family=Outfit:wght@300;400;500;600;700&display=swap');
         
-        @keyframes scroll-left {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
         }
-        .review-scroll-container {
-            display: flex;
-            width: max-content;
-            animation: scroll-left 40s linear infinite;
-        }
-        .review-scroll-container:hover {
-            animation-play-state: paused;
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
         }
         .mask-image-fade {
             mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
@@ -363,61 +358,143 @@
             </div>
             
             <!-- Hero Reviews Strip -->
-            <div class="w-full relative z-10 mt-16 pt-8 border-t border-white/10 overflow-hidden mask-image-fade">
-                <div class="review-scroll-container gap-6 px-6">
-                    <!-- Review 1 -->
-                    <div class="bg-white/5 p-6 rounded-2xl border border-white/10 backdrop-blur-sm w-[350px] sm:w-[450px] flex-shrink-0 whitespace-normal">
-                        <div class="flex text-[var(--g3)] text-sm mb-3"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                        <p class="text-white/80 text-sm sm:text-base italic mb-4 leading-relaxed">"I was terrified when my Golden Retriever started vomiting blood at 2 AM. MaxPetz was the only <strong class="text-white">24/7 emergency animal hospital</strong> that picked up. The ICU team was waiting at the door. They diagnosed him with Parvovirus and started treatment immediately. He's alive today because of their rapid response. Truly the <strong class="text-white">best emergency vet in Delhi</strong>!"</p>
-                        <div class="text-xs text-white/50 font-bold uppercase tracking-widest">- Priya Sharma, Pawtner of Leo</div>
-                    </div>
-                    <!-- Review 2 -->
-                    <div class="bg-white/5 p-6 rounded-2xl border border-white/10 backdrop-blur-sm w-[350px] sm:w-[450px] flex-shrink-0 whitespace-normal">
-                        <div class="flex text-[var(--g3)] text-sm mb-3"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                        <p class="text-white/80 text-sm sm:text-base italic mb-4 leading-relaxed">"My senior cat hates the carrier. Booking an <strong class="text-white">at-home vet consultation</strong> was a game-changer. The vet was incredibly gentle, did her blood work on the spot, and even handled her <strong class="text-white">cat vaccinations</strong> without a single hiss. It's the most <strong class="text-white">fear-free pet care</strong> experience we've ever had."</p>
-                        <div class="text-xs text-white/50 font-bold uppercase tracking-widest">- Rohan Verma, Pawtner of Luna</div>
-                    </div>
-                    <!-- Review 3 -->
-                    <div class="bg-white/5 p-6 rounded-2xl border border-white/10 backdrop-blur-sm w-[350px] sm:w-[450px] flex-shrink-0 whitespace-normal">
-                        <div class="flex text-[var(--g3)] text-sm mb-3"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                        <p class="text-white/80 text-sm sm:text-base italic mb-4 leading-relaxed">"When Max tore his ACL, we needed an <strong class="text-white">orthopedic veterinary surgeon</strong> we could trust. The <strong class="text-white">advanced pet surgery and diagnostics</strong> here are world-class. They walked us through the digital x-rays and the entire recovery plan. Six months later, he's running like a puppy again."</p>
-                        <div class="text-xs text-white/50 font-bold uppercase tracking-widest">- Amit Patel, Pawtner of Max</div>
-                    </div>
-                    <!-- Review 4 -->
-                    <div class="bg-white/5 p-6 rounded-2xl border border-white/10 backdrop-blur-sm w-[350px] sm:w-[450px] flex-shrink-0 whitespace-normal">
-                        <div class="flex text-[var(--g3)] text-sm mb-3"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                        <p class="text-white/80 text-sm sm:text-base italic mb-4 leading-relaxed">"Finding an <strong class="text-white">affordable pet clinic</strong> that doesn't compromise on quality is hard. MaxPetz handled my indie dog's <strong class="text-white">tick fever treatment</strong> with such professionalism. The <strong class="text-white">in-house blood tests</strong> gave us results in minutes, not days. Highly recommend to all pawtners!"</p>
-                        <div class="text-xs text-white/50 font-bold uppercase tracking-widest">- Sneha Gupta, Pawtner of Chutney</div>
-                    </div>
-                    
-                    <!-- DUPLICATES FOR INFINITE SCROLL -->
-                    <!-- Review 1 -->
-                    <div class="bg-white/5 p-6 rounded-2xl border border-white/10 backdrop-blur-sm w-[350px] sm:w-[450px] flex-shrink-0 whitespace-normal">
-                        <div class="flex text-[var(--g3)] text-sm mb-3"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                        <p class="text-white/80 text-sm sm:text-base italic mb-4 leading-relaxed">"I was terrified when my Golden Retriever started vomiting blood at 2 AM. MaxPetz was the only <strong class="text-white">24/7 emergency animal hospital</strong> that picked up. The ICU team was waiting at the door. They diagnosed him with Parvovirus and started treatment immediately. He's alive today because of their rapid response. Truly the <strong class="text-white">best emergency vet in Delhi</strong>!"</p>
-                        <div class="text-xs text-white/50 font-bold uppercase tracking-widest">- Priya Sharma, Pawtner of Leo</div>
-                    </div>
-                    <!-- Review 2 -->
-                    <div class="bg-white/5 p-6 rounded-2xl border border-white/10 backdrop-blur-sm w-[350px] sm:w-[450px] flex-shrink-0 whitespace-normal">
-                        <div class="flex text-[var(--g3)] text-sm mb-3"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                        <p class="text-white/80 text-sm sm:text-base italic mb-4 leading-relaxed">"My senior cat hates the carrier. Booking an <strong class="text-white">at-home vet consultation</strong> was a game-changer. The vet was incredibly gentle, did her blood work on the spot, and even handled her <strong class="text-white">cat vaccinations</strong> without a single hiss. It's the most <strong class="text-white">fear-free pet care</strong> experience we've ever had."</p>
-                        <div class="text-xs text-white/50 font-bold uppercase tracking-widest">- Rohan Verma, Pawtner of Luna</div>
-                    </div>
-                    <!-- Review 3 -->
-                    <div class="bg-white/5 p-6 rounded-2xl border border-white/10 backdrop-blur-sm w-[350px] sm:w-[450px] flex-shrink-0 whitespace-normal">
-                        <div class="flex text-[var(--g3)] text-sm mb-3"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                        <p class="text-white/80 text-sm sm:text-base italic mb-4 leading-relaxed">"When Max tore his ACL, we needed an <strong class="text-white">orthopedic veterinary surgeon</strong> we could trust. The <strong class="text-white">advanced pet surgery and diagnostics</strong> here are world-class. They walked us through the digital x-rays and the entire recovery plan. Six months later, he's running like a puppy again."</p>
-                        <div class="text-xs text-white/50 font-bold uppercase tracking-widest">- Amit Patel, Pawtner of Max</div>
-                    </div>
-                    <!-- Review 4 -->
-                    <div class="bg-white/5 p-6 rounded-2xl border border-white/10 backdrop-blur-sm w-[350px] sm:w-[450px] flex-shrink-0 whitespace-normal">
-                        <div class="flex text-[var(--g3)] text-sm mb-3"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                        <p class="text-white/80 text-sm sm:text-base italic mb-4 leading-relaxed">"Finding an <strong class="text-white">affordable pet clinic</strong> that doesn't compromise on quality is hard. MaxPetz handled my indie dog's <strong class="text-white">tick fever treatment</strong> with such professionalism. The <strong class="text-white">in-house blood tests</strong> gave us results in minutes, not days. Highly recommend to all pawtners!"</p>
-                        <div class="text-xs text-white/50 font-bold uppercase tracking-widest">- Sneha Gupta, Pawtner of Chutney</div>
-                    </div>
+            <div id="review-scroll-wrapper" class="w-full relative z-10 mt-16 pt-8 border-t border-white/10 overflow-x-auto no-scrollbar mask-image-fade cursor-grab active:cursor-grabbing">
+                <div id="hero-reviews-track" class="flex w-max gap-6 px-6">
+                    <!-- JS will populate this -->
                 </div>
             </div>
         </header>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const reviewsData = [
+                    { author: "Priya Sharma, Pawtner of Leo", text: "I was terrified when my Golden Retriever started vomiting blood at 2 AM. MaxPetz was the only <strong class='text-white'>24/7 emergency animal hospital</strong> that picked up. The ICU team diagnosed him with Parvovirus and started treatment immediately. Truly the <strong class='text-white'>best emergency vet in Delhi</strong>!" },
+                    { author: "Rohan Verma, Pawtner of Luna", text: "My senior cat hates the carrier. Booking an <strong class='text-white'>at-home vet consultation</strong> was a game-changer. The vet did her blood work on the spot and handled her <strong class='text-white'>cat vaccinations</strong> without a single hiss. The most <strong class='text-white'>fear-free pet care</strong> experience ever." },
+                    { author: "Amit Patel, Pawtner of Max", text: "When Max tore his ACL, we needed an <strong class='text-white'>orthopedic veterinary surgeon</strong> we could trust. The <strong class='text-white'>advanced pet surgery and diagnostics</strong> here are world-class. Six months later, he's running like a puppy again." },
+                    { author: "Sneha Gupta, Pawtner of Chutney", text: "Finding an <strong class='text-white'>affordable pet clinic</strong> that doesn't compromise on quality is hard. MaxPetz handled my indie dog's <strong class='text-white'>tick fever treatment</strong> with such professionalism. The <strong class='text-white'>in-house blood tests</strong> gave us results in minutes." },
+                    { author: "Vikram Singh, Pawtner of Bruno", text: "Our German Shepherd was struggling with severe hip dysplasia. The <strong class='text-white'>veterinary orthopedic specialists</strong> provided an incredible pain management plan and <strong class='text-white'>dog arthritis treatment</strong>. He is finally walking without a limp!" },
+                    { author: "Anjali Desai, Pawtner of Simba", text: "Simba stopped eating and was extremely lethargic. We rushed to this <strong class='text-white'>pet hospital in South Delhi</strong>. The <strong class='text-white'>veterinary ultrasound</strong> revealed a blockage, and they performed emergency <strong class='text-white'>soft tissue surgery</strong>. They saved his life." },
+                    { author: "Karan Malhotra, Pawtner of Bella", text: "The <strong class='text-white'>dog dental cleaning</strong> service is fantastic. Bella had terrible breath and tartar buildup. The <strong class='text-white'>pet dentistry experts</strong> safely put her under anesthesia and extracted two bad teeth. Her breath is fresh and she's eating better!" },
+                    { author: "Pooja Iyer, Pawtner of Milo", text: "I highly recommend their <strong class='text-white'>puppy vaccination packages</strong>. The vet explained the entire <strong class='text-white'>dog vaccination schedule</strong>, including Rabies and DHLPP. They even helped us with <strong class='text-white'>pet microchipping</strong> for his safety." },
+                    { author: "Rahul Kapoor, Pawtner of Daisy", text: "Daisy had a terrible skin rash that wouldn't go away. The <strong class='text-white'>pet dermatologist</strong> here diagnosed her with a severe yeast infection. With their <strong class='text-white'>dog skin allergy treatment</strong>, her coat is shiny and healthy again." },
+                    { author: "Neha Reddy, Pawtner of Cleo", text: "Our Persian cat was diagnosed with <strong class='text-white'>feline kidney disease</strong>. The continuous <strong class='text-white'>IV fluid therapy</strong> and specialized renal diet prescribed by their <strong class='text-white'>feline specialists</strong> have given her a new lease on life." },
+                    { author: "Siddharth Jain, Pawtner of Rocky", text: "Rocky was hit by a car and suffered multiple fractures. The <strong class='text-white'>pet trauma center</strong> stabilized him immediately with <strong class='text-white'>oxygen therapy</strong>. The <strong class='text-white'>digital x-ray for dogs</strong> was done instantly. Forever grateful!" },
+                    { author: "Meera Menon, Pawtner of Coco", text: "I needed a <strong class='text-white'>health certificate for pet travel</strong>. The team handled all the paperwork, <strong class='text-white'>rabies titer test</strong>, and <strong class='text-white'>pet passport</strong> requirements flawlessly. Best <strong class='text-white'>veterinary clinic in Gurgaon</strong>!" },
+                    { author: "Arjun Nair, Pawtner of Shadow", text: "Shadow had a severe seizure at midnight. We rushed to their <strong class='text-white'>24 hour vet clinic</strong>. The <strong class='text-white'>veterinary neurologist</strong> was incredibly knowledgeable and started him on anti-epileptic medication right away." },
+                    { author: "Kavita Joshi, Pawtner of Oreo", text: "The <strong class='text-white'>cat spay clinic</strong> was spotless. I was nervous about the anesthesia, but their <strong class='text-white'>fear-free certified vets</strong> monitored her vitals constantly. The <strong class='text-white'>spay and neuter surgery</strong> was a complete success." },
+                    { author: "Tarun Bhatia, Pawtner of Murphy", text: "Murphy swallowed a sock! The <strong class='text-white'>emergency endoscopy for dogs</strong> saved him from invasive surgery. The <strong class='text-white'>veterinary diagnostic imaging</strong> team was fast and precise." },
+                    { author: "Divya Singh, Pawtner of Nala", text: "Nala had chronic ear infections. The <strong class='text-white'>pet ear infection treatment</strong> here finally worked after months of struggling elsewhere. They did a deep ear flush under sedation. Highly recommend this <strong class='text-white'>pet hospital</strong>." },
+                    { author: "Rishabh Khanna, Pawtner of Thor", text: "Thor was diagnosed with Canine Distemper. The <strong class='text-white'>isolation ward for infectious diseases</strong> was top-notch. The <strong class='text-white'>intensive care unit for pets</strong> provided round-the-clock monitoring." },
+                    { author: "Aarti Patel, Pawtner of Lily", text: "I love their <strong class='text-white'>annual pet wellness exam</strong>. They do a comprehensive check, including a <strong class='text-white'>senior dog blood panel</strong> and <strong class='text-white'>urinalysis</strong>. It gives me such peace of mind." },
+                    { author: "Gaurav Sharma, Pawtner of Buster", text: "Buster had a sudden bout of hemorrhagic gastroenteritis. The <strong class='text-white'>emergency vet near me</strong> provided immediate <strong class='text-white'>IV fluids for dogs</strong> and anti-nausea meds. He bounced back in 24 hours." },
+                    { author: "Shruti Agarwal, Pawtner of Mia", text: "Mia was diagnosed with diabetes. The vet taught me how to administer insulin and use a <strong class='text-white'>pet glucose monitor</strong>. Their <strong class='text-white'>veterinary endocrinology</strong> support is unmatched." },
+                    { author: "Varun Desai, Pawtner of Zeus", text: "Zeus needed a <strong class='text-white'>TPLO surgery for dogs</strong>. The <strong class='text-white'>veterinary orthopedic surgeon</strong> explained the biomechanics perfectly. The post-op <strong class='text-white'>pet physiotherapy</strong> they recommended worked wonders." },
+                    { author: "Nidhi Verma, Pawtner of Chloe", text: "Chloe had a severe allergic reaction to a bee sting. Her face swelled up instantly. The <strong class='text-white'>emergency animal hospital</strong> gave her an antihistamine injection and saved her life." },
+                    { author: "Sameer Reddy, Pawtner of Duke", text: "Duke was diagnosed with a heart murmur. The <strong class='text-white'>veterinary cardiologist</strong> performed an <strong class='text-white'>echocardiogram for dogs</strong> and prescribed the right meds. He's doing great!" },
+                    { author: "Priyanka Rao, Pawtner of Jasper", text: "Jasper had a urinary blockage, a true emergency for male cats. The <strong class='text-white'>feline emergency vet</strong> unblocked him quickly and provided excellent <strong class='text-white'>cat urinary tract infection treatment</strong>." },
+                    { author: "Aditya Kapoor, Pawtner of Penny", text: "Penny needed a <strong class='text-white'>dog tumor removal surgery</strong>. The <strong class='text-white'>veterinary oncologist</strong> was so compassionate. The <strong class='text-white'>pet biopsy</strong> results came back fast, and the margins were clear!" },
+                    { author: "Riya Menon, Pawtner of Felix", text: "Felix had severe feline asthma. The <strong class='text-white'>cat asthma treatment</strong> included teaching me how to use an inhaler for him. The <strong class='text-white'>respiratory vet specialist</strong> was so patient." },
+                    { author: "Kunal Bhatia, Pawtner of Buddy", text: "Buddy had a terrible case of kennel cough. The <strong class='text-white'>dog cough treatment</strong> and antibiotics cleared it up. I also got the <strong class='text-white'>Bordetella vaccine</strong> updated here." },
+                    { author: "Sanjana Iyer, Pawtner of Rosie", text: "Rosie was pregnant and having trouble delivering. The <strong class='text-white'>emergency dog c-section</strong> saved her and her puppies. The <strong class='text-white'>veterinary obstetrics</strong> team was incredible." },
+                    { author: "Nitin Joshi, Pawtner of Oscar", text: "Oscar had a corneal ulcer. The <strong class='text-white'>veterinary ophthalmologist</strong> provided specialized eye drops and a protective collar. His <strong class='text-white'>pet eye infection</strong> healed perfectly." },
+                    { author: "Meghna Singh, Pawtner of Stella", text: "Stella was diagnosed with hypothyroidism. The <strong class='text-white'>dog thyroid blood test</strong> was quick, and the daily medication has completely restored her energy levels." },
+                    { author: "Ravi Khanna, Pawtner of Winston", text: "Winston needed <strong class='text-white'>dog teeth cleaning without anesthesia</strong>. They evaluated him and determined he needed a full <strong class='text-white'>veterinary dental scaling</strong>. His teeth look brand new." },
+                    { author: "Ananya Patel, Pawtner of Ruby", text: "Ruby had a severe case of ringworm. The <strong class='text-white'>pet fungal infection treatment</strong> and medicated baths prescribed by the <strong class='text-white'>vet dermatologist</strong> cleared it up completely." },
+                    { author: "Deepak Sharma, Pawtner of Toby", text: "Toby was limping badly. The <strong class='text-white'>dog x-ray near me</strong> showed a luxating patella. The <strong class='text-white'>pet orthopedic surgery</strong> fixed his knee, and he's pain-free now." },
+                    { author: "Kritika Verma, Pawtner of Lily", text: "Lily had a sudden bout of pancreatitis. The <strong class='text-white'>emergency vet clinic</strong> hospitalized her for three days with <strong class='text-white'>IV fluids and pain management</strong>. They saved her." },
+                    { author: "Saurabh Desai, Pawtner of Charlie", text: "Charlie needed his <strong class='text-white'>annual cat vaccinations</strong>. The <strong class='text-white'>feline friendly vet</strong> made sure he was comfortable. We also got his <strong class='text-white'>cat deworming</strong> done." },
+                    { author: "Pallavi Reddy, Pawtner of Maya", text: "Maya was diagnosed with Cushing's disease. The <strong class='text-white'>veterinary internal medicine specialist</strong> ran an ACTH stimulation test and got her on the right track." },
+                    { author: "Gautam Kapoor, Pawtner of Dexter", text: "Dexter swallowed a chicken bone. The <strong class='text-white'>emergency pet x-ray</strong> confirmed it was in his stomach. The <strong class='text-white'>veterinary surgeon</strong> successfully removed it via endoscopy." },
+                    { author: "Neha Bhatia, Pawtner of Sophie", text: "Sophie had a severe flea and tick infestation. The <strong class='text-white'>tick fever prevention</strong> and <strong class='text-white'>pet parasite control</strong> advice from the vet was incredibly helpful." },
+                    { author: "Ashish Menon, Pawtner of Oliver", text: "Oliver was diagnosed with FIV. The <strong class='text-white'>feline immunodeficiency virus management</strong> plan provided by the vet has kept him healthy and happy for years." },
+                    { author: "Shikha Iyer, Pawtner of Bailey", text: "Bailey had a torn dewclaw. The <strong class='text-white'>minor pet surgery</strong> was done quickly under local anesthesia. The <strong class='text-white'>wound care for dogs</strong> instructions were very clear." },
+                    { author: "Prateek Joshi, Pawtner of Lola", text: "Lola needed a <strong class='text-white'>dog ultrasound</strong> for her pregnancy. The <strong class='text-white'>veterinary imaging specialist</strong> was so gentle and showed us the puppies' heartbeats!" },
+                    { author: "Ritu Singh, Pawtner of Tucker", text: "Tucker was diagnosed with glaucoma. The <strong class='text-white'>pet eye pressure test</strong> was done quickly, and the <strong class='text-white'>veterinary eye drops</strong> saved his vision." },
+                    { author: "Manish Khanna, Pawtner of Zoe", text: "Zoe had a severe case of giardia. The <strong class='text-white'>dog diarrhea treatment</strong> and <strong class='text-white'>fecal test for pets</strong> were handled efficiently by the clinic staff." },
+                    { author: "Swati Patel, Pawtner of Murphy", text: "Murphy needed a <strong class='text-white'>dog blood transfusion</strong> after a severe tick fever episode. The <strong class='text-white'>veterinary blood bank</strong> access they have is truly life-saving." },
+                    { author: "Alok Sharma, Pawtner of Daisy", text: "Daisy had a pyometra, a life-threatening uterine infection. The <strong class='text-white'>emergency spay surgery</strong> was performed immediately. The <strong class='text-white'>veterinary surgical team</strong> is amazing." },
+                    { author: "Pooja Verma, Pawtner of Simba", text: "Simba was diagnosed with hyperthyroidism. The <strong class='text-white'>cat thyroid treatment</strong> options were explained clearly, and the daily medication is working perfectly." },
+                    { author: "Rahul Desai, Pawtner of Rocky", text: "Rocky had a severe hot spot. The <strong class='text-white'>dog skin infection treatment</strong> and medicated spray provided immediate relief. Best <strong class='text-white'>pet clinic in Delhi</strong>." },
+                    { author: "Anjali Reddy, Pawtner of Cleo", text: "Cleo needed a <strong class='text-white'>cat dental extraction</strong>. The <strong class='text-white'>veterinary dental x-rays</strong> showed the root damage clearly. She recovered so fast!" },
+                    { author: "Vikram Kapoor, Pawtner of Bruno", text: "Bruno had a sudden collapse. The <strong class='text-white'>emergency vet care</strong> team performed an <strong class='text-white'>ECG for dogs</strong> and diagnosed an arrhythmia. He's stable now." },
+                    { author: "Sneha Bhatia, Pawtner of Bella", text: "Bella had a severe allergic reaction. The <strong class='text-white'>anaphylaxis treatment for dogs</strong> was administered instantly. The <strong class='text-white'>24 hour animal hospital</strong> staff is incredible." }
+                ];
+
+                const track = document.getElementById('hero-reviews-track');
+                const wrapper = document.getElementById('review-scroll-wrapper');
+                let htmlContent = '';
+
+                reviewsData.forEach(review => {
+                    htmlContent += `
+                    <div class="bg-white/5 p-6 rounded-2xl border border-white/10 backdrop-blur-sm w-[350px] sm:w-[450px] flex-shrink-0 whitespace-normal select-none">
+                        <div class="flex text-[var(--g3)] text-sm mb-3">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-white/80 text-sm sm:text-base italic mb-4 leading-relaxed pointer-events-none">"${review.text}"</p>
+                        <div class="text-xs text-white/50 font-bold uppercase tracking-widest pointer-events-none">- ${review.author}</div>
+                    </div>`;
+                });
+
+                // Duplicate the content to create a seamless infinite scroll loop
+                track.innerHTML = htmlContent + htmlContent;
+
+                // Auto-scroll and Drag-to-scroll logic
+                let isDown = false;
+                let startX;
+                let scrollLeft;
+                let isHovered = false;
+
+                // Auto scroll animation
+                function autoScroll() {
+                    if (!isHovered && !isDown) {
+                        wrapper.scrollLeft += 0.5; // Adjust speed here
+                        // Reset scroll position for infinite loop
+                        if (wrapper.scrollLeft >= track.scrollWidth / 2) {
+                            wrapper.scrollLeft = 0;
+                        }
+                    }
+                    requestAnimationFrame(autoScroll);
+                }
+
+                // Mouse events for drag
+                wrapper.addEventListener('mousedown', (e) => {
+                    isDown = true;
+                    wrapper.classList.add('cursor-grabbing');
+                    wrapper.classList.remove('cursor-grab');
+                    startX = e.pageX - wrapper.offsetLeft;
+                    scrollLeft = wrapper.scrollLeft;
+                });
+                
+                wrapper.addEventListener('mouseleave', () => {
+                    isDown = false;
+                    isHovered = false;
+                    wrapper.classList.remove('cursor-grabbing');
+                    wrapper.classList.add('cursor-grab');
+                });
+                
+                wrapper.addEventListener('mouseup', () => {
+                    isDown = false;
+                    wrapper.classList.remove('cursor-grabbing');
+                    wrapper.classList.add('cursor-grab');
+                });
+                
+                wrapper.addEventListener('mousemove', (e) => {
+                    if (!isDown) return;
+                    e.preventDefault();
+                    const x = e.pageX - wrapper.offsetLeft;
+                    const walk = (x - startX) * 1.5; // Scroll speed multiplier
+                    wrapper.scrollLeft = scrollLeft - walk;
+                });
+
+                // Pause on hover/touch
+                wrapper.addEventListener('mouseenter', () => isHovered = true);
+                wrapper.addEventListener('touchstart', () => isHovered = true, {passive: true});
+                wrapper.addEventListener('touchend', () => isHovered = false);
+
+                // Start auto-scroll
+                requestAnimationFrame(autoScroll);
+            });
+        </script>
 
         <!-- Services Module -->
         <section id="services" class="py-32 bg-[var(--paper)] relative overflow-hidden">
